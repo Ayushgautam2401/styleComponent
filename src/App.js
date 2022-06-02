@@ -30,11 +30,12 @@ function App() {
       <GlobalStyle/>
 
     <Routes>
-      <Route path= "/" element={<OuterLayout/>}/>
+      <Route path= "/" element={<OuterLayout/>}>
       <Route path= "/select" element={<RenderSelectInput/>}/>
       <Route path= "/text" element={<Text/>}/>
       <Route path= "/input" element={<Input/>}/>
       <Route path= "/link" element={<Link/>}/>
+      </Route>
   </Routes>
 
 
