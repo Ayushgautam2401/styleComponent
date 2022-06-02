@@ -2,12 +2,14 @@
 import { createGlobalStyle} from 'styled-components';
 import { ThemeProvider } from 'styled-components';
 import { theme } from './theme';
+
 import { OuterLayout } from './Container/layout/OuterLayout';
 import { Routes, Route } from 'react-router-dom';
-
+import { RenderSelectInput } from './Components/selectComponent/selectComponent';
 
 
 const GlobalStyle = createGlobalStyle`
+
  html,body{
    font-size:16px;
    margin:0;
@@ -24,8 +26,9 @@ function App() {
       <GlobalStyle/>
     <Routes>
       <Route path= "/" element={<OuterLayout/>}/>
-  
+      <Route path= "/select" element={<RenderSelectInput/>}/>
   </Routes>
+
     </ThemeProvider>
   );
 }
