@@ -19,14 +19,16 @@ export const OuterLayout = () => {
        <Link  to='link'>Link Components</Link>
      </Sidebar>
      <ContentArea>
+
      <TitleBar><TitleLabel> Title : </TitleLabel></TitleBar>
      <Content>
      
       <Outlet/>
       </Content>
+
      </ContentArea>
     </DisplayArea>
-    <Footer> shsus </Footer>
+    <Footer> Footer </Footer>
     </Layout>
   )
 }
