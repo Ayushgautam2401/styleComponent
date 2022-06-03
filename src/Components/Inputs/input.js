@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { theme } from '../../theme';
 
 const Styledinput = styled.input.attrs(props => {
-    const {theme:{size,text,background,color,bordersize}} = props;
+    const {theme:{size,background,bordersize}} = props;
 
     return{
         type:"text",
@@ -19,7 +19,6 @@ const Styledinput = styled.input.attrs(props => {
   `
   const PasswordInput = styled(Styledinput).attrs({
     type: "password",
-    // background: background[props.background]|| background.main,
   })`
    background-color: ${props => props.background};
    color: ${props => props.color};
@@ -41,7 +40,6 @@ const Label=styled.label.attrs(props => {
 })`
 color: ${props => props.color};
 `
-//  const LabelText = styled.span 
 
 function Input() {
   return (

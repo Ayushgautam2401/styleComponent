@@ -16,12 +16,10 @@ color: ${props => props.color};
 `
 const Link = () => {
   return (
-    // <div>
    <ThemeProvider theme={theme}>
        <Styledlink>Home</Styledlink>
 
    </ThemeProvider>
-    // </div>
   )
 }
 

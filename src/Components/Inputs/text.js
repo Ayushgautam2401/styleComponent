@@ -1,9 +1,7 @@
 import React from 'react'
 import { theme } from '../../theme'
-import { text } from './styles'
 import styled from "styled-components"
 import { ThemeProvider } from 'styled-components'
-// import { Styledtext } from './styles'
 
 const Styledtext = styled.div.attrs(props =>{
   const {theme : {size,text,background,color,bordersize}} = props;
@@ -23,13 +21,11 @@ const Text = () => {
 
 
   return (
-    // <div>
-    // <Input placeholder="Testing style  " size="2em" />
+    
     <ThemeProvider theme={theme}>
     <Styledtext> Home </Styledtext>
     </ThemeProvider>
-      
-    // </div>
+  
   )
 }
 

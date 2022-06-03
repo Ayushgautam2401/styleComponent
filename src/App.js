@@ -20,6 +20,7 @@ const GlobalStyle = createGlobalStyle`
    padding:0;
    font-family: 'Courier New', Courier, monospace;
    height: 100vh;
+   width: 100%;
  }`
 
 
@@ -31,10 +32,10 @@ function App() {
 
     <Routes>
       <Route path= "/" element={<OuterLayout/>}>
-      <Route path= "/select" element={<RenderSelectInput/>}/>
-      <Route path= "/text" element={<Text/>}/>
-      <Route path= "/input" element={<Input/>}/>
-      <Route path= "/link" element={<Link/>}/>
+      <Route path= "select" element={<RenderSelectInput/>}/>
+      <Route path= "text" element={<Text/>}/>
+      <Route path= "input" element={<Input/>}/>
+      <Route path= "link" element={<Link/>}/>
       </Route>
   </Routes>
 
