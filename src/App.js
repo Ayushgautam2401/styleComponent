@@ -11,9 +11,9 @@ import { RenderSelectInput } from './Components/selectComponent/selectComponent'
 import Text from './Components/Inputs/text';
 import Input from './Components/Inputs/input';
 import Link from './Components/Inputs/link';
+import Temp from './Components/temp';
+
 const GlobalStyle = createGlobalStyle`
-
-
  html,body{
    font-size:16px;
    margin:0;
@@ -29,11 +29,11 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle/>
-
     <Routes>
       <Route path= "/" element={<OuterLayout/>}>
       <Route path= "select" element={<RenderSelectInput/>}/>
       <Route path= "text" element={<Text/>}/>
+      <Route path='temp' element={<Temp/>}/>
       <Route path= "input" element={<Input/>}/>
       <Route path= "link" element={<Link/>}/>
       </Route>

@@ -14,6 +14,7 @@ export const OuterLayout = () => {
     <DisplayArea>
      <Sidebar>
        <Link  to='select'>Select Component</Link>
+       <Link to='temp'> Icon inputs</Link>
        <Link  to='text'>Text Components</Link>
        <Link  to='input'>Input Components</Link>
        <Link  to='link'>Link Components</Link>

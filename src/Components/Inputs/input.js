@@ -22,14 +22,11 @@ const Styledinput = styled.input.attrs(props => {
   })`
    background-color: ${props => props.background};
    color: ${props => props.color};
-
   `
 const Checkbox = styled(Styledinput).attrs({
     type:"checkbox",
 
 })`
-
-
 `
 const Label=styled.label.attrs(props => {
     const {theme: {size,text,background,color,bordersize}}= props;
@@ -66,4 +63,4 @@ function Input() {
   )
 }
 
-export default Input
+export default Input;
