@@ -24,27 +24,27 @@ height: 50px;
 
 `
 const StyleInput = styled.div`
-  &.inputWithIcon {
+  /* &.inputWithIcon { */
     position: relative;
 
-    ~.left-icon {
-      position: absolute;
-      left: 5px;
-      top: 25%;
-      svg {
-      fill: black;
-      transition: 0.3s;
-    }
-    }
-  }
+        /* ~.left-icon {
+        position: absolute;
+        left: 5px;
+        top: 25%;
+        svg {
+        fill: black;
+        transition: 0.3s;
+      }
+      } */
+  /* } */
 
    .left-icon {
     position: absolute;
     left: 5px;
     top: 25%; 
     svg {
-      /* fill: black; */
-      /* transition: 0.3s; */
+      fill: black;
+      transition: 0.3s;
     }
   } 
 `;
