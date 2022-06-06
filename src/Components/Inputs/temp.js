@@ -1,19 +1,29 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled from "styled-components"; 
+import { ThemeProvider } from "styled-components";
+import { theme } from "../../theme";
 
-// const StyleInput = styled.div.attrs(props => {
-//     const {theme: {size,text,color,bordersize}} = props;
+const Input = styled.input.attrs(props => {
+    const {theme: {size,text,color,bordersize}} = props;
 
-//     return{
-//         size:size[props.size]|| size.ex4lg,
-//         bordersize: bordersize[props.bordersize]|| bordersize.md,
-//     }
-// })`
-// font-size: ${props => props.size};
-// border: 2px solid black;
-// border-radius: 4px;
+    return{
+        size:size[props.size]|| size.ex4lg,
+        bordersize: bordersize[props.bordersize]|| bordersize.md,
+    }
+})`
+font-size: ${props => props.size};
 
-// `
+height: 50px;
+ /* font-size: 25px; */
+ width: 100%;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  margin: 8px 0;
+  padding: 8px;
+  box-sizing: border-box;
+  padding-left: 50px;
+
+`
 const StyleInput = styled.div`
   &.inputWithIcon {
     position: relative;
@@ -29,24 +39,12 @@ const StyleInput = styled.div`
     }
   }
 `;
-const Input = styled.input`
-  height: 50px;
-  font-size: 25px;
-  width: 100%;
-  border: 2px solid #aaa;
-  border-radius: 4px;
-  margin: 8px 0;
-  padding: 8px;
-  box-sizing: border-box;
-  padding-left: 50px;
-
-`;
-
 
 
  const Temp = () => {
 
   return (
+    <ThemeProvider theme={theme}>
     <form>
       <StyleInput className={"inputWithIcon"}>
         <Input
@@ -66,6 +64,7 @@ const Input = styled.input`
 
       </StyleInput>
     </form>
+    </ThemeProvider>
   );
 };
 

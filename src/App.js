@@ -11,7 +11,8 @@ import { RenderSelectInput } from './Components/selectComponent/selectComponent'
 import Text from './Components/Inputs/text';
 import Input from './Components/Inputs/input';
 import Link from './Components/Inputs/link';
-import Temp from './Components/temp';
+import Temp from './Components/Inputs/temp';
+import { Nav } from './Components/Inputs/link';
 
 const GlobalStyle = createGlobalStyle`
  html,body{
@@ -35,7 +36,7 @@ function App() {
       <Route path= "text" element={<Text/>}/>
       <Route path='temp' element={<Temp/>}/>
       <Route path= "input" element={<Input/>}/>
-      <Route path= "link" element={<Link/>}/>
+      <Route path= "link" element={<Nav/>}/>
       </Route>
   </Routes>
 
