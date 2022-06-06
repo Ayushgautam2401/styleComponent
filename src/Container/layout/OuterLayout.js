@@ -24,19 +24,13 @@ export const OuterLayout = () => {
       <SidebarOption> <StyledLink  to='link'>Link Components</StyledLink></SidebarOption>
      </Sidebar>
      <ContentArea>
-       <TitleBar><TitleLabel> Title : </TitleLabel></TitleBar>
-       <Content>
-      
-         <Outlet>
-         <RenderSelectInput/>
-         <Text/>
-         <Input/>
-         
-         </Outlet>
+
+     <TitleBar><TitleLabel> Title : </TitleLabel></TitleBar>
+     <Content>
      
+      <Outlet/>
       </Content>
-     
-      
+
      </ContentArea>
     </DisplayArea>
     <Footer> Footer </Footer>

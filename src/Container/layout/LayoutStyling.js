@@ -62,7 +62,8 @@ export const SidebarOption = styled.div`
 `;
 
 // Main Content Area in Display Area
-export const ContentArea = styled.div`
+export const ContentArea = styled.div
+`
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -71,13 +72,13 @@ export const ContentArea = styled.div`
 `;
 // Title Bar in Main Content Area
 export const TitleBar = styled.div`
-  display: flex;
-  flex-direction: row;
+ // display: flex;
+  //flex-direction: row;
   width: 100%;
   height: 50px;
   background-color: beige;
   border-radius: 0.8rem;
-  border: 1px solid black;
+ // border: 1px solid black;
 `;
 
 // Styling of Label Area in Title Bar
@@ -104,8 +105,8 @@ export const TitleLabel = styled.text.attrs((props) => {
 
 // Inner Content Area in Main Content Area
 export const Content = styled.div`
-  display: flex;
-  width: 100%;
+ // display: flex;
+ // width: 100%;
   height: calc(100% - 50px);
   // border: 2px solid blue;
   overflow: auto;
