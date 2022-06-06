@@ -18,8 +18,6 @@ color: ${props => props.color};
 `
 
 const Text = () => {
-
-
   return (
     
     <ThemeProvider theme={theme}>

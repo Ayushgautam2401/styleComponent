@@ -14,7 +14,6 @@ const Input = styled.input.attrs(props => {
 font-size: ${props => props.size};
 
 height: 50px;
- /* font-size: 25px; */
  width: 100%;
   border: 2px solid #aaa;
   border-radius: 4px;
@@ -27,9 +26,19 @@ height: 50px;
 const StyleInput = styled.div`
   &.inputWithIcon {
     position: relative;
+
+    ~.left-icon {
+      position: absolute;
+      left: 5px;
+      top: 25%;
+      svg {
+      fill: black;
+      transition: 0.3s;
+    }
+    }
   }
 
-  .left-icon {
+   .left-icon {
     position: absolute;
     left: 5px;
     top: 25%; 
@@ -37,7 +46,7 @@ const StyleInput = styled.div`
       /* fill: black; */
       /* transition: 0.3s; */
     }
-  }
+  } 
 `;
 
 
@@ -46,7 +55,7 @@ const StyleInput = styled.div`
   return (
     <ThemeProvider theme={theme}>
     <form>
-      <StyleInput className={"inputWithIcon"}>
+      <StyleInput >
         <Input
           type="text"
           placeholder="Search"
