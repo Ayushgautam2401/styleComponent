@@ -12,6 +12,8 @@ import Input from './Components/Inputs/input';
 import Link from './Components/Inputs/link';
 import Temp from './Components/Inputs/temp';
 import { Nav } from './Components/Inputs/link';
+import ClientForm from "Container/client/clientForm";
+import InvoiceForm from "Container/invoice/invoiceForm";
 
 
 
@@ -31,10 +33,12 @@ function App() {
 
 
 
-
       <GlobalStyle />
-      <OuterLayout/>
-      <Temp/>
+      {/* <ClientForm/> */}
+      <InvoiceForm/>
+      {/* <OuterLayout/> */}
+      {/* <Temp/>    */}
+     
      {/* <Routes>
         <Route path="/" element={<OuterLay out />}/>
          

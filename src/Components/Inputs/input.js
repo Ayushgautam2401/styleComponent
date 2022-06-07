@@ -8,7 +8,7 @@ import { setTitleAction } from '../../Store/Action/action';
 import { useSelector } from 'react-redux';
 import { getTitle } from '../../Store/Selector';
 import { TITLES } from '../../constant';
-const Styledinput = styled.input.attrs(props => {
+ export const Styledinput = styled.input.attrs(props => {
     const {theme:{size,background,bordersize}} = props;
 
     return{
@@ -21,6 +21,9 @@ const Styledinput = styled.input.attrs(props => {
   font-size: ${props => props.size};
   background-color: ${props => props.background};
   border-radius: ${props=> props.bordersize};
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-family: 'Poppins', sans-serif;
   `
   const PasswordInput = styled(Styledinput).attrs({
     type: "password",
