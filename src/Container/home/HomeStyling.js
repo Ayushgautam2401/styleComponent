@@ -24,3 +24,20 @@ export const FormHeader = styled.text`display:flex;
   height: 15%;
   width: 100%;
 `
+export const Input = styled.input.attrs(props => ({
+  type: "text",
+  size: props.size || "0.5em",
+}))`
+  color: red;
+  font-size: 1em;
+  border: 2px solid green ;
+  border-radius: 8px;
+  margin: ${props => props.size};
+  padding: ${props => props.size};
+`;
+export const Button = styled.button`
+width:100px;
+height: 30px;
+background-color:${(props)=>props.variant === 'outline'? '#FFF':'#4caf50'};
+color:${(props)=>(props.variant === 'outline'? '#4caf50':'#FFF')}; 
+`;
