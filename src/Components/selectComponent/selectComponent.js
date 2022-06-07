@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import theme from '../../theme'
 import ReactSelect from 'react-select'
 import styled  from 'styled-components'
+import { useLocation } from 'react-router-dom'
 
 const options = [
     { value: 'chocolate', label: 'Chocolate' },
@@ -10,8 +11,12 @@ const options = [
   ]
 
 export const RenderSelectInput = () => {
+  const location = useLocation();
   return (
-
+    <>
+    {location.pathname === `/select` ?(
+      <p>select components</p>  
+        ):null}
     <ReactSelect
       options={options}
       theme={(theme) => ({
@@ -24,5 +29,6 @@ export const RenderSelectInput = () => {
         },
       })}
     />
+    </>
   )
 }
