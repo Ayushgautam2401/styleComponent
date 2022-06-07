@@ -1,25 +1,36 @@
 import { Field, reduxForm,Form} from 'redux-form'
-import { Input } from './HomeStyling'
-import { Button } from './HomeStyling'
+import { InputLabel, Styledinput } from './HomeStyling'
+//import { Button } from './HomeStyling'
+import { PasswordInput } from './HomeStyling'
+
+
 
 const LoginFormComponent = (props) => {
     return(
+      
         <Form >
+         
+         
+          <InputLabel>Username</InputLabel>
         <Field
         name="name"
-        component={Input}
+        component={Styledinput}
         type="text"
-        placeholder="Full Name"
+        placeholder="User ID"
       />
+     
+     
+      <InputLabel>Password</InputLabel>
       <Field
-      name="email"
-      component={Input}
-      type="text"
-      placeholder="email"
+      name="password"
+      component={PasswordInput}
+      type="password"
+      placeholder="Password"
     />
-    <Button>
-      Login
-    </Button>
+    
+   
+    <button>Log In</button>
+    
     </Form>
     )
 }

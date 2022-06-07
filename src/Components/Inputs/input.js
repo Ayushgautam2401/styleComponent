@@ -8,7 +8,7 @@ import { setTitleAction } from '../../Store/Action/action';
 import { useSelector } from 'react-redux';
 import { getTitle } from '../../Store/Selector';
 import { TITLES } from '../../constant';
-const Styledinput = styled.input.attrs(props => {
+ const Styledinput = styled.input.attrs(props => {
     const {theme:{size,background,bordersize}} = props;
 
     return{

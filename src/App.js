@@ -4,14 +4,9 @@ import { ThemeProvider } from "styled-components";
 import { OuterLayout } from "./Components/layout/OuterLayout";
 import { theme } from "./theme";
 import Home from "./Container/home/Home";
+import { Route, Switch } from "react-router-dom";
 
-// import { OuterLayout } from "./Container/layout/OuterLayout";
-// import { Routes, Route } from "react-router-dom";
-// import { RenderSelectInput } from "./Components/selectComponent/selectComponent";
 
-// import Text from "./Components/Inputs/text";
-// import Input from "./Components/Inputs/input";
-// import Link from "./Components/Inputs/link";
 const GlobalStyle = createGlobalStyle`
 
 
@@ -21,14 +16,24 @@ const GlobalStyle = createGlobalStyle`
    padding:0;
    font-family: 'Courier New', Courier, monospace;
    height: 100vh;
-   width: 100%;
+   width: 100vw;
  }`;
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Home />
+      <Switch>
+            <Route exact path="/">
+              <Home/>
+            </Route>
+            <Route exact path="/Clients">
+              <OuterLayout/>
+            </Route>
+
+
+
+      </Switch>
      
     </ThemeProvider>
   );
