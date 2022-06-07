@@ -21,7 +21,7 @@ export const theme ={
     color:{
         primary:'red',
         secondary:'blue',
-        default:'green'
+        default:'black'
     },
     bordersize:{
         xs:'0.4rem',

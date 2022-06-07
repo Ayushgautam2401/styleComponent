@@ -8,7 +8,9 @@ import { setTitleAction } from '../../Store/Action/action';
 import { useSelector } from 'react-redux';
 import { getTitle } from '../../Store/Selector';
 import { TITLES } from '../../constant';
- const Styledinput = styled.input.attrs(props => {
+
+
+ export const Styledinput = styled.input.attrs(props => {
     const {theme:{size,background,bordersize}} = props;
 
     return{
@@ -21,20 +23,20 @@ import { TITLES } from '../../constant';
   font-size: ${props => props.size};
   background-color: ${props => props.background};
   border-radius: ${props=> props.bordersize};
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-family: 'Poppins', sans-serif;
   `
   const PasswordInput = styled(Styledinput).attrs({
     type: "password",
   })`
    background-color: ${props => props.background};
    color: ${props => props.color};
-
   `
 const Checkbox = styled(Styledinput).attrs({
     type:"checkbox",
 
 })`
-
-
 `
 const Label=styled.label.attrs(props => {
     const {theme: {size,text,background,color,bordersize}}= props;
@@ -77,4 +79,4 @@ dispatch(setTitleAction())
   )
 }
 
-export default Input
+export default Input;
