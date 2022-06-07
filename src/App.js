@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 import { ThemeProvider } from "styled-components";
 import { OuterLayout } from "./Components/layout/OuterLayout";
 import { theme } from "./theme";
-import Home from "./Container/home/Home";
+import LoginPage from "./Container/login/LoginPage";
 import { Route, Switch } from "react-router-dom";
 
 import ClientForm from "Container/client/clientForm";
@@ -29,15 +29,18 @@ function App() {
             <Route exact path="/">
               <Home/>
             </Route>
-            <Route path = "/Clients">
+            <Route path="/Login">
+              <LoginPage/>
+            </Route>
+            <Route path = "/Outerlayout">
               <OuterLayout/>
             </Route>
-            <Route path="/Client">
+            {/* <Route path="/Client">
               <Client/>
             </Route>
             <Route path="/Invoice">
               < Invoice/>
-            </Route>
+            </Route> */}
 
 
 

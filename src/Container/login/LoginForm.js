@@ -1,8 +1,8 @@
 import { Field, reduxForm,Form} from 'redux-form'
-import { InputLabel, Styledinput } from './HomeStyling'
+import { InputLabel, Loginbutton, Styledinput } from './LoginpageStyling'
 //import { Button } from './HomeStyling'
-import { PasswordInput } from './HomeStyling'
-
+import { PasswordInput } from './LoginpageStyling'
+import { Styledbutton } from 'Components/Inputs/button'
 
 
 const LoginFormComponent = (props) => {
@@ -29,7 +29,7 @@ const LoginFormComponent = (props) => {
     />
     
    
-    <button>Log In</button>
+    <Loginbutton>Log In</Loginbutton>
     
     </Form>
     )
