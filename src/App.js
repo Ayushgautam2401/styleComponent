@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
 import { ThemeProvider } from "styled-components";
 import { OuterLayout } from "./Components/layout/OuterLayout";
 import { theme } from "./theme";
+import Home from "./Container/home/Home";
 
 // import { OuterLayout } from "./Container/layout/OuterLayout";
 // import { Routes, Route } from "react-router-dom";
@@ -27,12 +28,8 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <OuterLayout/>
-     {/* <Routes>
-        <Route path="/" element={<OuterLay out />}/>
-         
-        
-      </Routes> */}
+      <Home />
+     
     </ThemeProvider>
   );
 }
