@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 import { ThemeProvider } from "styled-components";
 import { OuterLayout } from "./Components/layout/OuterLayout";
 import { theme } from "./theme";
-import { OuterLayout } from './Container/layout/OuterLayout';
+// import { OuterLayout } from './Container/layout/OuterLayout';
 import { Routes, Route } from 'react-router-dom';
 import { RenderSelectInput } from './Components/selectComponent/selectComponent';
 
@@ -34,6 +34,7 @@ function App() {
 
       <GlobalStyle />
       <OuterLayout/>
+      <Temp/>
      {/* <Routes>
         <Route path="/" element={<OuterLay out />}/>
          
