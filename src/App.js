@@ -1,16 +1,16 @@
 
-import { createGlobalStyle } from "styled-components";
-import { ThemeProvider } from "styled-components";
-import { OuterLayout } from "./Components/layout/OuterLayout";
-import { theme } from "./theme";
+import { createGlobalStyle} from 'styled-components';
+import { ThemeProvider } from 'styled-components';
+import { theme } from './theme';
 
-// import { OuterLayout } from "./Container/layout/OuterLayout";
-// import { Routes, Route } from "react-router-dom";
-// import { RenderSelectInput } from "./Components/selectComponent/selectComponent";
 
-// import Text from "./Components/Inputs/text";
-// import Input from "./Components/Inputs/input";
-// import Link from "./Components/Inputs/link";
+import { OuterLayout } from './Container/layout/OuterLayout';
+import { Routes, Route } from 'react-router-dom';
+import { RenderSelectInput } from './Components/selectComponent/selectComponent';
+
+import Text from './Components/Inputs/text';
+import Input from './Components/Inputs/input';
+import Link from './Components/Inputs/link';
 const GlobalStyle = createGlobalStyle`
 
 
@@ -21,18 +21,25 @@ const GlobalStyle = createGlobalStyle`
    font-family: 'Courier New', Courier, monospace;
    height: 100vh;
    width: 100%;
- }`;
+ }`
+
+
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <OuterLayout/>
-     {/* <Routes>
-        <Route path="/" element={<OuterLay out />}/>
-         
-        
-      </Routes> */}
+      <GlobalStyle/>
+
+    <Routes>
+      <Route path= "/" element={<OuterLayout/>}>
+      <Route path= "select" element={<RenderSelectInput/>}/>
+      <Route path= "text" element={<Text/>}/>
+      <Route path= "input" element={<Input/>}/>
+      <Route path= "link" element={<Link/>}/>
+      </Route>
+  </Routes>
+
+
     </ThemeProvider>
   );
 }
