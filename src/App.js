@@ -1,11 +1,10 @@
 
 import { createGlobalStyle } from "styled-components";
 import { ThemeProvider } from "styled-components";
-import { OuterLayout } from "./Components/layout/OuterLayout";
 import { theme } from "./theme";
 import LoginPage from "./Container/login/LoginPage";
 import { Route, Switch } from "react-router-dom";
-
+import Home from "Container/home/Home";
 import ClientForm from "Container/client/clientForm";
 import InvoiceForm from "Container/invoice/invoiceForm"
 
@@ -32,9 +31,7 @@ function App() {
             <Route path="/Login">
               <LoginPage/>
             </Route>
-            <Route path = "/Outerlayout">
-              <OuterLayout/>
-            </Route>
+           
             {/* <Route path="/Client">
               <Client/>
             </Route>
