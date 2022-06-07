@@ -6,7 +6,14 @@ import LoginPage from "./Container/login/LoginPage";
 import { Route, Switch } from "react-router-dom";
 import Home from "Container/home/Home";
 import ClientForm from "Container/client/clientForm";
+<<<<<<< HEAD
 import InvoiceForm from "Container/invoice/invoiceForm"
+=======
+import InvoiceForm from "Container/invoice/invoiceForm";
+import Invoice from "Container/invoice/Invoice";
+import Client from "Container/client/Client";
+
+>>>>>>> cf79fd32260cc559d0881c52eac402eebd02b109
 
 
 const GlobalStyle = createGlobalStyle`
@@ -41,7 +48,17 @@ function App() {
 
 
 
+<<<<<<< HEAD
       </Switch>
+=======
+      <GlobalStyle />
+      {/* <ClientForm/> */}
+      {/* <InvoiceForm/> */}
+      <Invoice/>
+      <Client/>
+      {/* <OuterLayout/> */}
+      {/* <Temp/>    */}
+>>>>>>> cf79fd32260cc559d0881c52eac402eebd02b109
      
 
     </ThemeProvider>
