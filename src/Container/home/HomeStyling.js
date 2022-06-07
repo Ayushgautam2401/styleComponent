@@ -14,9 +14,13 @@ export const FormContainer = styled.div`display:flex;
      width: 30%;
      background-color: beige;
      border-radius: 5%;
-     align-self: center;
+    // align-self: center;
      margin-left: 35%;
 
 
 `
-
+export const FormHeader = styled.text`display:flex;
+  background-color: red;
+  height: 15%;
+  width: 100%;
+`
