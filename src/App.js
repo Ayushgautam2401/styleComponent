@@ -22,7 +22,8 @@ const GlobalStyle = createGlobalStyle`
    font-size:16px;
    margin:0;
    padding:0;
-   font-family: 'Courier New', Courier, monospace;
+   font-family: 'Poppins', sans-serif;
+   /* font-family: 'Courier New', Courier, monospace; */
    height: 100vh;
    width: 100%;
  }`;

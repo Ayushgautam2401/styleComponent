@@ -14,9 +14,9 @@ const current = new Date();
 
   const renderField = ({ input, label, type, meta: { touched, error } }) => (
     <div>
-      <label>{label}</label>
+      <Styledtext>{label}</Styledtext>
       <div>
-        <input {...input} type={type} placeholder={label} />
+        <Styledinput {...input} type={type} placeholder={label} />
         {touched && error && <span>{error}</span>}
       </div>
     </div>
@@ -36,7 +36,7 @@ const renderInvoiceOrders = ({ fields, meta: { error, submitFailed } }) => (
             title="Remove Member"
             onClick={() => fields.remove(index)}
           >Remove</button>
-          <h5>Description and Amount{index + 1}</h5>
+          <Styledheader>Description and Amount{index + 1}</Styledheader>
           <Field
             name={`${member}.detail`}
             type="text"

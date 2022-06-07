@@ -10,7 +10,7 @@ export const Styledheader = styled.header.attrs(props =>{
     const {theme : {size,text,background,color,bordersize}} = props;
      
     return{
-        size:size[props.size]|| size.ex4lg,
+        size:size[props.size]|| size.ex3lg,
         color: color[props.color] ||  color.default,
     }
   })  `
