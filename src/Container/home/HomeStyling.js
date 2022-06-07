@@ -5,6 +5,7 @@ export const HomepageLayout = styled.div`
     height: 100vh;
     width: 100vw;
     background-color:rgb(66,94,150);
+    position: relative;
 
 
   `
@@ -14,13 +15,17 @@ export const FormContainer = styled.div`display:flex;
      width: 30%;
      background-color: beige;
      border-radius: 5%;
-    // align-self: center;
+     align-self: center;
      margin-left: 35%;
+     margin-top: 5%;
+    position: absolute;
+    border: 2px solid black;
 
 
 `
-export const FormHeader = styled.text`display:flex;
+export const FormHeader = styled.div`display:flex;
   background-color: red;
+  margin-top: 10%;
   height: 15%;
   width: 100%;
 `
