@@ -24,7 +24,7 @@ function Home() {
       <DisplayArea>
         <Sidebar>
           <NavLink
-          activeClassName="active"
+         exact activeClassName="active"
             to="/"
            
             activeStyle={{
