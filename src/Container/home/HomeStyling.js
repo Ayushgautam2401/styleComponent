@@ -64,18 +64,19 @@ export const SidebarOption = styled.div.attrs((props) => {
   width: 96%;
   height: 3rem;
   border: 2px solid black;
-  padding-left: 2px;
   background-color: ${(props) => props.bg};
-   :active{
-    background-color: grey;
-   
-    
-    
-  } 
-  align-content: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
   align-items: center;
   border-radius: 0.4rem;
   font-weight: bold;
+  justify-content: center;
+  :only-child{
+    font-weight: bold;
+    color:black;
+    text-decoration:none;
+  
+  };
   
 `
 // Main Content Area in Display Area
@@ -86,6 +87,7 @@ export const ContentArea = styled.div
   height: 100%;
   width: 85%;
   overflow: auto;
+  
 `;
 // Title Bar in Main Content Area
 export const TitleBar = styled.div`
@@ -138,11 +140,11 @@ export const Footer = styled.footer.attrs((props) => {
 })`
   height: 60px;
   background-color: ${(props) => props.bg};
-`;
-
-export const StyledNavLink = styled.a(NavLink)`
- text-decoration: none;
-  color: black;
-  font-weight: bold;
- 
 `
+
+//  export const StyledNavLink = styled.a(NavLink)`
+//  text-decoration: none;
+//    color: black;
+//   font-weight: bold;
+ 
+//  `
