@@ -2,6 +2,10 @@
 import { createGlobalStyle } from "styled-components";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./theme";
+import Home from "./Container/home/Home";
+import {Switch, Route} from "react-router-dom";
+import History from "Container/History/History";
+ 
 import LoginPage from "./Container/login/LoginPage";
 import { Route, Switch } from "react-router-dom";
 import Home from "Container/home/Home";
@@ -26,6 +30,13 @@ const GlobalStyle = createGlobalStyle`
 function App() {
   return (
     <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Switch>
+          <Route exact path="/">
+            <History />
+          </Route>
+          <Route path="/Home"> <Home/></Route>
+          </Switch>
      <GlobalStyle />
       <Switch>
             <Route exact path="/">

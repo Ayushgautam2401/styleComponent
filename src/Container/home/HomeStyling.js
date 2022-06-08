@@ -141,8 +141,8 @@ export const Footer = styled.footer.attrs((props) => {
 `;
 
 export const StyledNavLink = styled.a(NavLink)`
- ~ {text-decoration: none;
+ text-decoration: none;
   color: black;
   font-weight: bold;
- }
+ 
 `
