@@ -1,58 +1,67 @@
-import  { Styledbutton } from 'Components/Inputs/button'
+import React from 'react'
+import { Styledbutton } from 'Components/Inputs/button'
 import { Styledheader } from 'Components/Inputs/header'
 import { Styledinput } from 'Components/Inputs/input'
 import { Styledtext } from 'Components/Inputs/text'
-import React from 'react'
-import { Field ,Form,reduxForm} from 'redux-form'
+import { Field, Form, reduxForm } from 'redux-form'
+import { validate } from 'Util/validate'
+import FormInput from 'Components/Inputs/formInputs'
 
-const ClientForm = () => {
-  return (      
-   <>
-   <Styledbutton>Back</Styledbutton>
-   <Styledheader>Client Form</Styledheader>
-  <Form>
-          <Styledtext>Name</Styledtext>
-  <Field
-    name="name"
-    type="text"
-    placeholder='Name'
-    component={Styledinput}
-    />
+const ClientForm = (props) => {
+  const { handleSubmit,submitting } = props
+  //  console.log(props)
+  return (
+    <div>
+      {/* <Styledbutton>Back</Styledbutton> */}
+      {/* <Styledheader>Client Form</Styledheader> */}
+      <Form onSubmit={handleSubmit((formValues)=>{
+        console.log(formValues)
+        })} >
+        <Styledtext>Name</Styledtext>
+        <Field
+          name="username"
+          type="text"
+          placeholder='Name'
+          component='input'
+        />
 
-<Styledtext>Email</Styledtext>
-  <Field
-    name="email"
-    type="text"
-    placeholder='Email'
-    component={Styledinput}
-    />
+        <Styledtext>Email</Styledtext>
+        <Field
+          name="email"
+          type="text"
+          placeholder='Email'
+          // component={Styledinput}
+          component='input'
+        />
 
-<Styledtext>Phone Number</Styledtext>
-  <Field
-    name="name"
-    type="text"
-    placeholder='Phone Number'
-    component={Styledinput}
-    />
+        <Styledtext>Phone Number</Styledtext>
+        <Field
+          name="name"
+          type="text"
+          placeholder='Phone Number'
+          // component={Styledinput}
+          component='input'
+        />
 
-<Styledtext>Address</Styledtext>
-  <Field
-    name="address"
-    type="text"
-    placeholder='Address'
-    component={Styledinput}
-    />
+        <Styledtext>Address</Styledtext>
+        <Field
+          name="address"
+          type="text"
+          placeholder='Address'
+          // component={Styledinput}
+          component='input'
+        />
 
-    <Styledbutton>Submit</Styledbutton>
+        <Styledbutton>Submit</Styledbutton>
 
 
-  </Form>
-  </>
+      </Form> 
+      </div> 
   )
 }
 
 export default reduxForm({
-    form: "ClientForm",
-  
-  })(ClientForm);
-  
+  form: "ClientForm",
+  // validate,
+
+})(ClientForm);

@@ -72,11 +72,8 @@ dispatch(setTitleAction())
             </div>
            
            <PasswordInput placeholder=" password input"  />
-           
           
              </ThemeProvider>
-    
   )
 }
-
 export default Input;

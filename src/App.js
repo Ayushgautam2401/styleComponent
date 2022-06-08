@@ -34,7 +34,7 @@ function App() {
             <Route path="/Login">
               <LoginPage/>
             </Route>
-           
+            </Switch>
             {/* <Route path="/Client">
               <Client/>
             </Route>
@@ -44,7 +44,6 @@ function App() {
 
 
 
-      </Switch>
      
 
     </ThemeProvider>
