@@ -1,44 +1,133 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const HomepageLayout = styled.div`
-    display: flex;
-    height: 100vh;
-    width: 100vw;
-    background-color:rgb(66,94,150);
-
-
-  `
-export const FormContainer = styled.div`display:flex;
-    flex-direction: column;
-     height: 80%;
-     width: 30%;
-     background-color: beige;
-     border-radius: 5%;
-    // align-self: center;
-     margin-left: 35%;
-
-
-`
-export const FormHeader = styled.text`display:flex;
-  background-color: red;
-  height: 15%;
-  width: 100%;
-`
-export const Input = styled.input.attrs(props => ({
-  type: "text",
-  size: props.size || "0.5em",
-}))`
-  color: red;
-  font-size: 1em;
-  border: 2px solid green ;
-  border-radius: 8px;
-  margin: ${props => props.size};
-  padding: ${props => props.size};
+// Main Layout of Page
+export const Layout = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 `;
-export const Button = styled.button`
-width:100px;
-height: 30px;
-background-color:${(props)=>props.variant === 'outline'? '#FFF':'#4caf50'};
-color:${(props)=>(props.variant === 'outline'? '#4caf50':'#FFF')}; 
+// Header Component
+export const Header = styled.header.attrs((props) => {
+  const {
+    theme: {
+      background: { main, ...restbg },
+    },
+  } = props;
+  return {
+    bg: restbg[props.bg] || main,
+  };
+})`
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+  background-color: ${(props) => props.bg};
+`;
+
+// Middle Display Area
+export const DisplayArea = styled.div`
+  display: flex;
+  flex-direction: row;
+  height: calc(100% - 120px);
+`;
+
+// Sidebar in Display Area
+export const Sidebar = styled.div.attrs((props) => {
+  const {
+    theme: {
+      background: { primary, ...restBg },
+    },
+  } = props;
+  return {
+    bg: restBg[props.bg] || primary,
+  };
+})`
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  height: 100%;
+  background-color: ${(props) => props.bg};
+  overflow: auto;
+`;
+// Options Displayed in Sidebar
+export const SidebarOption = styled.div`
+  display: flex;
+  width: 96%;
+  height: 3rem;
+  border: 2px solid black;
+  padding-left: 2px;
+  
+  :active{
+    background-color: grey;
+    :hover{
+     background-color: lightgreen;
+  }  
+    
+    
+  }
+  align-content: center;
+  align-items: center;
+  border-radius: 0.4rem;
+  
+`
+// Main Content Area in Display Area
+export const ContentArea = styled.div
+`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 85%;
+  overflow: auto;
+`;
+// Title Bar in Main Content Area
+export const TitleBar = styled.div`
+ 
+  width: 100%;
+  height: 50px;
+  background-color: beige;
+  border-radius: 0.8rem;
+ 
+`;
+
+// Styling of Label Area in Title Bar
+export const TitleLabel = styled.text.attrs((props) => {
+  const {
+    theme: {
+      Text: { secondary, ...resttc },
+      size: { ex2lg, ...restts },
+    },
+  } = props;
+  return {
+    tc: resttc[props.tc] || secondary,
+    ts: restts[props.ts] || ex2lg,
+  };
+})`
+  color: ${(props) => props.tc};
+  font-size: ${(props) => props.ts};
+  width: 20%;
+  float: left;
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+  font-weight: bold;
+`;
+
+// Inner Content Area in Main Content Area
+export const Content = styled.div`
+ 
+  height: calc(100% - 50px);
+
+  overflow: auto;
+`;
+
+// Footer Componennt
+export const Footer = styled.footer.attrs((props) => {
+  const {
+    theme: { background },
+  } = props;
+  return {
+    bg: background[props.bg] || background.main,
+  };
+})`
+  height: 60px;
+  background-color: ${(props) => props.bg};
 `;
 
