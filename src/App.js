@@ -37,10 +37,10 @@ function App() {
 
 
       <GlobalStyle />
-      {/* <ClientForm/> */}
+      <ClientForm/>
       {/* <InvoiceForm/> */}
-      <Invoice/>
-      <Client/>
+      {/* <Invoice/> */}
+      {/* <Client/> */}
       {/* <OuterLayout/> */}
       {/* <Temp/>    */}
      
