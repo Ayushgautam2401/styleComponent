@@ -7,6 +7,7 @@ export const theme ={
     background:{
         main:'#FFFF00',
         primary:'#197A56',
+        secondary: 'black',
     },
     size:{
         xs:'0.4rem',

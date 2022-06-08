@@ -30,17 +30,18 @@ function App() {
       <Switch>
             <Route exact path="/">
               <Home/>
-            </Route>
-            <Route path="/Login">
-              <LoginPage/>
-            </Route>
-           
-            {/* <Route path="/Client">
-              <Client/>
-            </Route>
-            <Route path="/Invoice">
-              < Invoice/>
-            </Route> */}
+              </Route>  
+                <Route path="/Client">
+                        <Client/>
+                    </Route>
+                      <Route path="/Invoice">
+                        <Invoice/>
+                      </Route>
+
+
+            
+            <Route path="/Login"><LoginPage/></Route>
+            
 
 
 
