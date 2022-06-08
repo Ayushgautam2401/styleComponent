@@ -5,8 +5,8 @@ export const theme ={
         secondary:'green'
     },
     background:{
-        main:'#7ABD43',
-        primary:'#FFFF00',
+        main:'#f2f2f266',
+        primary:'#197a56',
     },
     size:{
         xs:'0.4rem',
@@ -32,5 +32,12 @@ export const theme ={
         ex2lg:'1.5rem',
         ex3lg:'1.75rem',
         ex4lg:'2rem'
-    }
+    },
+    borderadius:{
+        xs:'0.4rem',
+        sm:'0.3rem',
+        md:'0.5rem',
+        lg:'1rem',
+    },
+
 }

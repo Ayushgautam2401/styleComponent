@@ -5,9 +5,11 @@ import ClientReducer from './Reducer/clientReducer';
 import {titleReducer}  from "./Reducer/reducer";
 import InvoiceReducer from './Reducer/invoiceReducer'
 import saga from './saga/saga'
+import AuthReducer from "./Reducer/auth";
 const SagaMiddleware = createSagaMiddleware();
 const Reducer = combineReducers({
     form:reduxformReducer,
+    authReducer: AuthReducer,
     clientReducer: ClientReducer,
     invoiceReducer: InvoiceReducer,
     TitleReducer: titleReducer,

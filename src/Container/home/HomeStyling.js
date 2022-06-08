@@ -41,3 +41,4 @@ height: 30px;
 background-color:${(props)=>props.variant === 'outline'? '#FFF':'#4caf50'};
 color:${(props)=>(props.variant === 'outline'? '#4caf50':'#FFF')}; 
 `;
+

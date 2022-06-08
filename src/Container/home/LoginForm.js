@@ -1,23 +1,29 @@
 import { Field, reduxForm,Form} from 'redux-form'
 import { Input } from './HomeStyling'
 import { Button } from './HomeStyling'
+import { loginActions } from 'Store/Action/auth'
+import { useDispatch } from 'react-redux'
 
 const LoginFormComponent = (props) => {
+ const dispatch = useDispatch();
+  const handleFormSubmit = (data)=>{
+    dispatch(loginActions.request(data))
+  }
     return(
-        <Form >
+        <Form onSubmit={props.handleSubmit(handleFormSubmit)}>
         <Field
-        name="name"
+        name="email"
         component={Input}
         type="text"
         placeholder="Full Name"
       />
       <Field
-      name="email"
+      name="password"
       component={Input}
       type="text"
       placeholder="email"
     />
-    <Button>
+    <Button onClick={props.submit}>
       Login
     </Button>
     </Form>

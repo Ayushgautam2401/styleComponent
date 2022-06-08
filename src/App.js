@@ -4,6 +4,9 @@ import { ThemeProvider } from "styled-components";
 import { OuterLayout } from "./Components/layout/OuterLayout";
 import { theme } from "./theme";
 import Home from "./Container/home/Home";
+import {Switch, Route} from "react-router-dom";
+import History from "Container/History/History";
+ 
 
 // import { OuterLayout } from "./Container/layout/OuterLayout";
 // import { Routes, Route } from "react-router-dom";
@@ -28,8 +31,12 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Home />
-     
+      <Switch>
+          <Route exact path="/">
+            <History />
+          </Route>
+          <Route path="/Home"> <Home/></Route>
+          </Switch>
     </ThemeProvider>
   );
 }
