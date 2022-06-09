@@ -35,7 +35,7 @@ function Client() {
   return (
     <div className="client">
       {/* <Styledbutton className="add" onClick={() => { handleClient() }}>Add</Styledbutton> */}
-     
+    
      <div className="list">
       {
          <Table striped bordered hover variant="dark">
