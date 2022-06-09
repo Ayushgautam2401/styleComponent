@@ -5,7 +5,7 @@ export const theme ={
         secondary:'green'
     },
     background:{
-        main:'#FFFF00',
+        main:'#FFFF',
         primary:'#197A56',
     },
     size:{

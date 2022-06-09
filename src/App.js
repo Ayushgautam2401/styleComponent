@@ -9,6 +9,7 @@ import ClientForm from "Container/client/clientForm";
 import InvoiceForm from "Container/invoice/invoiceForm";
 import Invoice from "Container/invoice/Invoice";
 import Client from "Container/client/Client";
+import LoginForm from "Container/login/LoginForm";
 
 
 
@@ -27,24 +28,23 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
      <GlobalStyle />
-      <Switch>
+      {/* <Switch>
             <Route exact path="/">
               <Home/>
             </Route>
             <Route path="/Login">
               <LoginPage/>
             </Route>
-            </Switch>
+            </Switch> */}
             {/* <Route path="/Client">
               <Client/>
             </Route>
             <Route path="/Invoice">
               < Invoice/>
             </Route> */}
-
-
-
-     
+            {/* <ClientForm/> */}
+            {/* <LoginForm/> */}
+            <InvoiceForm/>
 
     </ThemeProvider>
   );

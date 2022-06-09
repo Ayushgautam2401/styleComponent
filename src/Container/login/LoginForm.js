@@ -1,39 +1,41 @@
-import { Field, reduxForm,Form} from 'redux-form'
+import { Field, reduxForm, Form } from 'redux-form'
 import { InputLabel, Loginbutton, Styledinput } from './LoginpageStyling'
-//import { Button } from './HomeStyling'
 import { PasswordInput } from './LoginpageStyling'
 import { Styledbutton } from 'Components/Inputs/button'
+import FormInput from 'Components/Inputs/formInputs'
+import { required } from 'Util/validate'
 
 
 const LoginFormComponent = (props) => {
-    return(
-      
-        <Form >
-         
-         
-          <InputLabel>Username</InputLabel>
-        <Field
+  const { handleSubmit } = props
+  return (
+
+    <Form onSubmit={handleSubmit((formValues)=>{
+      console.log(formValues)
+      })} >
+      <InputLabel>Username</InputLabel>
+      <Field
         name="name"
-        component={Styledinput}
-        type="text"
+        component={FormInput}
+        validate={[ required]}
         placeholder="User ID"
       />
-     
-     
+
+
       <InputLabel>Password</InputLabel>
       <Field
-      name="password"
-      component={PasswordInput}
-      type="password"
-      placeholder="Password"
-    />
-    
-   
-    <Loginbutton>Log In</Loginbutton>
-    
+        name="password"
+        component={PasswordInput}
+        // validate={[ required]}
+        type="password"
+      />
+
+
+      <Loginbutton>Log In</Loginbutton>
+
     </Form>
-    )
+  )
 }
 export default reduxForm({
-    form: 'LoginForm',
-  })(LoginFormComponent)
+  form: 'LoginForm',
+})(LoginFormComponent)
