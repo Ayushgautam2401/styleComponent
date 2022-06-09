@@ -37,11 +37,12 @@ function App() {
             </Route>
             </Switch> */}
             {/* <Route path="/Client">
-              <Client/>
+              
             </Route>
             <Route path="/Invoice">
               < Invoice/>
             </Route> */}
+            <Client/>
             {/* <ClientForm/> */}
             {/* <LoginForm/> */}
             <InvoiceForm/>

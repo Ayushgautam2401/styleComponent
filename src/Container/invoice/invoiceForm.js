@@ -26,18 +26,18 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
 const renderInvoiceOrders = ({ fields, meta: { error, submitFailed } }) => (
   <ul>
     <li>
-      <button type="button" onClick={() => fields.push({})}>
+      <Styledbutton type="button" onClick={() => fields.push({})}>
         Add Description
-      </button>
+      </Styledbutton>
       {submitFailed && error && <span>{error}</span>}
     </li>
     {fields.map((member, index) => (
       <li key={index}>
-        <button
+        <Styledbutton
           type="button"
           title="Remove Member"
           onClick={() => fields.remove(index)}
-        >Remove</button>
+        >Remove</Styledbutton>
         <Styledheader>Description and Amount{index + 1}</Styledheader>
         <Field
           name={`${member}.detail`}
@@ -66,14 +66,12 @@ const renderInvoiceOrders = ({ fields, meta: { error, submitFailed } }) => (
 
 
 const InvoiceForm = (props) => {
-  const { handleSubmit } = props
+  const { handleSubmit, reset, handleFormSubmit, clientOptions } = props
   return (
     <>
       <Styledbutton>Back</Styledbutton>
       <Styledheader>Invoice Form</Styledheader>
-      <Form onSubmit={handleSubmit((formValues)=>{
-      console.log(formValues)
-      })} >
+      <Form onSubmit={handleSubmit(handleFormSubmit)}>
         <Field
           name="invoiceDate"
           component={Date}

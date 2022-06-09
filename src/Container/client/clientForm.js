@@ -7,14 +7,12 @@ import { Field, Form, reduxForm } from 'redux-form'
 import FormInput from 'Components/Inputs/formInputs'
 
 const ClientForm = (props) => {
-  const { handleSubmit } = props
+  const { handleSubmit, reset, handleFormSubmit  } = props
   return (
     <div>
       <Styledbutton>Back</Styledbutton>
          <Styledheader>Client Form</Styledheader>
-      <Form onSubmit={handleSubmit((formValues)=>{
-        console.log(formValues)
-        })} >
+         <Form onSubmit={handleSubmit(handleFormSubmit)}>
         <Styledtext>Name</Styledtext>
         <Field
           name="username"
