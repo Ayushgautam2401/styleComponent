@@ -1,21 +1,15 @@
 
 import { createGlobalStyle } from "styled-components";
 import { ThemeProvider } from "styled-components";
-import { OuterLayout } from "./Components/layout/OuterLayout";
 import { theme } from "./theme";
-// import { OuterLayout } from './Container/layout/OuterLayout';
-import { Routes, Route } from 'react-router-dom';
-import { RenderSelectInput } from './Components/selectComponent/selectComponent';
-
-import Text from './Components/Inputs/text';
-import Input from './Components/Inputs/input';
-import Link from './Components/Inputs/link';
-import Temp from './Components/Inputs/temp';
-import { Nav } from './Components/Inputs/link';
+import LoginPage from "./Container/login/LoginPage";
+import { Route, Switch } from "react-router-dom";
+import Home from "Container/home/Home";
 import ClientForm from "Container/client/clientForm";
 import InvoiceForm from "Container/invoice/invoiceForm";
 import Invoice from "Container/invoice/Invoice";
 import Client from "Container/client/Client";
+import LoginForm from "Container/login/LoginForm";
 
 
 
@@ -27,28 +21,30 @@ const GlobalStyle = createGlobalStyle`
    font-family: 'Poppins', sans-serif;
    /* font-family: 'Courier New', Courier, monospace; */
    height: 100vh;
-   width: 100%;
+   width: 100vw;
  }`;
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-
-
-
-      <GlobalStyle />
-      <ClientForm/>
-      {/* <InvoiceForm/> */}
-      {/* <Invoice/> */}
-      {/* <Client/> */}
-      {/* <OuterLayout/> */}
-      {/* <Temp/>    */}
-     
-     {/* <Routes>
-        <Route path="/" element={<OuterLay out />}/>
-         
-        
-      </Routes> */}
+     <GlobalStyle />
+      {/* <Switch>
+            <Route exact path="/">
+              <Home/>
+            </Route>
+            <Route path="/Login">
+              <LoginPage/>
+            </Route>
+            </Switch> */}
+            {/* <Route path="/Client">
+              <Client/>
+            </Route>
+            <Route path="/Invoice">
+              < Invoice/>
+            </Route> */}
+            {/* <ClientForm/> */}
+            {/* <LoginForm/> */}
+            <InvoiceForm/>
 
     </ThemeProvider>
   );

@@ -1,19 +1,18 @@
 import React from 'react'
 import { Styledbutton } from 'Components/Inputs/button'
 import { Styledheader } from 'Components/Inputs/header'
-import { Styledinput } from 'Components/Inputs/input'
+import { email, normalizePhone, required } from 'Util/validate'
 import { Styledtext } from 'Components/Inputs/text'
 import { Field, Form, reduxForm } from 'redux-form'
 import { RenderField, validate } from 'Util/validate'
 import FormInput from 'Components/Inputs/formInputs'
 
 const ClientForm = (props) => {
-  const { handleSubmit,submitting } = props
-  //  console.log(props)
+  const { handleSubmit } = props
   return (
     <div>
-      {/* <Styledbutton>Back</Styledbutton> */}
-      {/* <Styledheader>Client Form</Styledheader> */}
+      <Styledbutton>Back</Styledbutton>
+         <Styledheader>Client Form</Styledheader>
       <Form onSubmit={handleSubmit((formValues)=>{
         console.log(formValues)
         })} >
@@ -23,8 +22,8 @@ const ClientForm = (props) => {
           name="username"
           type="text"
           placeholder='Name'
-          component={Styledinput}
-          // component='input'
+          component={FormInput}
+          validate={[ required]}
         />
 
         <Styledtext>Email</Styledtext>
@@ -32,8 +31,8 @@ const ClientForm = (props) => {
           name="email"
           type="text"
           placeholder='Email'
-          component={Styledinput}
-          // component='input'
+          component={FormInput}
+          validate={[ required,email]}
         />
 
         <Styledtext>Phone Number</Styledtext>
@@ -41,8 +40,9 @@ const ClientForm = (props) => {
           name="name"
           type="text"
           placeholder='Phone Number'
-          component={Styledinput}
-          // component='input'
+          component={FormInput}
+          validate={[ required]}
+          normalize={normalizePhone}
         />
 
         <Styledtext>Address</Styledtext>
@@ -50,8 +50,9 @@ const ClientForm = (props) => {
           name="address"
           type="text"
           placeholder='Address'
-          component={Styledinput}
-          // component='input'
+          component={FormInput}
+          validate={[ required]}
+
         />
 
         <Styledbutton>Submit</Styledbutton>
@@ -64,6 +65,4 @@ const ClientForm = (props) => {
 
 export default reduxForm({
   form: "ClientForm",
-  // validate,
-
 })(ClientForm);
