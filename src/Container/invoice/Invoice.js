@@ -1,18 +1,22 @@
-import React from 'react'
-import { useNavigate } from "react-router-dom";
-import { getInvoiceState } from 'Store/Selector'
+import React from 'react';
+import { getInvoiceState } from 'Store/Selector';
 import { useSelector } from "react-redux";
 import { Table } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
+import { Styledbutton } from 'Components/Inputs/button';
+import { generatePath } from 'react-router-dom';
+
+
 function Invoice() {
-//   const navigate = useNavigate();
+   const history = useHistory();
   const { list, raw } = useSelector(getInvoiceState);
 
 
-//   const handleInvoice = (invoice = {}) => {
-//     const { id } = invoice;
-//     navigate(`/invoice/${id || ""}`);
-//   }
+  const handleInvoice = (invoice = {}) => {
+     const { id } = invoice;
+     history.push(`/Invoice/${id || ""}`);
+   }
   const renderInvoiceItem = (invoiceID)=>{
     const { id,invoiceDate,invoiceNumber, name, order} = raw[invoiceID] || {};
     return (
@@ -21,18 +25,18 @@ function Invoice() {
         <td>{invoiceDate}</td>
         <td>{invoiceNumber}</td>
         
-         {/* <td><button  className='update' onClick={() => {
+          <td><button  className='update' onClick={() => {
           handleInvoice(raw[invoiceID])
-        }}>update</button></td>  */}
-        {/* <td> <Button className='generatepdf' variant="success" onClick={()=> navigate(`/PDF/${id}`)}>Generate PDF</Button></td> */}
+        }}>update</button></td>  
+        <td> <Button className='generatepdf' variant="success" onClick={()=> history.push(`/PDF/${id}`)}>Generate PDF</Button></td> 
       </tr>
        
     )
   }
   return (
     <div className='invoice'>
-      {/* <button className='add' onClick={() => { handleInvoice() }}>Add</button>  */}
-    
+      <Styledbutton className='add' onClick={() => { handleInvoice() }}>Add</Styledbutton> 
+     
 
       <div className='invoicelist'></div>
       {
@@ -46,7 +50,7 @@ function Invoice() {
               <th>Amount</th>
               <th>Total</th>
             </tr>
-            {/* <tr>
+            <tr>
                 <td>ejs</td>
                 <td>ejs</td>
                 <td>ejs</td>
@@ -54,12 +58,12 @@ function Invoice() {
                 <td>ejs</td>
                 <td>ejs</td>
 
-            </tr> */}
+            </tr> 
             </thead>    
 
-            {/* {
+             {
               list?.map(renderInvoiceItem)
-            } */}
+            } 
         </Table>
       }
     </div>

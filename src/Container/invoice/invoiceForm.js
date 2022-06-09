@@ -5,6 +5,7 @@ import { Styledtext } from 'Components/Inputs/text'
 import { RenderSelectInput } from 'Components/selectComponent/selectComponent'
 import React from 'react'
 import { Field ,Form,reduxForm,FieldArray} from 'redux-form'
+import { FormContainer, FormHeaderContainer } from './invoicePDF/FormStyling'
 
 
 
@@ -24,18 +25,18 @@ const current = new Date();
 const renderInvoiceOrders = ({ fields, meta: { error, submitFailed } }) => (
     <ul>
       <li>
-        <button type="button" onClick={() => fields.push({})}>
+        <Styledbutton type="button" onClick={() => fields.push({})}>
           Add Description
-        </button>
+        </Styledbutton>
         {submitFailed && error && <span>{error}</span>}
       </li>
       {fields.map((member, index) => (
         <li key={index}>
-          <button
+          <Styledbutton
             type="button"
             title="Remove Member"
             onClick={() => fields.remove(index)}
-          >Remove</button>
+          >Remove</Styledbutton>
           <Styledheader>Description and Amount{index + 1}</Styledheader>
           <Field
             name={`${member}.detail`}
@@ -63,10 +64,17 @@ const renderInvoiceOrders = ({ fields, meta: { error, submitFailed } }) => (
 
 const InvoiceForm = () => {
   return (      
-   <>
+  <>
    <Styledbutton>Back</Styledbutton>
-   <Styledheader>Invoice Form</Styledheader>
+   <FormContainer>
+  <FormHeaderContainer> <Styledheader>Invoice Form</Styledheader></FormHeaderContainer>
   <Form>
+  <Field
+    name="selectComponent"
+    type="text"
+    // placeholder=''
+    component={RenderSelectInput}
+    />
   <Field
     name="invoiceDate"
     component={Date}
@@ -97,12 +105,7 @@ const InvoiceForm = () => {
     placeholder='Currency type'
     component={Styledinput}
     />
-     <Field
-    name="selectComponent"
-    type="text"
-    // placeholder=''
-    component={RenderSelectInput}
-    />
+    
     
     
     <FieldArray name="descriptions" component={renderInvoiceOrders} />
@@ -111,6 +114,7 @@ const InvoiceForm = () => {
 
 
   </Form>
+  </FormContainer>
   </>
   )
 }

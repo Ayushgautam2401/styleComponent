@@ -55,6 +55,7 @@ function Home() {
             <Switch>
               <Route exact path="/" render={Client} />
                 <Route path = "/Client/Clientform" component={ClientForm}/>
+                <Route path = "/Client/Clientform/:id" component={ClientForm}/>
               <Route exact path="/Invoice" component={Invoice}/>
               <Route  path = "/Invoice/Invoiceform" component={InvoiceForm}/>
               {/* <Switch>

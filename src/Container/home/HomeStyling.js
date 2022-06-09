@@ -125,7 +125,7 @@ export const TitleLabel = styled.text.attrs((props) => {
 export const Content = styled.div`
  
   height: calc(100% - 50px);
-
+  position:relative;
   overflow: auto;
 `;
 
