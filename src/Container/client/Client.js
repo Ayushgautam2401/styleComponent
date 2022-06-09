@@ -5,8 +5,12 @@ import { useSelector } from "react-redux";
 import { Table } from "react-bootstrap";
 import Styledbutton from "../../Components/Inputs/button";
 import {useHistory} from "react-router-dom";
+import { useParams } from "react-router-dom";
+
+
 
 function Client() {
+  
   // const history = useHistory();
   //  const { list, raw } = useSelector(getClientState);
 
