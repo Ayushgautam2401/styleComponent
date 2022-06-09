@@ -24,9 +24,9 @@ const current = new Date();
 const renderInvoiceOrders = ({ fields, meta: { error, submitFailed } }) => (
     <ul>
       <li>
-        <button type="button" onClick={() => fields.push({})}>
+        <Styledbutton type="button" onClick={() => fields.push({})}>
           Add Description
-        </button>
+        </Styledbutton>
         {submitFailed && error && <span>{error}</span>}
       </li>
       {fields.map((member, index) => (
@@ -84,7 +84,7 @@ const InvoiceForm = () => {
 
 <Styledtext>Invoice Number</Styledtext>
   <Field
-    name="email"
+    name="Invoice Number    "
     type="text"
     placeholder='Invoice Number'
     component={Styledinput}

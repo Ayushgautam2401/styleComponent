@@ -27,8 +27,7 @@ export const validate = values => {
     input,
     label,
     type,
-    meta: { touched, error, warning 
-    }
+    meta: { touched, error, warning }
   }) => (
     <div>
       <label>{label}</label>

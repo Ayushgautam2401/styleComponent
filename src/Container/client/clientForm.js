@@ -4,7 +4,7 @@ import { Styledheader } from 'Components/Inputs/header'
 import { Styledinput } from 'Components/Inputs/input'
 import { Styledtext } from 'Components/Inputs/text'
 import { Field, Form, reduxForm } from 'redux-form'
-import { validate } from 'Util/validate'
+import { RenderField, validate } from 'Util/validate'
 import FormInput from 'Components/Inputs/formInputs'
 
 const ClientForm = (props) => {
@@ -17,12 +17,14 @@ const ClientForm = (props) => {
       <Form onSubmit={handleSubmit((formValues)=>{
         console.log(formValues)
         })} >
+          <RenderField>
         <Styledtext>Name</Styledtext>
         <Field
           name="username"
           type="text"
           placeholder='Name'
-          component='input'
+          component={Styledinput}
+          // component='input'
         />
 
         <Styledtext>Email</Styledtext>
@@ -30,8 +32,8 @@ const ClientForm = (props) => {
           name="email"
           type="text"
           placeholder='Email'
-          // component={Styledinput}
-          component='input'
+          component={Styledinput}
+          // component='input'
         />
 
         <Styledtext>Phone Number</Styledtext>
@@ -39,8 +41,8 @@ const ClientForm = (props) => {
           name="name"
           type="text"
           placeholder='Phone Number'
-          // component={Styledinput}
-          component='input'
+          component={Styledinput}
+          // component='input'
         />
 
         <Styledtext>Address</Styledtext>
@@ -48,13 +50,13 @@ const ClientForm = (props) => {
           name="address"
           type="text"
           placeholder='Address'
-          // component={Styledinput}
-          component='input'
+          component={Styledinput}
+          // component='input'
         />
 
         <Styledbutton>Submit</Styledbutton>
 
-
+        </RenderField>
       </Form> 
       </div> 
   )
