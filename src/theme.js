@@ -5,10 +5,7 @@ export const theme ={
         secondary:'green'
     },
     background:{
-        main:'#f2f2f266',
-        primary:'#197a56',
-
-        main:'#FFFF00',
+        main:'#FFFF',
         primary:'#197A56',
         secondary: 'black',
 

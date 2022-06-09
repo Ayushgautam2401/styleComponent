@@ -15,7 +15,8 @@ import { Header } from "./HomeStyling";
 import Client from "Container/client/Client";
 import { NavLink } from "react-router-dom";
 import { Switch, Route } from "react-router-dom";
-import clientForm from "Container/client/clientForm";
+import ClientForm from "Container/client/ClientForm";
+import InvoiceForm from "Container/invoice/InvoiceForm";
 
 function Home() {
   return (
@@ -52,12 +53,15 @@ function Home() {
           </TitleBar>
           <Content>
             <Switch>
-              <Route exact path="/" component={Client} />
+              <Route exact path="/" render={Client} />
+                <Route path = "/Client/Clientform" component={ClientForm}/>
+              <Route exact path="/Invoice" component={Invoice}/>
+              <Route  path = "/Invoice/Invoiceform" component={InvoiceForm}/>
               {/* <Switch>
              <Route path='/ClientForm' component={clientForm}></Route>
            </Switch> */}
 
-              <Route exact path="/Invoice" component={Invoice} />
+              {/* <Route exact path="/Invoice" component={Invoice} /> */}
             </Switch>
           </Content>
         </ContentArea>

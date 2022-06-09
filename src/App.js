@@ -9,10 +9,7 @@ import History from "Container/History/History";
 import LoginPage from "./Container/login/LoginPage";
 import { Route, Switch } from "react-router-dom";
 import Home from "Container/home/Home";
-import ClientForm from "Container/client/clientForm";
-import InvoiceForm from "Container/invoice/invoiceForm";
-import Invoice from "Container/invoice/Invoice";
-import Client from "Container/client/Client";
+
 
 
 
@@ -33,14 +30,11 @@ function App() {
     
      <GlobalStyle />
       <Switch>
-            <Route path="/">
-              <Home/>
-              </Route>  
-             
+           
 
             
-         <Route path="/Login"><LoginPage/></Route>
-            
+         <Route  path="/Login"><LoginPage/></Route>
+          <Route  path="/" component={Home}/>  
 
 
 

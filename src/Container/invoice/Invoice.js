@@ -36,13 +36,13 @@ function Invoice() {
 
       <div className='invoicelist'></div>
       {
-        <Table striped bordered hover variant="dark">
+        <Table striped bordered hover variant="dark" >
               <thead>
             <tr>
               <th>Id</th>
-              <th>InvoiceDate</th>
-              <th>InvoiceNumber</th>
-              <th>discription</th>
+              <th>Invoice Date</th>
+              <th>Invoice Number</th>
+              <th>Description</th>
               <th>Amount</th>
               <th>Total</th>
             </tr>
