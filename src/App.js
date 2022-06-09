@@ -12,7 +12,6 @@ import Home from "Container/home/Home";
 
 
 
-
 const GlobalStyle = createGlobalStyle`
  html,body{
    font-size:16px;
