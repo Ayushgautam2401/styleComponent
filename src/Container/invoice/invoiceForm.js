@@ -26,12 +26,7 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
 const renderInvoiceOrders = ({ fields, meta: { error, submitFailed } }) => (
 
   <ul>
-    <li>
-      <Styledbutton type="button" onClick={() => fields.push({})}>
-        Add Description
-      </Styledbutton>
-      {submitFailed && error && <span>{error}</span>}
-    </li>
+        
     {fields.map((member, index) => (
       <li key={index}>
         <Styledbutton
