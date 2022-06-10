@@ -8,7 +8,6 @@ export const Styledbutton = styled.button.attrs(props => {
     const {theme:{size,background,bordersize}} = props;
 
     return{
-        type:"submit",
         size:size[props.size] ||  size.exlg,
         background: background[props.background] || background.primary,
         bordersize:bordersize[props.bordersize] ||  bordersize.xs,

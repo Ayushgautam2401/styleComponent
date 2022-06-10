@@ -8,19 +8,19 @@ import {
 import { makeid } from "Util/idGenrator";
 
 const INITIAL_STATE = {
-  list: ["BIZ_CLIENT_1","BIZ_CLIENT_2"],
+  list: ["BIZ_CLIENT_1", "BIZ_CLIENT_2"],
   raw: {
     "BIZ_CLIENT_1" : {
       "id": "BIZ_CLIENT_1",
-      "name": "BIZTECNO",
-      "address": "PLOT J7 FCS BUILDING",
+      "username": "BIZTECNO",
+      "address": "PLOT J7 FCS BUILDINGg",
       "phoneNumber": "9888824240"
     },
     "BIZ_CLIENT_2" : {
-      "id": "BIZ_CLIENT_2",
-      "name": "BIZTECNO",
-      "address": "PLOT J7 FCS BUILDING",
-      "phoneNumber": "9888824240"
+      "id": "BIZ__2",
+      "username": "BIZ",
+      "address": " J7 FCS BUILDING",
+      "phoneNumber": "96971782782"
     }
     
   },

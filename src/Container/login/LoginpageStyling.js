@@ -13,7 +13,7 @@ export const HomepageLayout = styled.div`
   `
 export const InnerContainer = styled.div`display:flex;
     flex-direction: column;
-     height: 60%;
+     height: 70%;
      width: 30%;
      background-color: beige;
      border-radius: 5%;
@@ -33,7 +33,7 @@ export const FormHeader = styled.div`display:flex;
   justify-content: center;
   align-items: center;
 `
-export const Heading = styled.text.attrs((props) => {
+export const Heading = styled.div.attrs((props) => {
   const {
     theme: {
       Text: { secondary, ...resttc },
@@ -55,11 +55,11 @@ export const Heading = styled.text.attrs((props) => {
 export const FormContainer = styled.div` display:flex;
 flex-direction: column;
  height:80%;
- width: 100%;
- justify-content: center;
+ width: 60%;
+ justify-content:space-between;
  align-items: center;
- 
- 
+ align-self: center;
+
  
 `
 export const InputLabel = styled.label.attrs((props) => {
@@ -77,9 +77,9 @@ export const InputLabel = styled.label.attrs((props) => {
 
 color:${(props) => props.tc};;
   size:${(props) => props.ts};;
-  padding-left: 16%;
   font-weight: bold;
-
+  padding-bottom: 2%;
+  padding-top: 12%;
   
 `
 
@@ -98,11 +98,6 @@ font-size: ${props => props.size};
 border-radius: ${props=> props.bordersize};
 border:2px solid #197A56  ;
 height:2.5rem;
-  margin-left:16%;
-margin-right: 10%;
-margin-bottom: 10%; 
-align-self: center;
-//position: absolute;
 `
 export const PasswordInput = styled(Styledinput).attrs({
   type: "password",
@@ -126,13 +121,10 @@ background-color: ${props => props.background};
 border-radius: ${props=> props.bordersize};
 border: none;
 display: flex;
-//margin-top: 5%;
-//margin-bottom: 5%;
-margin-left: 40%;
+margin-top: 15%;
+margin-left: 25%;
 height:2rem;
 width:5rem;
 color:white;
 align-items: center;
-//align-content: center;
-align-self: center;
 `

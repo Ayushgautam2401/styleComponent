@@ -89,7 +89,7 @@ export const TitleBar = styled.div`
 `;
 
 // Styling of Label Area in Title Bar
-export const TitleLabel = styled.text.attrs((props) => {
+export const TitleLabel = styled.div.attrs((props) => {
   const {
     theme: {
       Text: { secondary, ...resttc },

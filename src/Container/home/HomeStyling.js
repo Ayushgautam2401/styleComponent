@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 // Main Layout of Page
@@ -10,11 +11,11 @@ export const Layout = styled.div`
 export const Header = styled.header.attrs((props) => {
   const {
     theme: {
-      background: { main, ...restbg },
+      background: { primary, ...restbg },
     },
   } = props;
   return {
-    bg: restbg[props.bg] || main,
+    bg: restbg[props.bg] || primary,
   };
 })`
   display: flex;
@@ -34,11 +35,11 @@ export const DisplayArea = styled.div`
 export const Sidebar = styled.div.attrs((props) => {
   const {
     theme: {
-      background: { primary, ...restBg },
+      background: { secondary, ...restBg },
     },
   } = props;
   return {
-    bg: restBg[props.bg] || primary,
+    bg: restBg[props.bg] || secondary,
   };
 })`
   display: flex;
@@ -49,24 +50,33 @@ export const Sidebar = styled.div.attrs((props) => {
   overflow: auto;
 `;
 // Options Displayed in Sidebar
-export const SidebarOption = styled.div`
+export const SidebarOption = styled.div.attrs((props) => {
+  const {
+    theme: {
+      background: { primary, ...restBg },
+    },
+  } = props;
+  return {
+    bg: restBg[props.bg] || primary,
+  };
+})`
   display: flex;
   width: 96%;
   height: 3rem;
   border: 2px solid black;
-  padding-left: 2px;
-  
-  :active{
-    background-color: grey;
-    :hover{
-     background-color: lightgreen;
-  }  
-    
-    
-  }
-  align-content: center;
+  background-color: ${(props) => props.bg};
+  margin-top: 5%;
+  margin-bottom: 5%;
   align-items: center;
   border-radius: 0.4rem;
+  font-weight: bold;
+  justify-content: center;
+  :only-child{
+    font-weight: bold;
+    color:black;
+    text-decoration:none;
+  
+  };
   
 `
 // Main Content Area in Display Area
@@ -77,6 +87,7 @@ export const ContentArea = styled.div
   height: 100%;
   width: 85%;
   overflow: auto;
+  
 `;
 // Title Bar in Main Content Area
 export const TitleBar = styled.div`
@@ -89,7 +100,7 @@ export const TitleBar = styled.div`
 `;
 
 // Styling of Label Area in Title Bar
-export const TitleLabel = styled.text.attrs((props) => {
+export const TitleLabel = styled.div.attrs((props) => {
   const {
     theme: {
       Text: { secondary, ...resttc },
@@ -114,7 +125,7 @@ export const TitleLabel = styled.text.attrs((props) => {
 export const Content = styled.div`
  
   height: calc(100% - 50px);
-
+  position:relative;
   overflow: auto;
 `;
 
@@ -124,9 +135,16 @@ export const Footer = styled.footer.attrs((props) => {
     theme: { background },
   } = props;
   return {
-    bg: background[props.bg] || background.main,
+    bg: background[props.bg] || background.primary,
   };
 })`
   height: 60px;
   background-color: ${(props) => props.bg};
-`;
+`
+
+//  export const StyledNavLink = styled.a(NavLink)`
+//  text-decoration: none;
+//    color: black;
+//   font-weight: bold;
+ 
+//  `

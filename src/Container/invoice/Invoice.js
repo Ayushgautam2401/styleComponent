@@ -1,68 +1,55 @@
-import React from 'react'
-import { useNavigate } from "react-router-dom";
-import { getInvoiceState } from 'Store/Selector'
+import React from 'react';
+import { getInvoiceState } from 'Store/Selector';
 import { useSelector } from "react-redux";
 import { Table } from 'react-bootstrap';
-import { Button } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
+import { Styledbutton } from 'Components/Inputs/button';
+import { generatePath } from 'react-router-dom';
+
+
 function Invoice() {
-//   const navigate = useNavigate();
+  const history = useHistory();
   const { list, raw } = useSelector(getInvoiceState);
 
 
-//   const handleInvoice = (invoice = {}) => {
-//     const { id } = invoice;
-//     navigate(`/invoice/${id || ""}`);
-//   }
-  const renderInvoiceItem = (invoiceID)=>{
-    const { id,invoiceDate,invoiceNumber, name, order} = raw[invoiceID] || {};
+  const handleInvoice = (invoice = {}) => {
+    const { id } = invoice;
+    history.push(`/invoice/Invoiceform/${id || ""}`);
+  }
+  const renderInvoiceItem = (invoiceID) => {
+    const { id, invoiceDate, invoiceNumber } = raw[invoiceID] || {};
     return (
       <tr key={id} >
         <td>{id}</td>
         <td>{invoiceDate}</td>
         <td>{invoiceNumber}</td>
-        
-         {/* <td><button  className='update' onClick={() => {
+
+        <td><Styledbutton className='update' onClick={() => {
           handleInvoice(raw[invoiceID])
-        }}>update</button></td>  */}
-        {/* <td> <Button className='generatepdf' variant="success" onClick={()=> navigate(`/PDF/${id}`)}>Generate PDF</Button></td> */}
+        }}>update</Styledbutton></td>
+        <td> <Styledbutton className='generatepdf' variant="success" onClick={() => history.push(`/PDF/:invoiceID'${id}`)}>Generate PDF</Styledbutton></td>
       </tr>
-       
+
     )
   }
   return (
-    <div className='invoice'>
-      {/* <button className='add' onClick={() => { handleInvoice() }}>Add</button>  */}
-    
-
-      <div className='invoicelist'></div>
+    <>
+      <Styledbutton className='add' onClick={() => { handleInvoice() }}>Add</Styledbutton>
       {
-        <Table striped bordered hover variant="dark">
-              <thead>
+        <Table striped bordered hover variant="dark" >
+          <tbody>
             <tr>
-              <th>Id</th>
-              <th>InvoiceDate</th>
-              <th>InvoiceNumber</th>
-              <th>discription</th>
-              <th>Amount</th>
-              <th>Total</th>
+              <td>Invoice Id</td>
+              <td>Invoice Date</td>
+              <td>Invoice Number</td>
             </tr>
-            {/* <tr>
-                <td>ejs</td>
-                <td>ejs</td>
-                <td>ejs</td>
-                <td>ejs</td>
-                <td>ejs</td>
-                <td>ejs</td>
-
-            </tr> */}
-            </thead>    
-
-            {/* {
+            {
               list?.map(renderInvoiceItem)
-            } */}
+            }
+          </tbody>
         </Table>
       }
-    </div>
+    </>
   )
 }
 
