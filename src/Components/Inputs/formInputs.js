@@ -2,14 +2,15 @@ import React from 'react'
 import { Styledinput } from './input'
 import { RenderField } from 'Util/validate'
 import { PasswordInput } from 'Container/login/LoginpageStyling'
+import { Styledtext } from './text'
 
-const FormInput = (props ) => {
-    console.log(props)
+const FormInput = ({label, input, meta, placeholder} ) => {
   return (
     <div>
-         <Styledinput {...props.input} value={props.input.value || ""} />
+        <Styledtext>{label}</Styledtext>
+         <Styledinput {...input} placeholder={placeholder} value={input.value || ""} />
          {/* <PasswordInput {...props.input} value={props.input.value || ""} /> */}
-        <RenderField {...props}/>
+        <RenderField {...meta}/>
     </div>
   )
 }

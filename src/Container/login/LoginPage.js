@@ -1,7 +1,7 @@
 import React from 'react'
 import { FormContainer, HomepageLayout } from './LoginpageStyling'
 import { FormHeader } from './LoginpageStyling'
-import LoginForm from './LoginForm'
+import LoginFormComponent from './LoginFormComponent';
 import { InnerContainer } from './LoginpageStyling';
 import { Heading } from './LoginpageStyling';
 
@@ -11,7 +11,7 @@ function LoginPage() {
     <InnerContainer>
       <FormHeader><Heading>BIZTECNO</Heading></FormHeader>
       <FormContainer>
-        <LoginForm/>
+        <LoginFormComponent/>
       </FormContainer>
     </InnerContainer>
 </HomepageLayout>
