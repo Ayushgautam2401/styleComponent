@@ -17,3 +17,6 @@ export function getInvoiceState(state) {
 export function getToken(state){
     return state.authReducer.token
 }
+export function getAuthState(state){
+    return state.authReducer
+}

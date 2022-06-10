@@ -3,35 +3,35 @@ import { useNavigate } from "react-router-dom";
 import { getClientState } from 'Store/Selector'
 import { useSelector } from "react-redux";
 import { Table } from "react-bootstrap";
-import Styledbutton from "../../Components/Inputs/button";
-import {useHistory} from "react-router-dom";
+import { Styledbutton } from "../../Components/Inputs/button";
+import { useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 
 
 function Client() {
-  
-  const history = useHistory();
-   const { list, raw } = useSelector(getClientState);
 
- const handleClient = (client = {}) => {
+  const history = useHistory();
+  const { list, raw } = useSelector(getClientState);
+
+  const handleClient = (client = {}) => {
     const { id } = client;
-    history.push(`/client/${id || ""}`);
+    history.push(`/client/Clientform/${id || ""}`);
   }
 
   const renderClientItem = (clientID, index) => {
-    const { id, name, phoneNumber, address } = raw[clientID] || {};
+    const { id, username, PhoneNo, address } = raw[clientID] || {};
     return (
       <tbody>
-      <tr key={id} >
-        <td>{id}</td>
-        <td>{name}</td>
-        <td>{address}</td>
-        <td>{phoneNumber}</td>
-        <td><button className="update" onClick={() => {
-          handleClient(raw[clientID])
-        }}>update</button></td>
-      </tr>
+        <tr key={id} >
+          <td>{id}</td>
+          <td>{username}</td>
+          <td>{address}</td>
+          <td>{PhoneNo}</td>
+          <td><button className="update" onClick={() => {
+            handleClient(raw[clientID])
+          }}>update</button></td>
+        </tr>
       </tbody>
     )
   }
@@ -39,7 +39,6 @@ function Client() {
   return (
     <div className="client">
       <Styledbutton className="add" onClick={() => { handleClient() }}>Add</Styledbutton>
-    
      <div className="list">
       {
          <Table striped bordered hover variant="dark">
