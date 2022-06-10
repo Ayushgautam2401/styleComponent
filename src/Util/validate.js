@@ -46,15 +46,9 @@ export const email = value =>
 
 
   
-export const RenderField = ({
-    input,
-    label,
-    type,
-    meta: { touched, error, warning }
-  }) => (
-    <div>
-        {touched &&
-          ((error && <span>{error}</span>) ||
-            (warning && <span>{warning}</span>))}
-    </div>
+
+  export const RenderField = ({ input, label, type, meta: { touched, error, warning } }) => (
+      <div>
+        {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
+      </div>
   )

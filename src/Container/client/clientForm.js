@@ -16,7 +16,6 @@ const ClientForm = (props) => {
       <Form onSubmit={handleSubmit((formValues)=>{
         console.log(formValues)
         })} >
-          <RenderField>
         <Styledtext>Name</Styledtext>
         <Field
           name="username"
@@ -57,7 +56,6 @@ const ClientForm = (props) => {
 
         <Styledbutton>Submit</Styledbutton>
 
-        </RenderField>
       </Form> 
       </div> 
   )

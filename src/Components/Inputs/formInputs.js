@@ -4,7 +4,7 @@ import { RenderField } from 'Util/validate'
 import { PasswordInput } from 'Container/login/LoginpageStyling'
 
 const FormInput = (props ) => {
-    console.log(props)
+    // console.log(props)
   return (
     <div>
          <Styledinput {...props.input} value={props.input.value || ""} />

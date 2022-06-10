@@ -42,9 +42,9 @@ function App() {
             <Route path="/Invoice">
               < Invoice/>
             </Route> */}
-            <ClientForm/>
+            {/* <ClientForm/> */}
             {/* <LoginForm/> */}
-            {/* <InvoiceForm/> */}
+            <InvoiceForm/>
 
     </ThemeProvider>
   );
