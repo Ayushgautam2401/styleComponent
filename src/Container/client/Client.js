@@ -11,34 +11,34 @@ import { useParams } from "react-router-dom";
 
 function Client() {
   
-  // const history = useHistory();
-  //  const { list, raw } = useSelector(getClientState);
+  const history = useHistory();
+   const { list, raw } = useSelector(getClientState);
 
-  // const handleClient = (client = {}) => {
-  //   const { id } = client;
-  //   history.push(`/client/${id || ""}`);
-  // }
+ const handleClient = (client = {}) => {
+    const { id } = client;
+    history.push(`/client/${id || ""}`);
+  }
 
-  // const renderClientItem = (clientID, index) => {
-  //   const { id, name, phoneNumber, address } = raw[clientID] || {};
-  //   return (
-  //     <tbody>
-  //     <tr key={id} >
-  //       <td>{id}</td>
-  //       <td>{name}</td>
-  //       <td>{address}</td>
-  //       <td>{phoneNumber}</td>
-  //       {/* <td><button className="update" onClick={() => {
-  //         handleClient(raw[clientID])
-  //       }}>update</button></td> */}
-  //     </tr>
-  //     </tbody>
-  //   )
-  // }
+  const renderClientItem = (clientID, index) => {
+    const { id, name, phoneNumber, address } = raw[clientID] || {};
+    return (
+      <tbody>
+      <tr key={id} >
+        <td>{id}</td>
+        <td>{name}</td>
+        <td>{address}</td>
+        <td>{phoneNumber}</td>
+        <td><button className="update" onClick={() => {
+          handleClient(raw[clientID])
+        }}>update</button></td>
+      </tr>
+      </tbody>
+    )
+  }
 
   return (
     <div className="client">
-      {/* <Styledbutton className="add" onClick={() => { handleClient() }}>Add</Styledbutton> */}
+      <Styledbutton className="add" onClick={() => { handleClient() }}>Add</Styledbutton>
     
      <div className="list">
       {
@@ -53,7 +53,7 @@ function Client() {
            </tr>
          </thead>
             {
-              // list?.map(renderClientItem)
+              list?.map(renderClientItem)
             }
           
         </Table>

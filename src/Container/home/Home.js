@@ -15,8 +15,8 @@ import { Header } from "./HomeStyling";
 import Client from "Container/client/Client";
 import { NavLink } from "react-router-dom";
 import { Switch, Route } from "react-router-dom";
-import ClientForm from "Container/client/ClientForm";
-import InvoiceForm from "Container/invoice/InvoiceForm";
+import ClientForm from "Container/client/clientForm";
+import InvoiceForm from "Container/invoice/invoiceForm";
 
 function Home() {
   return (
