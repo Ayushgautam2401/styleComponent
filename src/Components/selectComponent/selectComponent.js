@@ -1,23 +1,12 @@
 import React, { Component } from 'react'
 import theme from '../../theme'
-import ReactSelect from 'react-select'
-import styled  from 'styled-components'
-import { useLocation } from 'react-router-dom'
-
-const options = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' }
-  ]
-
-export const RenderSelectInput = () => {
-  const location = useLocation();
+import Select from 'react-select'
+import styled from 'styled-components'
+export const RenderSelectInput = ({input, options, ...props}) => {
+  console.log ("ptani",input,props)
   return (
-    <>
-    {location.pathname === `/select` ?(
-      <p>select components</p>  
-        ):null}
-    <ReactSelect
+    <Select
+      {...input}
       options={options}
       theme={(theme) => ({
         ...theme,
@@ -28,7 +17,10 @@ export const RenderSelectInput = () => {
           primary: 'black',
         },
       })}
+      onChange={(value) => {
+        input.onChange(value);
+      }}
+      onBlur={() => input.onBlur(input.value)}
     />
-    </>
   )
 }
