@@ -66,15 +66,18 @@ const renderInvoiceOrders = ({ fields, meta: { error, submitFailed } }) => (
 
 
 const InvoiceForm = (props) => {
-  const { handleSubmit, reset, handleFormSubmit, clientOptions } = props
+  const { handleSubmit } = props
   return (
     <>
       <Styledbutton>Back</Styledbutton>
       <Styledheader>Invoice Form</Styledheader>
-      <Form onSubmit={handleSubmit(handleFormSubmit)}>
+      <Form onSubmit={handleSubmit((formValues)=>{
+      console.log(formValues)
+      })} >
+        <Styledtext>Date</Styledtext>
         <Field
           name="invoiceDate"
-          component={Date}
+          component={Styledinput}
           type="text"
           placeholder="invoiceDate"
           label="Date"
