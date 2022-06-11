@@ -70,24 +70,7 @@ const renderInvoiceOrders = ({ fields, meta: { error, submitFailed } }) => (
 )
 
 
-<<<<<<< HEAD
-const InvoiceForm = (props) => {
-  const { handleSubmit } = props
-  return (
-    <>
-      <Styledbutton>Back</Styledbutton>
-      <Styledheader>Invoice Form</Styledheader>
-      <Form onSubmit={handleSubmit((formValues)=>{
-      console.log(formValues)
-      })} >
-        <Styledtext>Date</Styledtext>
-        <Field
-          name="invoiceDate"
-          component={Styledinput}
-          type="text"
-          placeholder="invoiceDate"
-          label="Date"
-=======
+
 const invoiceForm = (props) => {
   console.log("aajaa",props)
   const { handleSubmit, reset, handleFormSubmit, clientOptions } = props
@@ -112,8 +95,6 @@ const invoiceForm = (props) => {
             validate={[required]}
             label="Purpose of Invoice"
           />
-
->>>>>>> master
          
           <Field
             name="invoiceNumber"

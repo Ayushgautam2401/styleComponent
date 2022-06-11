@@ -12,13 +12,13 @@ const INITIAL_STATE = {
   raw: {
     "BIZ_CLIENT_1" : {
       "id": "BIZ_CLIENT_1",
-      "name": "BIZTECNO",
+      "username": "BIZTECNO",
       "address": "PLOT J7 FCS BUILDING",
       "phoneNumber": "9888824240"
     },
     "BIZ_CLIENT_2" : {
       "id": "BIZ_CLIENT_2",
-      "name": "BIZTECNO",
+      "username": "BIZTECNO",
       "address": "PLOT J7 FCS BUILDING",
       "phoneNumber": "9888824240"
     }
