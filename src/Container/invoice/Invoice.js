@@ -27,7 +27,7 @@ function Invoice() {
         <td><Styledbutton className='update' onClick={() => {
           handleInvoice(raw[invoiceID])
         }}>update</Styledbutton></td>
-        <td> <Styledbutton className='generatepdf' variant="success" onClick={() => history.push(`/PDF/${id}`)}>Generate PDF</Styledbutton></td>
+        <td> <Styledbutton className='generatepdf' variant="success" onClick={() => history.push(`/PDF/:invoiceID'${id}`)}>Generate PDF</Styledbutton></td>
       </tr>
 
     )
