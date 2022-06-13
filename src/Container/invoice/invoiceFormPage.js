@@ -66,7 +66,7 @@ const InvoiceFormPage = props => {
       const options= [];
       list.forEach(item => {
         const clientDetail = raw[item]
-        options.push({label: clientDetail.username, value: clientDetail.id})
+        options.push({label: clientDetail.name, value: clientDetail.id})
       })
       setClientOptions(options);
     }
@@ -106,7 +106,7 @@ const InvoiceFormPage = props => {
   }
   return (
     <div className='formdesign'>
-      <Button variant='outline-dark' onClick={() => history.push("/invoiceList")}>Back</Button>
+      <Button variant='outline-dark' onClick={() => history.push("/invoice")}>Back</Button>
       <InvoiceForm clientOptions={clientOptions} handleFormSubmit={handleFormSubmit} initialValues={id ? {...invoice, clientFirm: {label: invoice.clientFirm && invoice.clientFirm.name, value: invoice.clientFirm && invoice.clientFirm.id}} : { invoiceDate: currentDate }} />
     </div>
   )

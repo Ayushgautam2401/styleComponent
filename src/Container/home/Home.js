@@ -19,7 +19,7 @@ import { Switch, Route } from "react-router-dom";
 import ClientForm from "Container/client/clientFormPage";
 import InvoiceForm from "Container/invoice/invoiceFormPage";
 import { Redirect } from "react-router-dom";
-import Makerpdf from "Container/invoice/invoicePDF/pdf_maker";
+import { Pdf_Maker } from "Container/invoice/invoicePDF/pdfMaker";
 
 function Home() {
   return (
@@ -28,23 +28,22 @@ function Home() {
       <DisplayArea>
         <Sidebar>
           <NavLink
+<<<<<<< HEAD
          exact activeClassName="active"
+=======
+             activeClassName="active"
+>>>>>>> styledComponent
             to="/client"
             activeStyle={{
               fontWeight: "bold",
               backgroundColor: "red",
-              
+
             }}
           >
             <SidebarOption>Client</SidebarOption>
           </NavLink>
           <NavLink
             to="/invoice"
-            // activeClassName="active"
-            // activeStyle={{
-            //   fontWeight: "bold",
-            //   backgroundColor: "gray",
-            // }}
           >
             <SidebarOption>Invoice</SidebarOption>
           </NavLink>
@@ -56,14 +55,11 @@ function Home() {
           <Content>
             <Switch>
               <Route exact path="/client" component={Client} />
-              <Route path = "/client/Clientform/:id?" component={ClientForm}/> 
-               {/* <Redirect to="/client"/> */}
-
-              <Route exact path="/invoice" component={Invoice}/>
-              <Route  path = "/invoice/Invoiceform/:id?" component={InvoiceForm}/>
-              <Route path='/PDF/:invoiceID' component={Makerpdf}/>
-              {/* <Redirect to="/invoice"/> */}
-              {/* <Redirect to="/client"/> */}
+              <Route path="/client/Clientform/:id?" component={ClientForm} />
+              <Route exact path="/invoice" component={Invoice} />
+              <Route path="/invoice/Invoiceform/:id?" component={InvoiceForm} />
+              <Route path= "/invoice_Pd/:invoiceID" component={Pdf_Maker}/>
+              <Redirect to="/client"/>
             </Switch>
           </Content>
         </ContentArea>

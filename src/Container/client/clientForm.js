@@ -31,15 +31,12 @@ const ClientForm = (props) => {
           validate={[required]}
           normalize={normalizePhone}
           label="Phone Number"
-
         />
-
         <Field
           name="address"
           type="text"
           placeholder='Address'
           component={FormInput}
-
           validate={[required]}
           label="Address"
         />

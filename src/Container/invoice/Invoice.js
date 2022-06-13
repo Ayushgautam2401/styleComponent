@@ -5,6 +5,7 @@ import { Table } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { Styledbutton } from 'Components/Inputs/button';
 import { generatePath } from 'react-router-dom';
+import { Fragment } from 'react';
 
 
 function Invoice() {
@@ -27,16 +28,18 @@ function Invoice() {
         <td><Styledbutton className='update' onClick={() => {
           handleInvoice(raw[invoiceID])
         }}>update</Styledbutton></td>
-        <td> <Styledbutton className='generatepdf' variant="success" onClick={() => history.push(`/PDF/:invoiceID'${id}`)}>Generate PDF</Styledbutton></td>
+        <td> <Styledbutton className='generatepdf' variant="success" onClick={() => {
+          history.push(`/invoice_Pd/${id}`)
+        }}>Generate PDF</Styledbutton></td>
       </tr>
 
     )
   }
   return (
-    <>
+    <Fragment>
       <Styledbutton className='add' onClick={() => { handleInvoice() }}>Add</Styledbutton>
       {
-        <Table striped bordered hover variant="dark" >
+        <Table striped bordered hover >
           <tbody>
             <tr>
               <td>Invoice Id</td>
@@ -49,7 +52,7 @@ function Invoice() {
           </tbody>
         </Table>
       }
-    </>
+    </Fragment>
   )
 }
 
