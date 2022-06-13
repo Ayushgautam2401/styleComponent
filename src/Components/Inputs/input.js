@@ -4,19 +4,6 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import styled from "styled-components"
 import { theme } from '../../theme';
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> master
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
-import { setTitleAction } from '../../Store/Action/action';
-import { getTitle } from '../../Store/Selector';
-import { TITLES } from '../../constant';
-import { useLocation } from 'react-router-dom';
-const Styledinput = styled.input.attrs(props => {
-=======
 import { setTitleAction } from '../../Store/Action/action';
 import { useSelector } from 'react-redux';
 import { getTitle } from '../../Store/Selector';
@@ -24,7 +11,6 @@ import { TITLES } from '../../constant';
 
 
  export const Styledinput = styled.input.attrs(props => {
->>>>>>> b85157dd9541bf14192d179d99b47f78030099f3
     const {theme:{size,background,bordersize}} = props;
 
     return{
@@ -63,36 +49,15 @@ color: ${props => props.color};
 `
 
 function Input() {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> master
-  const location = useLocation();
-  console.log(location)
-//   const {title} = useSelector(getTitle)
-//   // console.log(title)
-// const dispatch =useDispatch()
-// useEffect(()=>{
-// dispatch(setTitleAction())
-// },[])
-<<<<<<< HEAD
-=======
-=======
   const {title} = useSelector(getTitle)
   // console.log(title)
 const dispatch =useDispatch()
 useEffect(()=>{
 dispatch(setTitleAction())
 },[])
->>>>>>> b85157dd9541bf14192d179d99b47f78030099f3
->>>>>>> master
   return (
     
         <ThemeProvider theme={theme}>
-          {/* <p>my current location is {location.pathname}</p> */}
-          {location.pathname === `/input` ?(
-        <p>input components</p>  
-          ):null}
             <div>
             <Styledinput placeholder='Input bhai'>
            

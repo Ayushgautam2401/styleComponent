@@ -26,7 +26,7 @@ const ClientFormPage = (props) => {
 
   return (
     <div className='formdesign'>
-        <Button variant="outline-dark" onClick={() => history.push("/clientList")}>Back</Button>
+        <Button variant="outline-dark" onClick={() => history.push("/client")}>Back</Button>
         <ClientForm handleFormSubmit={handleFormSubmit} initialValues={id ? client : {}}/>
     </div>
   )

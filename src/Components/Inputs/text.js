@@ -22,16 +22,7 @@ font-family: 'Poppins', sans-serif;
 `
 
 const Text = () => {
-<<<<<<< HEAD
 const location = useLocation()
-
-=======
-<<<<<<< HEAD
-const location = useLocation()
-
-=======
->>>>>>> b85157dd9541bf14192d179d99b47f78030099f3
->>>>>>> master
   return (
     
     <ThemeProvider theme={theme}>

@@ -29,7 +29,7 @@ function Home() {
         <Sidebar>
           <NavLink
          exact activeClassName="active"
-            to="/"
+            to="/client"
             activeStyle={{
               fontWeight: "bold",
               backgroundColor: "red",

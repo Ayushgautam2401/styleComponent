@@ -4,7 +4,7 @@ import { MyDocument } from './InvoicePdf';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getInvoiceState } from 'Store/Selector';
-import { invoiceActions } from 'Store/Action/invoiceAction';
+import { invoiceActions } from 'Store/Action/invoiceActions';
 
 
 
