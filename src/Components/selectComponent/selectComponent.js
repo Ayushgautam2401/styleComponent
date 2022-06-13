@@ -13,7 +13,7 @@ export const RenderSelectInput = ({input, options, ...props}) => {
         borderRadius: "10px",
         colors: {
           ...theme.colors,
-          primary25: 'blue',
+          primary25: '#197A56',
           primary: 'black',
         },
       })}

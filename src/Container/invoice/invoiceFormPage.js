@@ -1,3 +1,4 @@
+
 import React, { useEffect,useState  } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, useParams } from "react-router-dom"
@@ -10,6 +11,10 @@ import {clientListActions } from 'Store/Action/clientActions'
 
 
 // const [startDate, setStartDate] = useState(new Date());
+const current = new Date();
+const currentDate = `${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()}`;
+
+
 function doConvert(numberInput) {
 
     let oneToTwenty = ['', 'ONE ', 'TWO ', 'THREE ', 'FOUR ', 'FIVE ', 'SIX ', 'SEVEN ', 'EIGHT ', 'NINE ', 'TEN ',
@@ -32,12 +37,10 @@ function doConvert(numberInput) {
     return outputText;
   }
 
-const current = new Date();
-const currentDate = `${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()}`;
 
 // const Add =new Address();
 const InvoiceFormPage = props => {
-  const History= useHistory();
+  const history= useHistory();
   const { id } = useParams();
   const dispatch = useDispatch();
   const { invoice, loading } = useSelector(getInvoiceState);
@@ -103,7 +106,7 @@ const InvoiceFormPage = props => {
   }
   return (
     <div className='formdesign'>
-      <Button className='btn-sm top-0 end-100 translate-end' variant="outline-dark" onClick={() => History.push("/invoiceList")}>Back</Button>
+      <Button variant='outline-dark' onClick={() => history.push("/invoiceList")}>Back</Button>
       <InvoiceForm clientOptions={clientOptions} handleFormSubmit={handleFormSubmit} initialValues={id ? {...invoice, clientFirm: {label: invoice.clientFirm && invoice.clientFirm.name, value: invoice.clientFirm && invoice.clientFirm.id}} : { invoiceDate: currentDate }} />
     </div>
   )

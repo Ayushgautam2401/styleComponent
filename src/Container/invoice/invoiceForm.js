@@ -25,7 +25,9 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
   </div>
 )
 const renderInvoiceOrders = ({ fields, meta: { error, submitFailed } }) => (
+
   <ul>
+
     <li>
       {submitFailed && error && <span>{error}</span>}
     </li>
@@ -61,7 +63,7 @@ const renderInvoiceOrders = ({ fields, meta: { error, submitFailed } }) => (
       
     ))}
     <li>
-    <Styledbutton className="m-3 btn-sm" variant="dark" type="button" onClick={() => fields.push({})}>
+    <Styledbutton type="button" onClick={() => fields.push({})}>
         Add Decription
       </Styledbutton>
       {submitFailed && error && <span>{error}</span>}
@@ -70,11 +72,13 @@ const renderInvoiceOrders = ({ fields, meta: { error, submitFailed } }) => (
 )
 
 
+
 const invoiceForm = (props) => {
   console.log("aajaa",props)
   const { handleSubmit, reset, handleFormSubmit, clientOptions } = props
   return (
     <>
+
       {/* <FormContainer> */}
         <Styledheader>Invoice Form</Styledheader>
         <Form onSubmit={handleSubmit(handleFormSubmit)}>
@@ -94,8 +98,6 @@ const invoiceForm = (props) => {
             validate={[required]}
             label="Purpose of Invoice"
           />
-
-         
           <Field
             name="invoiceNumber"
             type="text"
@@ -114,8 +116,7 @@ const invoiceForm = (props) => {
             label="Currency Type"
           />
           <Field
-            name="selectComponent"
-            type="text"
+            name="clientFirm"
             component={RenderSelectInput}
             options= {clientOptions}
           />

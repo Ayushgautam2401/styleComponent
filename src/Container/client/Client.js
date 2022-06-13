@@ -20,14 +20,14 @@ function Client() {
   }
 
   const renderClientItem = (clientID, index) => {
-    const { id, username, PhoneNo, address } = raw[clientID] || {};
+    const { id, username, phoneNumber, address } = raw[clientID] || {};
     return (
       <tbody>
         <tr key={id} >
           <td>{id}</td>
           <td>{username}</td>
           <td>{address}</td>
-          <td>{PhoneNo}</td>
+          <td>{phoneNumber}</td>
           <td><button className="update" onClick={() => {
             handleClient(raw[clientID])
           }}>update</button></td>

@@ -4,6 +4,7 @@ import { Styledheader } from 'Components/Inputs/header'
 import { normalizePhone, required } from 'Util/validate'
 import { Styledtext } from 'Components/Inputs/text'
 import { Field, Form, reduxForm } from 'redux-form'
+import { RenderField, validate } from 'Util/validate'
 import FormInput from 'Components/Inputs/formInputs'
 
 const ClientForm = (props) => {
@@ -12,8 +13,9 @@ const ClientForm = (props) => {
     <Fragment>
       <Styledheader>Client Form</Styledheader>
       <Form onSubmit={handleSubmit(handleFormSubmit)}>
+
         <Field
-          name="username"
+          name="name"
           type="text"
           placeholder='Name'
           component={FormInput}
@@ -22,7 +24,7 @@ const ClientForm = (props) => {
         />
 
         <Field
-          name="PhoneNo"
+          name="phoneNumber"
           type="text"
           placeholder='Phone Number'
           component={FormInput}
@@ -37,6 +39,7 @@ const ClientForm = (props) => {
           type="text"
           placeholder='Address'
           component={FormInput}
+
           validate={[required]}
           label="Address"
         />
