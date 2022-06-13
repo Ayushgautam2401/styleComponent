@@ -33,7 +33,7 @@ export const FormHeader = styled.div`display:flex;
   justify-content: center;
   align-items: center;
 `
-export const Heading = styled.text.attrs((props) => {
+export const Heading = styled.div.attrs((props) => {
   const {
     theme: {
       Text: { secondary, ...resttc },

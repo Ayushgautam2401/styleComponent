@@ -26,20 +26,11 @@ const GlobalStyle = createGlobalStyle`
 function App() {
   return (
     <ThemeProvider theme={theme}>
-    
      <GlobalStyle />
       <Switch>
-           
-
-            
-         <Route  path="/Login"><LoginPage/></Route>
-          <Route  path="/" component={Home}/>  
-
-
-
+        <Route exact path="/Login" component={LoginPage}/>
+        <Route path="/" component={Home}/>  
       </Switch>
-     
-
     </ThemeProvider>
   );
 }

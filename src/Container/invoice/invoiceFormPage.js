@@ -2,11 +2,13 @@ import React, { useEffect,useState  } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, useParams } from "react-router-dom"
 import { invoiceActions, invoiceUpdateActions } from 'Store/Action/invoiceActions'
-import { getInvoiceState,getClientState } from 'Store/Selector/index'
+//import { getInvoiceState,getClientState } from 'Store/Selector/index'
 //import './invoiceForm.scss'
+import { getInvoiceState,getClientState } from 'Store/Selector'
 import InvoiceForm from './invoiceForm'
 import { Button } from 'react-bootstrap';
 import {clientListActions } from 'Store/Action/clientActions'
+import { Styledbutton } from 'Components/Inputs/button'
 
 
 
@@ -38,7 +40,7 @@ const currentDate = `${current.getDate()}/${current.getMonth() + 1}/${current.ge
 
 // const Add =new Address();
 const InvoiceFormPage = props => {
-  const back = useHistory();
+  const History= useHistory();
   const { id } = useParams();
   const dispatch = useDispatch();
   const { invoice, loading } = useSelector(getInvoiceState);
@@ -64,7 +66,7 @@ const InvoiceFormPage = props => {
       const options= [];
       list.forEach(item => {
         const clientDetail = raw[item]
-        options.push({label: clientDetail.name, value: clientDetail.id})
+        options.push({label: clientDetail.username, value: clientDetail.id})
       })
       setClientOptions(options);
     }
@@ -104,8 +106,9 @@ const InvoiceFormPage = props => {
   }
   return (
     <div className='formdesign'>
-      <Button className='btn-sm top-0 end-100 translate-end' variant="outline-dark" onClick={() => back("/invoiceList")}>Back</Button>
-      <InvoiceForm clientOptions={clientOptions} handleFormSubmit={handleFormSubmit} initialValues={id ? {...invoice, clientFirm: {label: invoice.clientFirm && invoice.clientFirm.name, value: invoice.clientFirm && invoice.clientFirm.id}} : { invoiceDate: current }} />
+      <Button className='btn-sm top-0 end-100 translate-end' variant="outline-dark" onClick={() => History.push("/invoiceList")}>Back</Button>
+      <InvoiceForm clientOptions={clientOptions} handleFormSubmit={handleFormSubmit} initialValues={id ? {...invoice, clientFirm: {label: invoice.clientFirm && invoice.clientFirm.name, value: invoice.clientFirm && invoice.clientFirm.id}} : { invoiceDate: currentDate }} />
+      <Styledbutton onClick={handleFormSubmit}>Submit</Styledbutton>
     </div>
   )
 }

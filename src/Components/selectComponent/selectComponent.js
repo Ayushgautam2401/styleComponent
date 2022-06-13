@@ -1,18 +1,15 @@
 import React, { Component } from 'react'
 import theme from '../../theme'
-import ReactSelect from 'react-select'
-import styled  from 'styled-components'
+import Select from 'react-select'
+import styled from 'styled-components'
 
-const options = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' }
-  ]
 
-export const RenderSelectInput = () => {
+export const RenderSelectInput = ({input, options, ...props}) => {
+  console.log ("ptani",input,props)
   return (
 
-    <ReactSelect
+    <Select
+      {...input}
       options={options}
       theme={(theme) => ({
         ...theme,
@@ -23,6 +20,10 @@ export const RenderSelectInput = () => {
           primary: 'black',
         },
       })}
+      onChange={(value) => {
+        input.onChange(value);
+      }}
+      onBlur={() => input.onBlur(input.value)}
     />
   )
 }
