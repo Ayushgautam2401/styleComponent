@@ -1,10 +1,10 @@
 import React, { useEffect,useState  } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate, useParams } from "react-router-dom"
-import { invoiceActions, invoiceUpdateActions } from 'Store/Action/invoiceAction'
-import { getInvoiceState,getClientState } from 'Store/Selectors'
-import './invoiceForm.scss'
-import InvoiceForm from './InvoiceForm'
+import { useHistory, useParams } from "react-router-dom"
+import { invoiceActions, invoiceUpdateActions } from 'Store/Action/invoiceActions'
+import { getInvoiceState,getClientState } from 'Store/Selector/index'
+//import './invoiceForm.scss'
+import InvoiceForm from './invoiceForm'
 import { Button } from 'react-bootstrap';
 import {clientListActions } from 'Store/Action/clientActions'
 
@@ -38,7 +38,7 @@ const currentDate = `${current.getDate()}/${current.getMonth() + 1}/${current.ge
 
 // const Add =new Address();
 const InvoiceFormPage = props => {
-  const back = useNavigate();
+  const back = useHistory();
   const { id } = useParams();
   const dispatch = useDispatch();
   const { invoice, loading } = useSelector(getInvoiceState);

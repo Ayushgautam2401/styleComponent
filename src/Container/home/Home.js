@@ -15,8 +15,10 @@ import { Header } from "./HomeStyling";
 import Client from "Container/client/Client";
 import { NavLink } from "react-router-dom";
 import { Switch, Route } from "react-router-dom";
-import ClientForm from "Container/client/clientForm";
-import InvoiceForm from "Container/invoice/invoiceForm";
+//import ClientForm from "Container/client/clientForm";
+//import InvoiceForm from "Container/invoice/invoiceForm";
+import ClientFormPage from "Container/client/clientFormPage";
+import InvoiceFormPage from "Container/invoice/invoiceFormPage";
 
 function Home() {
   return (
@@ -54,10 +56,10 @@ function Home() {
           <Content>
             <Switch>
               <Route exact path="/" render={Client} />
-                <Route path = "/Client/Clientform" component={ClientForm}/>
-                <Route path = "/Client/Clientform/:id" component={ClientForm}/>
+                <Route path = "/Client/Clientform" component={ClientFormPage}/>
+                <Route path = "/Client/Clientform/:id" component={ClientFormPage}/>
               <Route exact path="/Invoice" component={Invoice}/>
-              <Route  path = "/Invoice/Invoiceform" component={InvoiceForm}/>
+              <Route  path = "/Invoice/Invoiceform" component={InvoiceFormPage}/>
               {/* <Switch>
              <Route path='/ClientForm' component={clientForm}></Route>
            </Switch> */}

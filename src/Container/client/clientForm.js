@@ -10,7 +10,7 @@ const ClientForm = (props) => {
   const { handleSubmit, reset, handleFormSubmit  } = props
   return (
     <div>
-      <Styledbutton>Back</Styledbutton>
+      
          <Styledheader>Client Form</Styledheader>
          <Form onSubmit={handleSubmit(handleFormSubmit)}>
         <Styledtext>Name</Styledtext>

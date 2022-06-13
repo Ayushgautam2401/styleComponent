@@ -14,7 +14,7 @@ function Client() {
   const history = useHistory();
    const { list, raw } = useSelector(getClientState);
 
- const handleClient = (client = {}) => {
+  const handleClient = (client = {}) => {
     const { id } = client;
     history.push(`/client/${id || ""}`);
   }

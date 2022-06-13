@@ -2,12 +2,13 @@ import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import { useNavigate, useParams } from "react-router-dom"
 import { clientActions, clientUpdateActions } from 'Store/Action/clientActions'
-import { getClientState } from 'Store/Selectors'
+import { getClientState } from 'Store/Selector'
 import { Button } from 'react-bootstrap'
-import ClientForm from "./ClientForm";
+import ClientForm from "./clientForm";
+import { useHistory } from 'react-router-dom'
 
 const ClientFormPage = props => {
-  const back = useNavigate();
+  const back = useHistory();
   const {id} = useParams();
   const dispatch= useDispatch();
   const {client, loading} = useSelector(getClientState);
