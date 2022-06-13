@@ -1,10 +1,10 @@
-import MyDocument from './invoice_Pd';
+import MyDocument from './InvoicePdf';
 import React, { useEffect } from 'react';
 import { PDFViewer } from '@react-pdf/renderer';
 import { useParams } from 'react-router-dom';
-import { invoiceActions } from 'Store/Action/invoiceAction';
+import { invoiceActions } from 'Store/Action/invoiceActions';
 import { useDispatch, useSelector } from 'react-redux';
-import { getInvoiceState } from 'Store/Selectors';
+import { getInvoiceState } from 'Store/Selector/index';
 
 export const Pdf_Maker = () => {
   const { invoiceID } = useParams();
@@ -20,7 +20,7 @@ export const Pdf_Maker = () => {
     
   }, [invoiceID]);
 
-  console.log(invoice)
+  console.log('pdf',invoice)
   return (
     invoice ? <PDFViewer style={{ width: "100%", height: "100vh" }}>
       <MyDocument invoice={invoice} />
