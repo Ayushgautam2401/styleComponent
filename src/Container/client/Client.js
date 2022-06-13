@@ -1,11 +1,10 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import { getClientState } from 'Store/Selector'
 import { useSelector } from "react-redux";
 import { Table } from "react-bootstrap";
 import { Styledbutton } from "../../Components/Inputs/button";
 import { useHistory } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { Fragment } from "react";
 
 
 
@@ -37,11 +36,10 @@ function Client() {
   }
 
   return (
-    <div className="client">
+    <Fragment>
       <Styledbutton className="add" onClick={() => { handleClient() }}>Add</Styledbutton>
-     <div className="list">
       {
-         <Table striped bordered hover variant="dark">
+         <Table striped bordered hover>
          <thead>
            <tr>
              <th>Id</th>
@@ -57,8 +55,7 @@ function Client() {
           
         </Table>
       }
-      </div>
-    </div>
+    </Fragment>
   );
 }
 
