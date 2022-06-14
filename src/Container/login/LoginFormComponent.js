@@ -26,7 +26,6 @@ const LoginFormComponent = (props) => {
       <Field
         name="password"
         component={PasswordInput}
-        // validate={[ required]}
         type="password"
       />
 

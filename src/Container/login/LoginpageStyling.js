@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const HomepageLayout = styled.div`
     display: flex;
    height: 100vh;
-    width: 100vw;
+    /* width: 100vw; */
     background-color:#197A56;
     position: relative;
     justify-items: center;
@@ -14,7 +14,7 @@ export const HomepageLayout = styled.div`
 export const InnerContainer = styled.div`display:flex;
     flex-direction: column;
      height: 70%;
-     width: 30%;
+     /* width: 30%; */
      background-color: beige;
      border-radius: 5%;
     position: absolute;
@@ -49,8 +49,6 @@ export const Heading = styled.div.attrs((props) => {
   font-size: ${(props) => props.ts};
   font-weight: bold;
 `;
-
-
 
 export const FormContainer = styled.div` display:flex;
 flex-direction: column;
