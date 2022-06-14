@@ -4,7 +4,7 @@ import { watchInvoiceActions } from './invoiceSaga';
 import { watchLoginActions } from './loginSaga';
 function* mysaga(){
   yield all([
-    // fork(watchLoginActions),
+    fork(watchLoginActions),
     fork(watchClientActions),
     fork(watchInvoiceActions)
   ])

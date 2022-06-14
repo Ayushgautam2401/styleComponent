@@ -1,19 +1,19 @@
 import { LOGIN_FETCH,LOGIN_SUCCESS,LOGIN_FAILURE, CURRENT_USER_FETCH,CURRENT_USER_SUCCESS,CURRENT_USER_FAILURE} from "Store/Action/auth";
-  export const _userData = [
-     {
-         email:'Ashishchoudhary',
-         password:'Ashish@123'
-     }
- ]
- localStorage.setItem('userData',
- JSON.stringify(_userData));
- let _retriveUserData=
- JSON.parse(localStorage.getItem('userData'));
- console.log( _retriveUserData)
+//   export const _userData = [
+//      {
+//          email:'Ashishchoudhary',
+//          password:'Ashish@123'
+//      }
+//  ]
+//  localStorage.setItem('userData',
+//  JSON.stringify(_userData));
+//  let _retriveUserData=
+//  JSON.parse(localStorage.getItem('userData'));
+//  console.log( _retriveUserData)
 
 const INITIAL_STATE = {
   user: undefined,
-  token: localStorage.getItem("userData"),
+  token: localStorage.getItem("user"),
   isAuthenticated: false,
   fetching: false,
   error: undefined
