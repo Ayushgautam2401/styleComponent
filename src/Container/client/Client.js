@@ -5,7 +5,13 @@ import { Table } from "react-bootstrap";
 import { Styledbutton } from "../../Components/Inputs/button";
 import { useHistory } from "react-router-dom";
 import { Fragment } from "react"; 
+
+
+
 function Client() {
+
+  const history = useHistory();
+  const {list, raw} = useSelector(getClientState);
 
   const handleClient = (client = {}) => {
     const { id } = client;

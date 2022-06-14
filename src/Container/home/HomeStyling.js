@@ -71,15 +71,16 @@ export const SidebarOption = styled.div.attrs((props) => {
   border-radius: 0.4rem;
   font-weight: bold;
   justify-content: center;
-  :active{
-    background-color: grey;
-  }
-  :only-child{
+ 
+    
+  
+:only-child{
     font-weight: bold;
     color:black;
     text-decoration:none;
     
   };
+  
   
 `
 // Main Content Area in Display Area
@@ -122,6 +123,7 @@ export const TitleLabel = styled.div.attrs((props) => {
   padding-left: 1rem;
   padding-top: 0.5rem;
   font-weight: bold;
+  
 `;
 
 // Inner Content Area in Main Content Area
@@ -145,9 +147,9 @@ export const Footer = styled.footer.attrs((props) => {
   background-color: ${(props) => props.bg};
 `
 
-//  export const StyledNavLink = styled.a(NavLink)`
-//  text-decoration: none;
-//    color: black;
-//   font-weight: bold;
+ export const StyledNavLink = styled(NavLink)`
+ text-decoration: none;
+   color: black;
+  font-weight: bold;
  
-//  `
+ `
