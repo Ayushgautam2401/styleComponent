@@ -8,14 +8,12 @@ import { Field, Form, reduxForm, FieldArray } from 'redux-form'
 import { FormContainer, FormHeaderContainer } from './invoicePDF/FormStyling'
 import { required } from 'Util/validate';
 import { Fragment } from 'react'
-
-
-
 const current = new Date();
 const invoiceForm = (props) => {
   console.log("aajaa",props)
   const { handleSubmit, handleFormSubmit, clientOptions } = props
   return (
+
     <Fragment>
       <FormContainer>
         <Styledheader>Invoice Form</Styledheader>
@@ -27,8 +25,7 @@ const invoiceForm = (props) => {
             type="text"
             placeholder="invoiceDate"
             label="Date"
-
-          /> 
+          />
           <Field
             name="purposeofInvoice"
             type="text"

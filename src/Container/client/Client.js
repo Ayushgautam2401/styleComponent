@@ -4,10 +4,7 @@ import { useSelector } from "react-redux";
 import { Table } from "react-bootstrap";
 import { Styledbutton } from "../../Components/Inputs/button";
 import { useHistory } from "react-router-dom";
-import { Fragment } from "react";
-
-
-
+import { Fragment } from "react"; 
 function Client() {
 
   const history = useHistory();

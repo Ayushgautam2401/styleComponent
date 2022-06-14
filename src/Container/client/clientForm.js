@@ -6,7 +6,6 @@ import { Field, Form, reduxForm } from 'redux-form'
 import FormInput from 'Components/Inputs/formInputs'
 import { FormContainer } from 'Container/invoice/invoicePDF/FormStyling'
 import { textArea } from 'Components/Inputs/input'
-
 const ClientForm = (props) => {
   const { handleSubmit, handleFormSubmit } = props
   return (

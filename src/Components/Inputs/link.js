@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -12,9 +13,9 @@ import styled from "styled-components";
     background-color: grey;
     /* background: blue; */
   }
-  &.active{
-    background-color: #e6007e;
-  }
+  // &.active{
+  //   background-color: #e6007e;
+  // }
 
 
 `;
@@ -93,5 +94,4 @@ import styled from "styled-components";
 // // }
 
 // // export default Link
-
 
