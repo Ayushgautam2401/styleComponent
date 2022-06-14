@@ -31,8 +31,8 @@ function Home() {
         <ContentArea>
           <TitleBar>
             <TitleLabel>{location.pathname === '/client' ? (
-              <p>Client</p>
-            ) : location.pathname ==='/invoice'?(<p>invoice</p>):null} </TitleLabel>
+              <p>Client List</p>
+            ) : location.pathname ==='/client/Clientform/' ? (<p>Client Form</p>) : location.pathname ==='/invoice'?(<p>Invoice List</p>): location.pathname === '/invoice/Invoiceform/' ? (<p>Invoice Form</p>):null} </TitleLabel>
 
           </TitleBar>
           <Content>

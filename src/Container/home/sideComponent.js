@@ -19,7 +19,7 @@ const SideComponent = () => {
           }
             
           >
-            <SidebarOption>Client</SidebarOption>
+            Client
           </StyledNavLink>
           <StyledNavLink
           activeClassName="active"
@@ -31,7 +31,7 @@ const SideComponent = () => {
                 textDecoration:"none",
               }}
             >
-            <SidebarOption>Invoice</SidebarOption>
+            Invoice
           </StyledNavLink>
         
         </Sidebar>

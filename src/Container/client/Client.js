@@ -29,7 +29,7 @@ function Client() {
           <td>{phoneNumber}</td>
           <td><button className="update" onClick={() => {
             handleClient(raw[clientID])
-          }}>update</button></td>
+          }}>Update</button></td>
         </tr>
       </tbody>
     )
@@ -37,7 +37,7 @@ function Client() {
 
   return (
     <Fragment>
-      <Styledbutton className="add" onClick={() => { handleClient() }}>Add</Styledbutton>
+      <Styledbutton  onClick={() => { handleClient() }}>Add</Styledbutton>
       {
          <Table striped bordered hover>
          <thead>

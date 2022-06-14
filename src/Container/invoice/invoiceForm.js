@@ -16,7 +16,7 @@ const invoiceForm = (props) => {
 
     <Fragment>
       <FormContainer>
-        <Styledheader>Invoice Form</Styledheader>
+       
         <Form onSubmit={handleSubmit(handleFormSubmit)}>
         <FormHeaderContainer>
           <Field

@@ -2,7 +2,7 @@ export const theme ={
     Text:{
         default:'black',
         primary:'grey',
-        secondary:'green'
+        secondary:'#197A56',
     },
     background:{
         main:'#FFFF',
