@@ -71,11 +71,14 @@ export const SidebarOption = styled.div.attrs((props) => {
   border-radius: 0.4rem;
   font-weight: bold;
   justify-content: center;
+  :active{
+    background-color: grey;
+  }
   :only-child{
     font-weight: bold;
     color:black;
     text-decoration:none;
-  
+    
   };
   
 `
