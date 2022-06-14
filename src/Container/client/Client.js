@@ -21,8 +21,8 @@ function Client() {
   const renderClientItem = (clientID, index) => {
     const { id, name, phoneNumber, address } = raw[clientID] || {};
     return (
-      <tbody>
-        <tr key={id} >
+      <tbody key={id}>
+        <tr key={id}>
           <td>{id}</td>
           <td>{name}</td>
           <td>{address}</td>
