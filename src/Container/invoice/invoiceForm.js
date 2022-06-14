@@ -74,7 +74,7 @@ const renderInvoiceOrders = ({ fields, meta: { error, submitFailed } }) => (
 
 const invoiceForm = (props) => {
   console.log("aajaa",props)
-  const { handleSubmit, reset, handleFormSubmit, clientOptions } = props
+  const { handleSubmit,  handleFormSubmit, clientOptions } = props
   return (
     <>
 

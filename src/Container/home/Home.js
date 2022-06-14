@@ -19,7 +19,6 @@ import { Switch, Route } from "react-router-dom";
 import ClientForm from "Container/client/clientFormPage";
 import InvoiceForm from "Container/invoice/invoiceFormPage";
 import { Redirect } from "react-router-dom";
-import Makerpdf from "Container/invoice/invoicePDF/pdf_maker";
 
 function Home() {
   return (
@@ -61,9 +60,9 @@ function Home() {
 
               <Route exact path="/invoice" component={Invoice}/>
               <Route  path = "/invoice/Invoiceform/:id?" component={InvoiceForm}/>
-              <Route path='/PDF/:invoiceID' component={Makerpdf}/>
+              {/* <Route path='PDF/:invoiceID' component={Makerpdf}/> */}
               {/* <Redirect to="/invoice"/> */}
-              {/* <Redirect to="/client"/> */}
+              <Redirect to="/client"/>
             </Switch>
           </Content>
         </ContentArea>

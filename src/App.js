@@ -18,7 +18,6 @@ const GlobalStyle = createGlobalStyle`
    margin:0;
    padding:0;
    font-family: 'Poppins', sans-serif;
-   /* font-family: 'Courier New', Courier, monospace; */
    height: 100vh;
    width: 100vw;
  }`;

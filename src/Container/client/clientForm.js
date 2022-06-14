@@ -14,7 +14,7 @@ const ClientForm = (props) => {
       <Styledheader>Client Form</Styledheader>
       <Form onSubmit={handleSubmit(handleFormSubmit)}>
         <Field
-          name="name"
+          name="username"
           type="text"
           placeholder='Name'
           component={FormInput}
