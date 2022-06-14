@@ -13,7 +13,7 @@ const LoginFormComponent = (props) => {
     <Form onSubmit={handleSubmit((formValues)=>{
       console.log(formValues)
       })} >
-      <InputLabel>Username</InputLabel>
+      <InputLabel>Name</InputLabel>
       <Field
         name="name"
         component={FormInput}

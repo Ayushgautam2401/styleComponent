@@ -5,13 +5,10 @@ import { theme } from "./theme";
 //import Home from "./Container/home/Home";
 //import {Switch, Route} from "react-router-dom";
 import History from "Container/History/History";
- 
 import LoginPage from "./Container/login/LoginPage";
 import { Route, Switch } from "react-router-dom";
 import Home from "Container/home/Home";
-
-
-
+import { Pdf_Maker } from "Container/invoice/invoicePDF/pdfMaker";
 const GlobalStyle = createGlobalStyle`
  html,body{
    font-size:16px;
@@ -28,8 +25,8 @@ function App() {
     <ThemeProvider theme={theme}>
      <GlobalStyle />
       <Switch>
-        <Route exact path="/Login" component={LoginPage}/>
-        <Route path="/" component={Home}/>  
+        <Route  path="/Login" component={LoginPage}/>
+        <Route path="/" component={Home}/>
       </Switch>
     </ThemeProvider>
   );
