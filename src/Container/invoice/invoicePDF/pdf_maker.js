@@ -5,9 +5,6 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getInvoiceState } from 'Store/Selector';
 import { invoiceActions } from 'Store/Action/invoiceActions';
-
-
-
 const Makerpdf = () => {
   const { invoiceID } = useParams();
   const dispatch = useDispatch();

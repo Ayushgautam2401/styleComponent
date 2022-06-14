@@ -1,6 +1,6 @@
 import { Styledbutton } from 'Components/Inputs/button'
 import FormInput from 'Components/Inputs/formInputs'
-import { Styledheader } from 'Components/Inputs/header'
+import Styledheader from "Components/Inputs/header"
 import { Styledinput } from 'Components/Inputs/input'
 import { Styledtext } from 'Components/Inputs/text'
 import { RenderSelectInput } from 'Components/selectComponent/selectComponent'
@@ -8,7 +8,7 @@ import React from 'react';
 import { Field, Form, reduxForm, FieldArray } from 'redux-form'
 import { FormContainer, FormHeaderContainer } from './invoicePDF/FormStyling'
 import { required } from 'Util/validate';
-
+import { formStyle } from './invoicePDF/FormStyling'
 
 
 const current = new Date();
@@ -79,16 +79,17 @@ const invoiceForm = (props) => {
   return (
     <>
 
-      {/* <FormContainer> */}
-        <Styledheader>Invoice Form</Styledheader>
+      <FormContainer>
+        
         <Form onSubmit={handleSubmit(handleFormSubmit)}>
+        {/* <Styledheader>InvoiceForm</Styledheader> */}
+      
           <Field
             name="invoiceDate"
             component="input"
             type="text"
             placeholder="invoiceDate"
             label="Date"
-
           />
           <Field
             name="purposeofInvoice"
@@ -123,7 +124,7 @@ const invoiceForm = (props) => {
           <FieldArray name="descriptions" component={renderInvoiceOrders} />
           <Styledbutton>Submit</Styledbutton>
         </Form>
-      {/* </FormContainer> */}
+      </FormContainer>
     </>
   );
 }

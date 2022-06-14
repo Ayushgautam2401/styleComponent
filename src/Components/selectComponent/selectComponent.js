@@ -1,14 +1,6 @@
-<<<<<<< HEAD
-import React, { Component } from 'react'
-// import theme from ''
-import Select from 'react-select'
-import styled from 'styled-components'
-=======
+
 import React from 'react'
 import Select from 'react-select'
-
-
->>>>>>> styledComponent
 export const RenderSelectInput = ({input, options, ...props}) => {
   console.log ("ptani",input,props)
   return (

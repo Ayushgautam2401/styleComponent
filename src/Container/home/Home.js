@@ -1,5 +1,6 @@
 import Invoice from "Container/invoice/Invoice";
 import React, { Fragment } from "react";
+import { useLocation } from "react-router-dom";
 import {
   Layout,
   DisplayArea,
@@ -11,6 +12,7 @@ import {
   Content,
   Footer,
 } from "./HomeStyling";
+
 import { Header } from "./HomeStyling";
 import Client from "Container/client/Client";
 // import { NavLink } from "react-router-dom";
@@ -20,37 +22,20 @@ import ClientForm from "Container/client/clientFormPage";
 import InvoiceForm from "Container/invoice/invoiceFormPage";
 import { Redirect } from "react-router-dom";
 import { Pdf_Maker } from "Container/invoice/invoicePDF/pdfMaker";
-
+import SideComponent from "./sideComponent";
 function Home() {
+  const location =useLocation();
   return (
     <Layout>
       <Header />
       <DisplayArea>
-        <Sidebar>
-          <NavLink
-<<<<<<< HEAD
-         exact activeClassName="active"
-=======
-             activeClassName="active"
->>>>>>> styledComponent
-            to="/client"
-            activeStyle={{
-              fontWeight: "bold",
-              backgroundColor: "red",
-
-            }}
-          >
-            <SidebarOption>Client</SidebarOption>
-          </NavLink>
-          <NavLink
-            to="/invoice"
-          >
-            <SidebarOption>Invoice</SidebarOption>
-          </NavLink>
-        </Sidebar>
+       <SideComponent/>
         <ContentArea>
           <TitleBar>
-            <TitleLabel> Title : </TitleLabel>
+            <TitleLabel>{location.pathname === '/client' ? (
+              <p>Client</p>
+            ) : location.pathname ==='/invoice'?(<p>invoice</p>):null} </TitleLabel>
+
           </TitleBar>
           <Content>
             <Switch>

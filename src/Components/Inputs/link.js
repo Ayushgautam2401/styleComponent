@@ -13,9 +13,9 @@ import styled from "styled-components";
     background-color: grey;
     /* background: blue; */
   }
-  &.active{
-    background-color: #e6007e;
-  }
+  // &.active{
+  //   background-color: #e6007e;
+  // }
 
 
 `;

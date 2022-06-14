@@ -3,12 +3,14 @@ import { Styledinput } from './input'
 import { RenderField } from 'Util/validate'
 import { PasswordInput } from 'Container/login/LoginpageStyling'
 import { Styledtext } from './text'
+// import StyledTextarea from 'Components/Inputs/textarea'
 
 const FormInput = ({label, input, meta, placeholder} ) => {
   return (
     <div>
         <Styledtext>{label}</Styledtext>
          <Styledinput {...input} placeholder={placeholder} value={input.value || ""} />
+         {/* <StyledTextarea/> */}
          {/* <PasswordInput {...props.input} value={props.input.value || ""} /> */}
         <RenderField {...meta}/>
     </div>

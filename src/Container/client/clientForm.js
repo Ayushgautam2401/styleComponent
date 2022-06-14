@@ -6,7 +6,7 @@ import { Styledtext } from 'Components/Inputs/text'
 import { Field, Form, reduxForm } from 'redux-form'
 import { RenderField, validate } from 'Util/validate'
 import FormInput from 'Components/Inputs/formInputs'
-
+// import StyledTextarea from 'Components/Inputs/textarea'
 const ClientForm = (props) => {
   const { handleSubmit, handleFormSubmit } = props
   return (
