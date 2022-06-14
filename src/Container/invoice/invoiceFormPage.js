@@ -83,7 +83,7 @@ const InvoiceFormPage = props => {
     formData = {
       ...formData,
       clientFirm: clientDetail,
-      invoiceRaisedBy: "Ashutosh Sharma",
+      invoicedRaisedBy: "Ashutosh Sharma",
       firmDetail: {
         name: "Biz Tecno",
         addressLine1: "Plot J7, FCS Building, Rajiv Gandhi Technology Park",

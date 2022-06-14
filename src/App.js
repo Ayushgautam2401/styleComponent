@@ -25,7 +25,7 @@ function App() {
     <ThemeProvider theme={theme}>
      <GlobalStyle />
       <Switch>
-        <Route exact path="/Login" component={LoginPage}/>
+        <Route  path="/Login" component={LoginPage}/>
         <Route path="/" component={Home}/>
       </Switch>
     </ThemeProvider>
