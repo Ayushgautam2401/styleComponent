@@ -2,21 +2,20 @@ import React, { Fragment } from 'react'
 import { Styledbutton } from 'Components/Inputs/button'
 import { Styledheader } from 'Components/Inputs/header'
 import { normalizePhone, required } from 'Util/validate'
-import { Styledtext } from 'Components/Inputs/text'
 import { Field, Form, reduxForm } from 'redux-form'
-import { RenderField, validate } from 'Util/validate'
 import FormInput from 'Components/Inputs/formInputs'
-// import StyledTextarea from 'Components/Inputs/textarea'
+import { FormContainer } from 'Container/invoice/invoicePDF/FormStyling'
+import { textArea } from 'Components/Inputs/input'
 const ClientForm = (props) => {
   const { handleSubmit, handleFormSubmit } = props
   return (
     <Fragment>
+      <FormContainer>
       <Styledheader>Client Form</Styledheader>
       <Form onSubmit={handleSubmit(handleFormSubmit)}>
 
         <Field
           name="name"
-          type="text"
           placeholder='Name'
           component={FormInput}
           validate={[required]}
@@ -25,7 +24,6 @@ const ClientForm = (props) => {
 
         <Field
           name="phoneNumber"
-          type="text"
           placeholder='Phone Number'
           component={FormInput}
           validate={[required]}
@@ -34,7 +32,6 @@ const ClientForm = (props) => {
         />
         <Field
           name="address"
-          type="text"
           placeholder='Address'
           component={FormInput}
           validate={[required]}
@@ -42,6 +39,7 @@ const ClientForm = (props) => {
         />
         <Styledbutton>Submit</Styledbutton>
       </Form>
+      </FormContainer>
     </Fragment>
   )
 }

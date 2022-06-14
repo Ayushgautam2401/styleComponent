@@ -7,7 +7,6 @@ import { theme } from '../../theme';
 import { setTitleAction } from '../../Store/Action/action';
 import { useSelector } from 'react-redux';
 import { getTitle } from '../../Store/Selector';
-import { TITLES } from '../../constant';
 
 
  export const Styledinput = styled.input.attrs(props => {
@@ -26,6 +25,12 @@ import { TITLES } from '../../constant';
   margin-top: 5px;
   margin-bottom: 5px;
   font-family: 'Poppins', sans-serif;
+  `
+export const textArea = styled(Styledinput).attrs({
+    type: "textarea",
+  })`
+   background-color: ${props => props.background};
+   color: ${props => props.color};
   `
   const PasswordInput = styled(Styledinput).attrs({
     type: "password",
