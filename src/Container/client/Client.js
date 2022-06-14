@@ -1,8 +1,4 @@
 import React from "react";
-<<<<<<< HEAD
-//import { useNavigate } from "react-router-dom";
-=======
->>>>>>> df8472aeff8c93151eeb2334a7533fe7c640a007
 import { getClientState } from 'Store/Selector'
 import { useSelector } from "react-redux";
 import { Table } from "react-bootstrap";
