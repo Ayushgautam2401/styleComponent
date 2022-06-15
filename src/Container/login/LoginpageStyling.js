@@ -50,7 +50,8 @@ export const Heading = styled.div.attrs((props) => {
   font-weight: bold;
 `;
 
-export const FormContainer = styled.div` display:flex;
+export const FormContainer = styled.div` 
+display:flex;
 flex-direction: column;
  height:80%;
  width: 60%;

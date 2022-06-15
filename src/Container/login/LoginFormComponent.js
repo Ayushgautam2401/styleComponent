@@ -28,10 +28,7 @@ const LoginFormComponent = (props) => {
         component={PasswordInput}
         type="password"
       />
-
-
       <Loginbutton>Log In</Loginbutton>
-
     </Form>
   )
 }

@@ -48,8 +48,7 @@ function Client() {
          </thead>
             {
               list?.map(renderClientItem)
-            }
-          
+            }   
         </Table>
       }
     </Fragment>

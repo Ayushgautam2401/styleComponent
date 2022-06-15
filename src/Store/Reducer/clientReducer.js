@@ -18,7 +18,7 @@ const INITIAL_STATE = {
       "phoneNumber": "9888824240"
     },
     "BIZ_CLIENT_2" : {
-      "id": "BIZ__2",
+      "id": "BIZ_CLIENT_2",
       "name": "BIZ",
       "address": " J7 FCS BUILDING",
       "phoneNumber": "96971782782"

@@ -14,7 +14,7 @@ function SideComponent (){
             <SidebarOption>Client</SidebarOption>
           </NavLink>
           <NavLink
-        //   activeClassName="active"
+          activeClassName="active"
             to="/invoice"
             // activeStyle={{
             //     fontWeight: "bold",
