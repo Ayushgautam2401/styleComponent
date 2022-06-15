@@ -1,6 +1,7 @@
 import Invoice from "Container/invoice/Invoice";
 import React from "react";
 import { useLocation } from "react-router-dom";
+import Button from "../../Components/Inputs/button";
 import {
   Layout,
   DisplayArea,
@@ -41,7 +42,7 @@ function Home() {
 
   return (
     user ? <Layout>
-      <Header><Styledbutton variant='outline-dark'>Thank You</Styledbutton></Header>
+      <Header><Styledbutton variant='outline-dark'>Thankyou</Styledbutton></Header>
       <DisplayArea>
         <SideComponent />
         <ContentArea>
