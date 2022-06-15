@@ -17,18 +17,19 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
 export const renderInvoiceOrders = ({ fields, meta: { error, submitFailed } }) => (
     <ul>
   
-      <li>
+      <ul>
         {submitFailed && error && <span>{error}</span>}
-      </li>
+      </ul>
       {fields.map((member, index) => (
-        <li key={index}>
+        <ul key={index}>
           <Styledbutton
             type="button"
             title="Remove Member"
             onClick={() => fields.remove(index)}
           >Remove</Styledbutton>
-          <Styledheader>Description and Amount{index + 1}</Styledheader>
+          <Styledheader>Description and Amount {index + 1}</Styledheader>
           <FormHeaderContainer>
+            
           <Field
             name={`${member}.detail`}
             type="text"
@@ -50,14 +51,14 @@ export const renderInvoiceOrders = ({ fields, meta: { error, submitFailed } }) =
             component={renderField}
             label="Amount"
           />
-        </li>
+        </ul>
         
       ))}
-      <li>
+      <ul>
       <Styledbutton type="button" onClick={() => fields.push({})}>
-          Add Decription
+          Add Description
         </Styledbutton>
         {submitFailed && error && <span>{error}</span>}
-      </li>
+      </ul>
     </ul>
   )

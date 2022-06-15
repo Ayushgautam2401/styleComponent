@@ -71,12 +71,16 @@ export const SidebarOption = styled.div.attrs((props) => {
   border-radius: 0.4rem;
   font-weight: bold;
   justify-content: center;
-  :only-child{
+ 
+    
+  
+:only-child{
     font-weight: bold;
     color:black;
     text-decoration:none;
-  
+    
   };
+  
   
 `
 // Main Content Area in Display Area
@@ -91,11 +95,14 @@ export const ContentArea = styled.div
 `;
 // Title Bar in Main Content Area
 export const TitleBar = styled.div`
- 
+display :flex ;
+flex-direction: row;
   width: 100%;
   height: 50px;
   background-color: beige;
   border-radius: 0.8rem;
+  justify-content: center;
+  
  
 `;
 
@@ -114,12 +121,25 @@ export const TitleLabel = styled.div.attrs((props) => {
 })`
   color: ${(props) => props.tc};
   font-size: ${(props) => props.ts};
-  width: 20%;
-  float: left;
-  padding-left: 1rem;
   padding-top: 0.5rem;
   font-weight: bold;
+ // text-decoration: underline;
+  font-weight: bold;
+  /* position:absolute;
+  justify-self: center; */
+  
+  
 `;
+
+export const ButtonContainer = styled.div `
+              position:flex-end;
+              border:2px solid black ;
+              width: 20%;
+              padding-left:20%;
+              /* position: absolute; */
+              float: right;
+
+`
 
 // Inner Content Area in Main Content Area
 export const Content = styled.div`
@@ -142,9 +162,34 @@ export const Footer = styled.footer.attrs((props) => {
   background-color: ${(props) => props.bg};
 `
 
-//  export const StyledNavLink = styled.a(NavLink)`
-//  text-decoration: none;
-//    color: black;
-//   font-weight: bold;
- 
-//  `
+ export const StyledNavLink = styled(NavLink).attrs((props) => {
+  const {
+    theme: {
+      background: { primary, ...restBg },
+    },
+  } = props;
+  return {
+    bg: restBg[props.bg] || primary,
+  };
+})`
+ text-decoration: none;
+   color: black;
+  font-weight: bold;
+  display: flex;
+  width: 98%;
+  height: 3rem; 
+  background-color: ${(props) => props.bg};
+  border: 2px solid black;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  align-items: center;
+  border-radius: 0.4rem;
+  font-weight: bold;
+  font-size: 1rem;
+  justify-content: center;
+  :hover{
+    text-decoration: none;
+    color:black;
+  }
+  
+ `

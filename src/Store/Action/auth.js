@@ -1,10 +1,10 @@
 export const LOGIN_FETCH = "LOGIN_FETCH";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
-export const LOGIN_FAILURE = "LOGIN_FAILURE";
+export const LOGIN_FAILIURE = "LOGIN_FAILURE";
 
 export const CURRENT_USER_FETCH = "CURRENT_USER_FETCH";
 export const CURRENT_USER_SUCCESS = "CURRENT_USER_SUCCESS";
-export const CURRENT_USER_FAILURE = "CURRENT_USER_FAILURE";
+export const CURRENT_USER_FAILIURE = "CURRENT_USER_FAILURE";
 
 
 
@@ -18,7 +18,7 @@ export const loginActions = {
         payload
     }),
     failure: (error) => ({
-        type: LOGIN_FAILURE,
+        type: LOGIN_FAILIURE,
         payload: {error}
     }),
 }
@@ -33,7 +33,7 @@ export const currentUserActions = {
         payload: {user}
     }),
     failure: (error) => ({
-        type: CURRENT_USER_FAILURE,
+        type: CURRENT_USER_FAILIURE,
         payload: {error}
     }),
 }
