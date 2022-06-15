@@ -13,13 +13,8 @@ import { LOGIN_FETCH,LOGIN_SUCCESS,LOGIN_FAILURE, CURRENT_USER_FETCH,CURRENT_USE
 
 const INITIAL_STATE = {
   user: undefined,
-<<<<<<< HEAD
-  // token: localStorage.getItem("userData"),
-  isAuthenticated: false,
-=======
   token: localStorage.getItem("token"),
   isAuthenticated: !!localStorage.getItem("token"),
->>>>>>> theme
   fetching: false,
   error: undefined
 }
