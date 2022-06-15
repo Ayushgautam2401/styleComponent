@@ -5,10 +5,13 @@ import { Table } from "react-bootstrap";
 import { Styledbutton } from "../../Components/Inputs/button";
 import { useHistory } from "react-router-dom";
 import { Fragment } from "react"; 
+
+
+
 function Client() {
 
   const history = useHistory();
-  const { list, raw } = useSelector(getClientState);
+  const {list, raw} = useSelector(getClientState);
 
   const handleClient = (client = {}) => {
     const { id } = client;
@@ -18,15 +21,15 @@ function Client() {
   const renderClientItem = (clientID, index) => {
     const { id, name, phoneNumber, address } = raw[clientID] || {};
     return (
-      <tbody>
-        <tr key={id} >
+      <tbody key={id}>
+        <tr key={id}>
           <td>{id}</td>
           <td>{name}</td>
           <td>{address}</td>
           <td>{phoneNumber}</td>
           <td><button className="update" onClick={() => {
             handleClient(raw[clientID])
-          }}>update</button></td>
+          }}>Update</button></td>
         </tr>
       </tbody>
     )
@@ -34,7 +37,7 @@ function Client() {
 
   return (
     <Fragment>
-      <Styledbutton className="add" onClick={() => { handleClient() }}>Add</Styledbutton>
+      <Styledbutton  onClick={() => { handleClient() }}>Add</Styledbutton>
       {
          <Table striped bordered hover>
          <thead>

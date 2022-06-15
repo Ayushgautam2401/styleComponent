@@ -3,10 +3,13 @@ import React, { useEffect,useState  } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, useParams } from "react-router-dom"
 import { invoiceActions, invoiceUpdateActions } from 'Store/Action/invoiceActions'
+//import { getInvoiceState,getClientState } from 'Store/Selector/index'
+//import './invoiceForm.scss'
 import { getInvoiceState,getClientState } from 'Store/Selector'
 import InvoiceForm from './invoiceForm'
-import { Button } from 'react-bootstrap';
+//import { Button } from 'react-bootstrap';
 import {clientListActions } from 'Store/Action/clientActions'
+import { Styledbutton } from 'Components/Inputs/button'
 
 
 
@@ -106,8 +109,9 @@ const InvoiceFormPage = props => {
   }
   return (
     <div className='formdesign'>
-      <Button variant='outline-dark' onClick={() => history.push("/invoice")}>Back</Button>
+      <Styledbutton variant='outline-dark' onClick={() => history.push("/invoice")}>Back</Styledbutton>
       <InvoiceForm clientOptions={clientOptions} handleFormSubmit={handleFormSubmit} initialValues={id ? {...invoice, clientFirm: {label: invoice.clientFirm && invoice.clientFirm.name, value: invoice.clientFirm && invoice.clientFirm.id}} : { invoiceDate: currentDate }} />
+      <Styledbutton onClick={handleFormSubmit}>Submit</Styledbutton>
     </div>
   )
 }

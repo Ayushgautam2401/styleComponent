@@ -27,8 +27,9 @@ export const renderInvoiceOrders = ({ fields, meta: { error, submitFailed } }) =
             title="Remove Member"
             onClick={() => fields.remove(index)}
           >Remove</Styledbutton>
-          <Styledheader>Description and Amount{index + 1}</Styledheader>
+          <Styledheader>Description and Amount {index + 1}</Styledheader>
           <FormHeaderContainer>
+            
           <Field
             name={`${member}.detail`}
             type="text"
@@ -55,7 +56,7 @@ export const renderInvoiceOrders = ({ fields, meta: { error, submitFailed } }) =
       ))}
       <ul>
       <Styledbutton type="button" onClick={() => fields.push({})}>
-          Add Decription
+          Add Description
         </Styledbutton>
         {submitFailed && error && <span>{error}</span>}
       </ul>
