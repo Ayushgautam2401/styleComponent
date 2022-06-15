@@ -44,9 +44,6 @@ export const renderInvoiceOrders = ({ fields, meta: { error, submitFailed } }) =
           </FormHeaderContainer>
           <Field
             name={`${member}.amount`}
-            type="number"
-            pattern='[0-9]*'
-            inputMode='numeric'
             component={renderField}
             label="Amount"
           />
