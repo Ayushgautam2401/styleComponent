@@ -61,7 +61,7 @@ const invoiceForm = (props) => {
             options= {clientOptions}
           />
           <FieldArray name="descriptions" component={renderInvoiceOrders} />
-        
+          <Styledbutton onClick={handleFormSubmit}>Submit</Styledbutton>
         </Form>
       </FormContainer>
       </Fragment>

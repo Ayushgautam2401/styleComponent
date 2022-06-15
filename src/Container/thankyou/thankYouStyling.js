@@ -33,8 +33,17 @@ export const Message = styled.text.attrs((props) => {
     color: beige;
     font-size: ${(props) => props.ts};
    align-self: center;
-   font-size: larger;
    font-weight: bolder;
    
 
+`
+export const ThanksButton = styled.button`
+   background-color: black;
+   color:white;
+   border-radius: 5px;
+   height:2.5rem;
+   width:5rem;
+  margin-left: 92%;
+  align-self: center;
+   
 `
