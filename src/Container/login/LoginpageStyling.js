@@ -20,10 +20,7 @@ export const InnerContainer = styled.div`display:flex;
     position: absolute;
     border: 2px solid black;
     align-self: center;
-
-   
-    
-    
+    min-height: 400px;
 
 `
 
