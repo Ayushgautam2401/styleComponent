@@ -23,10 +23,24 @@ import InvoiceForm from "Container/invoice/invoiceFormPage";
 import { Redirect } from "react-router-dom";
 import { Pdf_Maker } from "Container/invoice/invoicePDF/pdfMaker";
 import SideComponent from "./sideComponent";
+import { useEffect } from "react";
+import { getAuthState } from "Store/Selector";
+import { useDispatch, useSelector } from "react-redux";
+import { currentUserActions } from "Store/Action/auth";
 function Home() {
   const location =useLocation();
+  const dispatch = useDispatch();
+  const { user } = useSelector(getAuthState);
+
+
+  useEffect(() => {
+    // fetch user
+    dispatch(currentUserActions.request())
+  }, [])
+
+
   return (
-    <Layout>
+    user ? <Layout>
       <Header />
       <DisplayArea>
        <SideComponent/>
@@ -51,6 +65,7 @@ function Home() {
       </DisplayArea>
       <Footer></Footer>
     </Layout>
+    : <div>Lodaing ... </div>
   );
 }
 

@@ -1,53 +1,50 @@
 import { Field, reduxForm, Form } from 'redux-form'
 import { useEffect } from 'react'
-import { InputLabel, Loginbutton, Styledinput } from './LoginpageStyling'
-import { PasswordInput } from './LoginpageStyling'
-import { useDispatch,useSelector } from 'react-redux'
-import { loginActions } from 'Store/Action/auth'
-import { Styledbutton } from 'Components/Inputs/button'
+import { useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux'
+
+
 import FormInput from 'Components/Inputs/formInputs'
-import { required } from 'Util/validate'
-import { getAuthState } from 'Store/Selector'
-import { useHistory } from 'react-router-dom'
+import { Loginbutton } from './LoginpageStyling';
+import { loginActions } from 'Store/Action/auth';
+import { required } from 'Util/validate';
+import { getAuthState } from 'Store/Selector';
+
+
 const LoginFormComponent = (props) => {
-  // const { handleSubmit } = props
+  const { handleSubmit } = props
   const history = useHistory();
   const dispatch = useDispatch();
-  const {token } = useSelector(getAuthState);
+  const { isAuthenticated } = useSelector(getAuthState);
+
   useEffect(() => {
-    if (token) {
+    if (isAuthenticated) {
       history.push("/");
     }
-  }, [token]);
-  const handleFormSubmit = ()=>{
-    dispatch(loginActions.request())
+  }, [isAuthenticated]);
+
+
+  const handleFormSubmit = (formdata) => {
+    dispatch(loginActions.request(formdata))
   }
 
   return (
-    <Form onSubmit={props.handleSubmit(handleFormSubmit)}>
-      {/* <Form onSubmit={handleSubmit((formValues)=>{ 
-       console.log(formValues)
-       })} > */}
-      <InputLabel>Name</InputLabel>
+    <Form onSubmit={handleSubmit(handleFormSubmit)}>
       <Field
-        name="name"
+        name="email"
         component={FormInput}
-        validate={[ required]}
-        placeholder="User ID"
+        validate={[required]}
+        placeholder="Email"
+        label="Email"
       />
-
-
-      <InputLabel>Password</InputLabel>
       <Field
         name="password"
-        component={PasswordInput}
-        // validate={[ required]}
+        component={FormInput}
         type="password"
+        label="Password"
+      // validate={[ required]}
       />
-
-
       <Loginbutton>Log In</Loginbutton>
-
     </Form>
   )
 }
