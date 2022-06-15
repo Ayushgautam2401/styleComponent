@@ -3,8 +3,9 @@ import styled from 'styled-components';
 export const HomepageLayout = styled.div`
     display: flex;
    height: 100vh;
+
     width: 100vw;
-    background-color:#197A56;
+    background-color:${(props) => props.bg};
     position: relative;
     justify-items: center;
     justify-content: center;
