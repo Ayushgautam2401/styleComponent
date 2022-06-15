@@ -102,6 +102,7 @@ flex-direction: row;
   background-color: beige;
   border-radius: 0.8rem;
   justify-content: center;
+  
  
 `;
 
@@ -122,9 +123,23 @@ export const TitleLabel = styled.div.attrs((props) => {
   font-size: ${(props) => props.ts};
   padding-top: 0.5rem;
   font-weight: bold;
-  justify-self: center;
+ // text-decoration: underline;
+  font-weight: bold;
+  /* position:absolute;
+  justify-self: center; */
+  
   
 `;
+
+export const ButtonContainer = styled.div `
+              position:flex-end;
+              border:2px solid black ;
+              width: 20%;
+              padding-left:20%;
+              /* position: absolute; */
+              float: right;
+
+`
 
 // Inner Content Area in Main Content Area
 export const Content = styled.div`

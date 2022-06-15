@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import { Styledbutton } from 'Components/Inputs/button'
-import { Styledheader } from 'Components/Inputs/header'
 import { normalizePhone, required } from 'Util/validate'
 import { Field, Form, reduxForm } from 'redux-form'
 import FormInput from 'Components/Inputs/formInputs'

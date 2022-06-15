@@ -9,6 +9,7 @@ import {
   TitleLabel,
   Content,
   Footer,
+  ButtonContainer,
 } from "./HomeStyling";
 
 import { Header } from "./HomeStyling";
@@ -20,20 +21,27 @@ import { Redirect } from "react-router-dom";
 import { Pdf_Maker } from "Container/invoice/invoicePDF/pdfMaker";
 import SideComponent from "./sideComponent";
 
-
 function Home() {
-  const location =useLocation();
+  const location = useLocation();
   return (
     <Layout>
       <Header />
       <DisplayArea>
-       <SideComponent/>
+        <SideComponent />
         <ContentArea>
           <TitleBar>
-            <TitleLabel>{location.pathname === '/client' ? (
-              <p>Client List</p>
-            ) : location.pathname ==='/client/Clientform/' ? (<p>Client Form</p>) : location.pathname ==='/invoice'?(<p>Invoice List</p>): location.pathname === '/invoice/Invoiceform/' ? (<p>Invoice Form</p>):null} </TitleLabel>
-
+            <TitleLabel>
+              {location.pathname === "/client" ? (
+                <p>Client List</p>
+              ) : location.pathname === "/client/Clientform/" ? (
+                <p>Client Form</p>
+              ) : location.pathname === "/invoice" ? (
+                <p>Invoice List</p>
+              ) : location.pathname === "/invoice/Invoiceform/" ? (
+                <p>Invoice Form</p>
+              ) : null}{" "}
+            </TitleLabel>
+            {/* <ButtonContainer></ButtonContainer> */}
           </TitleBar>
           <Content>
             <Switch>
@@ -41,8 +49,8 @@ function Home() {
               <Route path="/client/Clientform/:id?" component={ClientForm} />
               <Route exact path="/invoice" component={Invoice} />
               <Route path="/invoice/Invoiceform/:id?" component={InvoiceForm} />
-              <Route path= "/invoice_Pd/:invoiceID" component={Pdf_Maker}/>
-              <Redirect to="/client"/>
+              <Route path="/invoice_Pd/:invoiceID" component={Pdf_Maker} />
+              <Redirect to="/client" />
             </Switch>
           </Content>
         </ContentArea>

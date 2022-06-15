@@ -8,6 +8,8 @@ export const HomepageLayout = styled.div`
     position: relative;
     justify-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    
 
 
   `
@@ -20,6 +22,8 @@ export const InnerContainer = styled.div`display:flex;
     position: absolute;
     border: 2px solid black;
     align-self: center;
+   // flex-wrap: wrap;
+    //flex-shrink:70%;
 
    
     
@@ -28,7 +32,7 @@ export const InnerContainer = styled.div`display:flex;
 `
 export const FormHeader = styled.div`display:flex;
 
-  height: 20%;
+  height:20%; 
   width: 100%;
   justify-content: center;
   align-items: center;
@@ -54,12 +58,13 @@ export const Heading = styled.div.attrs((props) => {
 
 export const FormContainer = styled.div` display:flex;
 flex-direction: column;
- height:80%;
+ height:calc(100% - 80.95px);
  width: 60%;
  justify-content:space-between;
- align-items: center;
+ //align-items: center;
  align-self: center;
-
+ //flex-wrap: calc(100% - 80.95px);
+//border: 2px solid black;
  
 `
 export const InputLabel = styled.label.attrs((props) => {
