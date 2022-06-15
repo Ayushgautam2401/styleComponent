@@ -3,8 +3,10 @@ import { Styledbutton } from 'Components/Inputs/button'
 import { normalizePhone, required } from 'Util/validate'
 import { Field, Form, reduxForm } from 'redux-form'
 import FormInput from 'Components/Inputs/formInputs'
-import { FormContainer } from 'Container/invoice/invoicePDF/FormStyling'
+import { FormContainer, FormHeaderContainer } from 'Container/invoice/invoicePDF/FormStyling'
 import { textArea } from 'Components/Inputs/input'
+import Textarea from 'Components/Inputs/textarea'
+
 const ClientForm = (props) => {
   const { handleSubmit, handleFormSubmit } = props
   return (
@@ -12,7 +14,7 @@ const ClientForm = (props) => {
       <FormContainer>
      
       <Form onSubmit={handleSubmit(handleFormSubmit)}>
-
+<FormHeaderContainer>
         <Field
           name="name"
           placeholder='Name'
@@ -29,6 +31,7 @@ const ClientForm = (props) => {
           normalize={normalizePhone}
           label="Phone Number"
         />
+        </FormHeaderContainer>
         <Field
           name="address"
           placeholder='Address'
