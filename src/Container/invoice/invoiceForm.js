@@ -59,7 +59,7 @@ const invoiceForm = (props) => {
             options= {clientOptions}
           />
           <FieldArray name="descriptions" component={renderInvoiceOrders} />
-        
+        <Styledbutton>submit</Styledbutton>
         </Form>
       </FormContainer>
       </Fragment>

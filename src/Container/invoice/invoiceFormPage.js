@@ -111,7 +111,6 @@ const InvoiceFormPage = props => {
     <div className='formdesign'>
       <Styledbutton variant='outline-dark' onClick={() => history.push("/invoice")}>Back</Styledbutton>
       <InvoiceForm clientOptions={clientOptions} handleFormSubmit={handleFormSubmit} initialValues={id ? {...invoice, clientFirm: {label: invoice.clientFirm && invoice.clientFirm.name, value: invoice.clientFirm && invoice.clientFirm.id}} : { invoiceDate: currentDate }} />
-      <Styledbutton onClick={handleFormSubmit}>Submit</Styledbutton>
     </div>
   )
 }

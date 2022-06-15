@@ -41,7 +41,7 @@ function Home() {
 
   return (
     user ? <Layout>
-      <Header><Styledbutton variant='outline-dark'>Thank You</Styledbutton></Header>
+      <Header><button variant='outline-dark'onClick={()=>{history.push('/Thankyou')}}>Thank You</button></Header>
       <DisplayArea>
         <SideComponent />
         <ContentArea>
