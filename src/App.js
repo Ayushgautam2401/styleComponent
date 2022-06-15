@@ -17,7 +17,6 @@ const GlobalStyle = createGlobalStyle`
    margin:0;
    padding:0;
    font-family: 'Poppins', sans-serif;
-   /* font-family: 'Courier New', Courier, monospace; */
    height: 100vh;
    width: 100vw;
  }`;
@@ -28,6 +27,7 @@ function App() {
      <GlobalStyle />
       <Switch>
         <Route  path="/Login" component={LoginPage}/>
+        
         <Route path="/" component={WithAuth(Home)}/>
         <Route path="/Thankyou" component={WithAuth(ThankyouPage)}/>
       </Switch>

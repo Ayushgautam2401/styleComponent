@@ -24,7 +24,10 @@ import { useEffect } from "react";
 import { getAuthState } from "Store/Selector";
 import { useDispatch, useSelector } from "react-redux";
 import { currentUserActions } from "Store/Action/auth";
+import { Styledbutton } from "Components/Inputs/button";
+import { useHistory } from "react-router-dom";
 function Home() {
+  const history = useHistory()
   const location =useLocation();
   const dispatch = useDispatch();
   const { user } = useSelector(getAuthState);
@@ -38,7 +41,7 @@ function Home() {
 
   return (
     user ? <Layout>
-      <Header />
+      <Header><Styledbutton variant='outline-dark'>Thank You</Styledbutton></Header>
       <DisplayArea>
         <SideComponent />
         <ContentArea>

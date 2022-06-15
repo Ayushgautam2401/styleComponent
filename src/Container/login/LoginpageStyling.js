@@ -17,7 +17,7 @@ export const HomepageLayout = styled.div.attrs((props) => {
     position: relative;
     justify-items: center;
     justify-content: center;
-    flex-wrap: wrap;
+  
     
 
 
@@ -31,8 +31,7 @@ export const InnerContainer = styled.div`display:flex;
     position: absolute;
     border: 2px solid black;
     align-self: center;
-   // flex-wrap: wrap;
-    //flex-shrink:70%;
+   
 
    
     
@@ -70,10 +69,7 @@ flex-direction: column;
  height:calc(100% - 80.95px);
  width: 60%;
  justify-content:space-between;
- //align-items: center;
  align-self: center;
- //flex-wrap: calc(100% - 80.95px);
-//border: 2px solid black;
  
 `
 export const InputLabel = styled.label.attrs((props) => {

@@ -1,8 +1,9 @@
 import React from 'react'
+import { MainContainer, Message } from './thankYouStyling'
 
 function ThankyouPage() {
   return (
-    <div>ThankyouPage</div>
+    <MainContainer><Message>Thank You .....</Message></MainContainer>
   )
 }
 
