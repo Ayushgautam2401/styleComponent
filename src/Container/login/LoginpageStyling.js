@@ -21,14 +21,12 @@ export const InnerContainer = styled.div`display:flex;
     position: absolute;
     border: 2px solid black;
     align-self: center;
-
-   
-    
-    
+    min-height: 400px;
 
 `
-export const FormHeader = styled.div`display:flex;
 
+export const FormHeader = styled.div`
+display:flex;
   height: 20%;
   width: 100%;
   justify-content: center;

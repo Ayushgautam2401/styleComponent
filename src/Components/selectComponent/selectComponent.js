@@ -1,13 +1,9 @@
-import React, { Component } from 'react'
-import theme from '../../theme'
+
+import React from 'react'
 import Select from 'react-select'
-import styled from 'styled-components'
-
-
 export const RenderSelectInput = ({input, options, ...props}) => {
   console.log ("ptani",input,props)
   return (
-
     <Select
       {...input}
       options={options}
@@ -16,7 +12,7 @@ export const RenderSelectInput = ({input, options, ...props}) => {
         borderRadius: "10px",
         colors: {
           ...theme.colors,
-          primary25: 'green',
+          primary25: '#197A56',
           primary: 'black',
         },
       })}

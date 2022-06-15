@@ -1,38 +1,52 @@
 import { Field, reduxForm, Form } from 'redux-form'
-import { InputLabel, Loginbutton, Styledinput } from './LoginpageStyling'
-import { PasswordInput } from './LoginpageStyling'
-import { Styledbutton } from 'Components/Inputs/button'
+import { useEffect } from 'react'
+import { useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux'
+
+
 import FormInput from 'Components/Inputs/formInputs'
-import { required } from 'Util/validate'
+import { Loginbutton } from './LoginpageStyling';
+import { loginActions } from 'Store/Action/auth';
+import { required } from 'Util/validate';
+import { getAuthState } from 'Store/Selector';
 
 
 const LoginFormComponent = (props) => {
   const { handleSubmit } = props
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const { isAuthenticated } = useSelector(getAuthState);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      history.push("/");
+    }
+  }, [isAuthenticated]);
+
+
+  const handleFormSubmit = (formdata) => {
+    dispatch(loginActions.request(formdata))
+  }
+
   return (
-
-    <Form onSubmit={handleSubmit((formValues)=>{
-      console.log(formValues)
-      })} >
-      <InputLabel>Username</InputLabel>
+    <Form onSubmit={handleSubmit(handleFormSubmit)}>
       <Field
-        name="name"
+        name="email"
         component={FormInput}
-        validate={[ required]}
-        placeholder="User ID"
+        validate={[required]}
+        placeholder="Email"
+        label="Email"
       />
-
-
-      <InputLabel>Password</InputLabel>
       <Field
         name="password"
-        component={PasswordInput}
-        // validate={[ required]}
+        component={FormInput}
         type="password"
+        label="Password"
+        placeholder='Password'
+      validate={[ required]}
+
       />
-
-
       <Loginbutton>Log In</Loginbutton>
-
     </Form>
   )
 }

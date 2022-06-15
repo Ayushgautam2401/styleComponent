@@ -6,7 +6,6 @@ export function getData(state) {
     return state.tableData;
 }
 
-
 export function getClientState(state) {
     return state.clientReducer
 }

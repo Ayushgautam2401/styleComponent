@@ -13,9 +13,9 @@ export const loginActions = {
         type: LOGIN_FETCH,
         payload
     }),
-    success: (token) => ({
+    success: (payload) => ({
         type: LOGIN_SUCCESS,
-        // payload: {token}
+        payload
     }),
     failure: (error) => ({
         type: LOGIN_FAILURE,
