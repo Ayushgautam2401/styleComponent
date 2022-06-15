@@ -6,8 +6,8 @@ import { useDispatch } from 'react-redux'
 
 const LoginFormComponent = (props) => {
  const dispatch = useDispatch();
-  const handleFormSubmit = (data)=>{
-    dispatch(loginActions.request(data))
+  const handleFormSubmit = ()=>{
+    dispatch(loginActions.request())
   }
     return(
         <Form onSubmit={props.handleSubmit(handleFormSubmit)}>

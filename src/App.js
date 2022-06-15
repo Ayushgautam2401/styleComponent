@@ -4,6 +4,8 @@ import { theme } from "./theme";
 import LoginPage from "./Container/login/LoginPage";
 import { Route, Switch } from "react-router-dom";
 import Home from "Container/home/Home";
+import { Pdf_Maker } from "Container/invoice/invoicePDF/pdfMaker";
+import WithAuth from "HOC/withAuth";
 const GlobalStyle = createGlobalStyle`
  html,body{
    font-size:16px;
@@ -19,8 +21,8 @@ function App() {
     <ThemeProvider theme={theme}>
      <GlobalStyle />
       <Switch>
-        <Route  path="/login" component={LoginPage}/>
-        <Route path="/" component={Home}/>
+        <Route  path="/Login" component={LoginPage}/>
+        <Route path="/" component={WithAuth(Home)}/>
       </Switch>
     </ThemeProvider>
   );
