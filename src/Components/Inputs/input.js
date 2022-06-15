@@ -13,7 +13,6 @@ import { getTitle } from '../../Store/Selector';
     const {theme:{size,background,bordersize}} = props;
 
     return{
-        type:"text",
         size:size[props.size] ||  size.exlg,
         background: background[props.background] || background.main,
         bs:bordersize[props.bordersize] ||  bordersize.lg,

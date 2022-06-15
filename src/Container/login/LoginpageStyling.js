@@ -30,9 +30,15 @@ export const InnerContainer = styled.div`display:flex;
     
 
 `
+<<<<<<< HEAD
 export const FormHeader = styled.div`display:flex;
 
   height:20%; 
+=======
+export const FormHeader = styled.div`
+display:flex;
+  height: 20%;
+>>>>>>> ff31bcfebbcb940cf51e6260b1c15a4bca19a855
   width: 100%;
   justify-content: center;
   align-items: center;
