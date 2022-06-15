@@ -46,7 +46,6 @@ const invoiceForm = (props) => {
             component={FormInput} 
             validate={[required]}
             />
-
             <Field
             name="currencyType"
             type="text"
@@ -61,7 +60,7 @@ const invoiceForm = (props) => {
             options= {clientOptions}
           />
           <FieldArray name="descriptions" component={renderInvoiceOrders} />
-        
+          <Styledbutton>Submit</Styledbutton>
         </Form>
       </FormContainer>
       </Fragment>

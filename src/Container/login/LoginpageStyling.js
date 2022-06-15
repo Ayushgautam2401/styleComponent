@@ -26,7 +26,7 @@ export const HomepageLayout = styled.div.attrs((props) => {
 export const InnerContainer = styled.div`display:flex;
     flex-direction: column;
      height: 70%;
-     /* width: 30%; */
+     width: 30%;
      background-color: beige;
      border-radius: 5%;
     position: absolute;
