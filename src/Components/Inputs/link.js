@@ -8,15 +8,15 @@ import styled from "styled-components";
   color: black;
   text-decoration: none;
 
-  &:hover {
-    color: red;
+  :hover {
+   // color: red;
     background-color: grey;
     /* background: blue; */
+
    } 
     &.active{
     background-color:red;
    } 
-
 
 `;
 

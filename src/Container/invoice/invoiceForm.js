@@ -18,7 +18,7 @@ const invoiceForm = (props) => {
 
     <Fragment>
       <FormContainer>
-        <Styledheader>Invoice Form</Styledheader>
+       
         <Form onSubmit={handleSubmit(handleFormSubmit)}>
         <FormHeaderContainer>
           <Field
@@ -46,7 +46,6 @@ const invoiceForm = (props) => {
             component={FormInput} 
             validate={[required]}
             />
-
             <Field
             name="currencyType"
             type="text"

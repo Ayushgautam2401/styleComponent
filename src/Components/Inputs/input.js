@@ -15,12 +15,16 @@ import { getTitle } from '../../Store/Selector';
     return{
         size:size[props.size] ||  size.exlg,
         background: background[props.background] || background.main,
-        bordersize:bordersize[props.bordersize] ||  bordersize.xs,
+        bs:bordersize[props.bordersize] ||  bordersize.lg,
+        bc:background[props.color] || background.primary,
     }
+
 })`
   font-size: ${props => props.size};
   background-color: ${props => props.background};
-  border-radius: ${props=> props.bordersize};
+  border-color: ${props => props.bc};
+  border-radius: ${props=> props.bs};
+
   margin-top: 5px;
   margin-bottom: 5px;
   font-family: 'Poppins', sans-serif;

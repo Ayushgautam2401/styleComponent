@@ -1,13 +1,25 @@
 import styled from 'styled-components';
 
-export const HomepageLayout = styled.div`
+export const HomepageLayout = styled.div.attrs((props) => {
+  const {
+    theme: {
+      background: { primary, ...restbg },
+    },
+  } = props;
+  return {
+    bg: restbg[props.bg] || primary,
+  };
+})`
     display: flex;
    height: 100vh;
+
     width: 100vw;
-    background-color:#197A56;
+    background-color:${(props) => props.bg};
     position: relative;
     justify-items: center;
     justify-content: center;
+  
+    
 
 
   `
@@ -21,7 +33,6 @@ export const InnerContainer = styled.div`display:flex;
     border: 2px solid black;
     align-self: center;
     min-height: 400px;
-
 `
 
 export const FormHeader = styled.div`
@@ -48,16 +59,13 @@ export const Heading = styled.div.attrs((props) => {
   font-weight: bold;
 `;
 
-
-
-export const FormContainer = styled.div` display:flex;
+export const FormContainer = styled.div` 
+display:flex;
 flex-direction: column;
- height:80%;
+ height:calc(100% - 80.95px);
  width: 60%;
  justify-content:space-between;
- align-items: center;
  align-self: center;
-
  
 `
 export const InputLabel = styled.label.attrs((props) => {

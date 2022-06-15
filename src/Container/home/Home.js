@@ -1,21 +1,20 @@
 import Invoice from "Container/invoice/Invoice";
-import React, { Fragment } from "react";
+import React from "react";
 import { useLocation } from "react-router-dom";
+
 import {
   Layout,
   DisplayArea,
-  Sidebar,
-  SidebarOption,
   ContentArea,
   TitleBar,
   TitleLabel,
   Content,
   Footer,
+  ButtonContainer,
 } from "./HomeStyling";
 
 import { Header } from "./HomeStyling";
 import Client from "Container/client/Client";
-// import { NavLink } from "react-router-dom";
 import { NavLink } from "Components/Inputs/link";
 import { Switch, Route } from "react-router-dom";
 import ClientForm from "Container/client/clientFormPage";
@@ -30,7 +29,11 @@ import { getAuthState } from "Store/Selector";
 import { useDispatch, useSelector } from "react-redux";
 import { currentUserActions } from "Store/Action/auth";
 
+import { Styledbutton } from "Components/Inputs/button";
+import { useHistory } from "react-router-dom";
+
 function Home() {
+  const history = useHistory()
   const location =useLocation();
   const dispatch = useDispatch();
   const { user } = useSelector(getAuthState);
@@ -40,19 +43,25 @@ function Home() {
     // fetch user
     dispatch(currentUserActions.request())
   }, [])
-
-
   return (
     user ? <Layout>
-      <Header />
+      <Header><Styledbutton variant='outline-dark'>Thank You</Styledbutton></Header>
       <DisplayArea>
-       <SideComponent/>
+        <SideComponent />
         <ContentArea>
           <TitleBar>
-            <TitleLabel>{location.pathname === '/client' ? (
-              <p>Client</p>
-            ) : location.pathname ==='/invoice'?(<p>invoice</p>):null} </TitleLabel>
-
+            <TitleLabel>
+              {location.pathname === "/client" ? (
+                <p>Client List</p>
+              ) : location.pathname === "/client/Clientform/" ? (
+                <p>Client Form</p>
+              ) : location.pathname === "/invoice" ? (
+                <p>Invoice List</p>
+              ) : location.pathname === "/invoice/Invoiceform/" ? (
+                <p>Invoice Form</p>
+              ) : null}{" "}
+            </TitleLabel>
+            {/* <ButtonContainer></ButtonContainer> */}
           </TitleBar>
           <Content>
             <Switch>
@@ -61,9 +70,11 @@ function Home() {
               <Route path="/client/Clientform/:id?" component={ClientForm} />
               <Route exact path="/invoice" component={Invoice} />
               <Route path="/invoice/Invoiceform/:id?" component={InvoiceForm} />
+
               <Route path= "/invoice_Pd/:invoiceID" component={Pdf_Maker}/>
 
               <Redirect to="/client"/>
+
             </Switch>
           </Content>
         </ContentArea>

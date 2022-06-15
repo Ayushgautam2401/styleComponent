@@ -1,4 +1,4 @@
-import { LOGIN_FETCH,LOGIN_SUCCESS,LOGIN_FAILURE, CURRENT_USER_FETCH,CURRENT_USER_SUCCESS,CURRENT_USER_FAILURE} from "Store/Action/auth";
+import { LOGIN_FETCH,LOGIN_SUCCESS,LOGIN_FAILIURE, CURRENT_USER_FETCH,CURRENT_USER_SUCCESS,CURRENT_USER_FAILIURE} from "../Action/auth";
 //   export const _userData = [
 //      {
 //          email:'Ashishchoudhary',
@@ -27,14 +27,14 @@ const AuthReducer = (state = INITIAL_STATE, action) => {
       return { ...INITIAL_STATE, fetching: true};
     case LOGIN_SUCCESS:
       return { ...state, fetching: false, isAuthenticated: true, ...payload }
-    case LOGIN_FAILURE:
+    case LOGIN_FAILIURE:
       return { ...state, fetching: false, isAuthenticated: false, ...payload }
 
     case CURRENT_USER_FETCH:
       return { ...state, fetching: true, error: undefined}
     case CURRENT_USER_SUCCESS:
       return { ...state, fetching: false, ...payload}
-    case CURRENT_USER_FAILURE: 
+    case CURRENT_USER_FAILIURE: 
       return { ...state, fetching: false, token: undefined, isAuthenticated: false, ...payload}
     default: return state;
   }
