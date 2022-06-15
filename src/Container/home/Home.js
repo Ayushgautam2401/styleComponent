@@ -21,7 +21,7 @@ import { Switch, Route } from "react-router-dom";
 import ClientForm from "Container/client/clientFormPage";
 import InvoiceForm from "Container/invoice/invoiceFormPage";
 import { Redirect } from "react-router-dom";
-
+import SideComponent from "./sideComponent";
 import { Pdf_Maker } from "Container/invoice/invoicePDF/pdfMaker";
 
 function Home() {
