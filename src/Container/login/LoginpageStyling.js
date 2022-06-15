@@ -26,10 +26,11 @@ export const InnerContainer = styled.div`display:flex;
     
 
 `
-export const FormHeader = styled.div`display:flex;
 
-  /* height: 20%; */
-  /* width: 100%; */
+export const FormHeader = styled.div`
+display:flex;
+  height: 20%;
+  width: 100%;
   justify-content: center;
   align-items: center;
 `

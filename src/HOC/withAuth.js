@@ -1,23 +1,21 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import { getAuthState } from "Store/Selector";
 
-const WithAuth = ({children}) => {
+const WithAuth = (ComposedComponent) => {
         const history= useHistory();
+        const location = useLocation();
         const { isAuthenticated } = useSelector(getAuthState);
 
         useEffect(() => {
+            console.log("auth check", isAuthenticated, location);
             if(!isAuthenticated) {
-                history.push()
+                history.push("/login");
             }
         }, [isAuthenticated])
 
-        return (
-        <div>
-            {isAuthenticated && children}
-        </div>
-        )
+        return isAuthenticated ? ComposedComponent : null
 }
 
 
