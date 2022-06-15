@@ -11,7 +11,9 @@ import { Fragment } from 'react'
 const current = new Date();
 const invoiceForm = (props) => {
   console.log("aajaa",props)
+
   const { handleSubmit, handleFormSubmit, clientOptions } = props
+
   return (
 
     <Fragment>
