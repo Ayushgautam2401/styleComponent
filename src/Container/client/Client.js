@@ -1,14 +1,10 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import { getClientState } from 'Store/Selector'
 import { useSelector } from "react-redux";
 import { Table } from "react-bootstrap";
 import { Styledbutton } from "../../Components/Inputs/button";
 import { useHistory } from "react-router-dom";
-import { useParams } from "react-router-dom";
-
-
-
+import { Fragment } from "react"; 
 function Client() {
 
   const history = useHistory();
@@ -20,12 +16,12 @@ function Client() {
   }
 
   const renderClientItem = (clientID, index) => {
-    const { id, username, phoneNumber, address } = raw[clientID] || {};
+    const { id, name, phoneNumber, address } = raw[clientID] || {};
     return (
       <tbody>
         <tr key={id} >
           <td>{id}</td>
-          <td>{username}</td>
+          <td>{name}</td>
           <td>{address}</td>
           <td>{phoneNumber}</td>
           <td><button className="update" onClick={() => {
@@ -37,11 +33,12 @@ function Client() {
   }
 
   return (
-    <>
+
+    <Fragment>
       <Styledbutton className="add" onClick={() => { handleClient() }}>Add</Styledbutton>
- 
+
       {
-         <Table striped bordered hover variant="dark">
+         <Table striped bordered hover>
          <thead>
            <tr>
              <th>Id</th>
@@ -57,7 +54,7 @@ function Client() {
           
         </Table>
       }
-      </>
+    </Fragment>
   );
 }
 

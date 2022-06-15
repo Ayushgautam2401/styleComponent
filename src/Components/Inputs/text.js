@@ -2,6 +2,7 @@ import React from 'react'
 import { theme } from '../../theme'
 import styled from "styled-components"
 import { ThemeProvider } from 'styled-components'
+import { useLocation } from 'react-router-dom'
 
  export const Styledtext = styled.div.attrs(props =>{
   const {theme : {size,text,background,color,bordersize}} = props;
@@ -21,9 +22,13 @@ font-family: 'Poppins', sans-serif;
 `
 
 const Text = () => {
+const location = useLocation()
   return (
     
     <ThemeProvider theme={theme}>
+       {location.pathname === `/text` ?(
+        <p>Text components</p>  
+          ):null}
     <Styledtext> Home </Styledtext>
     </ThemeProvider>
   
