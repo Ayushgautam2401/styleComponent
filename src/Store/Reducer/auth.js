@@ -1,4 +1,4 @@
-import { LOGIN_FETCH,LOGIN_SUCCESS,LOGIN_FAILURE, CURRENT_USER_FETCH,CURRENT_USER_SUCCESS,CURRENT_USER_FAILURE} from "Store/Action/auth";
+import { LOGIN_FETCH,LOGIN_SUCCESS,LOGIN_FAILURE, CURRENT_USER_FETCH,CURRENT_USER_SUCCESS,CURRENT_USER_FAILURE} from "../Action/auth";
 //   export const _userData = [
 //      {
 //          email:'Ashishchoudhary',

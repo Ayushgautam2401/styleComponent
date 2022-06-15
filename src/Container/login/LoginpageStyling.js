@@ -1,10 +1,19 @@
 import styled from 'styled-components';
 
-export const HomepageLayout = styled.div`
+export const HomepageLayout = styled.div.attrs((props) => {
+  const {
+    theme: {
+      background: { primary, ...restbg },
+    },
+  } = props;
+  return {
+    bg: restbg[props.bg] || primary,
+  };
+})`
     display: flex;
    height: 100vh;
     width: 100vw;
-    background-color:#197A56;
+    background-color:${(props) => props.bg};
     position: relative;
     justify-items: center;
     justify-content: center;
@@ -30,15 +39,9 @@ export const InnerContainer = styled.div`display:flex;
     
 
 `
-<<<<<<< HEAD
-export const FormHeader = styled.div`display:flex;
-
-  height:20%; 
-=======
 export const FormHeader = styled.div`
 display:flex;
   height: 20%;
->>>>>>> ff31bcfebbcb940cf51e6260b1c15a4bca19a855
   width: 100%;
   justify-content: center;
   align-items: center;

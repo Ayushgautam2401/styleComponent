@@ -20,11 +20,6 @@ import InvoiceForm from "Container/invoice/invoiceFormPage";
 import { Redirect } from "react-router-dom";
 import { Pdf_Maker } from "Container/invoice/invoicePDF/pdfMaker";
 import SideComponent from "./sideComponent";
-<<<<<<< HEAD
-
-function Home() {
-  const location = useLocation();
-=======
 import { useEffect } from "react";
 import { getAuthState } from "Store/Selector";
 import { useDispatch, useSelector } from "react-redux";
@@ -41,7 +36,6 @@ function Home() {
   }, [])
 
 
->>>>>>> ff31bcfebbcb940cf51e6260b1c15a4bca19a855
   return (
     user ? <Layout>
       <Header />
