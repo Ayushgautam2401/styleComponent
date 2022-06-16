@@ -1,7 +1,8 @@
 
 import { createGlobalStyle } from "styled-components";
 import { ThemeProvider } from "styled-components";
-import { theme } from "./theme";
+import { theme } from "./theme"; 
+import color from "Components/color";
 //import Home from "./Container/home/Home";
 //import {Switch, Route} from "react-router-dom";
 import History from "Container/History/History";
@@ -26,9 +27,11 @@ function App() {
     <ThemeProvider theme={theme}>
      <GlobalStyle />
       <Switch>
-        <Route  path="/Login" component={LoginPage}/>
+        <Route path = "/log" component={color}/>
+         <Route  path="/login" component={LoginPage}/> 
+        <Route path="/thankyou" component={ThankyouPage}/>
         <Route path="/" component={WithAuth(Home)}/>
-        <Route path="/Thankyou" component={ThankyouPage}/>
+        
       </Switch>
     </ThemeProvider>
   );

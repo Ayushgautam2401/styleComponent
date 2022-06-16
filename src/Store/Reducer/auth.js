@@ -18,8 +18,6 @@ const INITIAL_STATE = {
   fetching: false,
   error: undefined
 }
-
-
 const AuthReducer = (state = INITIAL_STATE, action) => {
   const { type, payload } = action;
   switch (type) {

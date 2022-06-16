@@ -10,6 +10,7 @@ import InvoiceForm from './invoiceForm'
 //import { Button } from 'react-bootstrap';
 import {clientListActions } from 'Store/Action/clientActions'
 import { Styledbutton } from 'Components/Inputs/button'
+import { Fragment } from 'react'
 
 
 
@@ -108,10 +109,10 @@ const InvoiceFormPage = props => {
     dispatch(invoiceUpdateActions.request(formData));
   }
   return (
-    <div className='formdesign'>
+    <Fragment>
       <Styledbutton variant='outline-dark' onClick={() => history.push("/invoice")}>Back</Styledbutton>
       <InvoiceForm clientOptions={clientOptions} handleFormSubmit={handleFormSubmit} initialValues={id ? {...invoice, clientFirm: {label: invoice.clientFirm && invoice.clientFirm.name, value: invoice.clientFirm && invoice.clientFirm.id}} : { invoiceDate: currentDate }} />
-    </div>
+      </Fragment>
   )
 }
 export default InvoiceFormPage;

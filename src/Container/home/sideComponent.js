@@ -11,12 +11,12 @@ const SideComponent = () => {
              activeClassName="active"
            
              to ="/client"
-            activeStyle={{
-              fontWeight: "bold",
-              backgroundColor: "grey",
-              textDecoration:"none",
-            }
-          }
+            // activeStyle={{
+            //   fontWeight: "bold",
+            //   backgroundColor: "grey",
+            //   textDecoration:"none",
+            // }
+          // }
             
           >
             Client
@@ -25,11 +25,11 @@ const SideComponent = () => {
           activeClassName="active"
            
             to="/invoice"
-            activeStyle={{
-                fontWeight: "bold",
-                backgroundColor: "grey",
-                textDecoration:"none",
-              }}
+            // activeStyle={{
+            //     fontWeight: "bold",
+            //     backgroundColor: "grey",
+            //     textDecoration:"none",
+            //   }}
             >
             Invoice
           </StyledNavLink>

@@ -1,6 +1,6 @@
 import Invoice from "Container/invoice/Invoice";
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom"; 
 import {
   Layout,
   DisplayArea,
@@ -11,7 +11,6 @@ import {
   Footer,
   ButtonContainer,
 } from "./HomeStyling";
-
 import { Header } from "./HomeStyling";
 import Client from "Container/client/Client";
 import { Switch, Route } from "react-router-dom";
@@ -41,7 +40,7 @@ function Home() {
 
   return (
     user ? <Layout>
-      <Header><button variant='outline-dark'onClick={()=>{history.push('/Thankyou')}}>Thank You</button></Header>
+      <Header><button variant='outline-dark'onClick={()=>{history.push('/thankyou')}}>Thank You</button></Header>
       <DisplayArea>
         <SideComponent />
         <ContentArea>
