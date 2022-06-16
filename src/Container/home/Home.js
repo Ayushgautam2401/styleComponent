@@ -2,7 +2,7 @@ import Invoice from "Container/invoice/Invoice";
 import React from "react";
 import { useLocation } from "react-router-dom";
 
-import { Layout,DisplayArea,ContentArea,TitleBar,TitleLabel,Content,Footer,} from "./HomeStyling";
+import {Layout,DisplayArea,ContentArea,TitleBar,TitleLabel,Content,Footer,}from "./HomeStyling";
 
 import { Header } from "./HomeStyling";
 import Client from "Container/client/Client";
@@ -27,16 +27,16 @@ function Home() {
   const history = useHistory()
   const location =useLocation();
   const dispatch = useDispatch();
-  const { user } = useSelector(getAuthState);
-
-
-  useEffect(() => {
-    // fetch user
-    dispatch(currentUserActions.request())
-  }, [])
+  // const { user } = useSelector(getAuthState);
+  // useEffect(() => {
+  //   // fetch user
+  //   dispatch(currentUserActions.request())
+  // }, [])
   return (
-    user ? <Layout>
-      <Header><Button variant='outline-dark' onClick={()=> history.push("/thankyou")}>Thank You</Button></Header>
+
+    <Layout>
+      <Header><button variant='outline-dark' onClick={()=>history.push("/thankyou")}>Thank You</button></Header>
+
       <DisplayArea>
         <SideComponent />
         <ContentArea>
@@ -72,7 +72,6 @@ function Home() {
       </DisplayArea>
       <Footer></Footer>
     </Layout>
-    : <div>Lodaing ... </div>
   );
 }
 

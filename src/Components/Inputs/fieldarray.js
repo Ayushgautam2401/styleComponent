@@ -4,6 +4,8 @@ import { Field } from 'redux-form'
 import { Styledbutton } from 'Components/Inputs/button'
 import { Styledheader } from 'Components/Inputs/header'
 import { FormHeaderContainer } from 'Container/invoice/invoicePDF/FormStyling'
+import FormInput from './formInputs'
+import { normalizeNo, required } from 'Util/validate'
 
 const renderField = ({ input, label, type, meta: { touched, error } }) => (
     <div>
@@ -33,20 +35,25 @@ export const renderInvoiceOrders = ({ fields, meta: { error, submitFailed } }) =
           <Field
             name={`${member}.detail`}
             type="text"
-            component={renderField}
+            component={FormInput}
+            validate={[required]}
             label="Description"
           />
           <Field
             name={`${member}.type`}
             type="text"
-            component={renderField}
+            component={FormInput}
+            validate={[required]}
             label="Type"
           />
           </FormHeaderContainer>
           <Field
             name={`${member}.amount`}
-            component={renderField}
+            component={FormInput}
+            validate={[required]}
+            normalize={normalizeNo}
             label="Amount"
+           
           />
         </ul>
         
