@@ -127,10 +127,11 @@ background-color: ${props => props.background};
 border-radius: ${props=> props.bordersize};
 border: none;
 display: flex;
-margin-top: 15%;
-margin-left: 25%;
+margin-top: 10%;
+margin-left: 27%;
 height:2rem;
 width:5rem;
 color:white;
-align-items: center;
+justify-content: center;
+
 `

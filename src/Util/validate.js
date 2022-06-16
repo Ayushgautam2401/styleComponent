@@ -1,3 +1,4 @@
+
 export const required = value => value ? undefined : 'Required'
 export const email = value =>
   value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value) ?
@@ -16,6 +17,7 @@ export const email = value =>
      }
      return `${onlyNums.slice(0,3)}-${onlyNums.slice(3,6)}-${onlyNums.slice(6,10)}`
 }
+
 
 
 

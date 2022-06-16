@@ -27,9 +27,9 @@ function App() {
      <GlobalStyle />
       <Switch>
         <Route  path="/Login" component={LoginPage}/>
-        
-        <Route path="/" component={WithAuth(Home)}/>
         <Route path="/Thankyou" component={WithAuth(ThankyouPage)}/>
+         <Route path="/" component={WithAuth(Home)}/>
+       
       </Switch>
     </ThemeProvider>
   );

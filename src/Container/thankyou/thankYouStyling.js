@@ -45,5 +45,6 @@ export const ThanksButton = styled.button`
    width:5rem;
   margin-left: 92%;
   align-self: center;
+  
    
 `
