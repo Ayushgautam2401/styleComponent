@@ -12,7 +12,6 @@ export const HomepageLayout = styled.div.attrs((props) => {
 })`
     display: flex;
    height: 100vh;
-
     width: 100vw;
     background-color:${(props) => props.bg};
     position: relative;
