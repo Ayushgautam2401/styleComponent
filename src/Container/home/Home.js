@@ -12,7 +12,7 @@ import InvoiceForm from "Container/invoice/invoiceFormPage";
 import { Redirect } from "react-router-dom";
 import SideComponent from "./sideComponent";
 import { Pdf_Maker } from "Container/invoice/invoicePDF/pdfMaker";
-
+import { loginActions } from "Store/Action/auth";
 
 import { useEffect } from "react";
 import { getAuthState } from "Store/Selector";
@@ -27,6 +27,11 @@ function Home() {
   const history = useHistory()
   const location =useLocation();
   const dispatch = useDispatch();
+
+  const handleLogout =() => {
+    dispatch(loginActions.logout ());
+    // history.push("/login")
+  }
   // const { user } = useSelector(getAuthState);
   // useEffect(() => {
   //   // fetch user
@@ -35,7 +40,9 @@ function Home() {
   return (
 
     <Layout>
-      <Header><button variant='outline-dark' onClick={()=>history.push("/thankyou")}>Thank You</button></Header>
+      <Header><Button variant='outline-dark' onClick={()=>history.push("/thankyou")}>Thank You</Button>
+      <Button onClick={handleLogout}>Log out</Button>
+      </Header>
 
       <DisplayArea>
         <SideComponent />

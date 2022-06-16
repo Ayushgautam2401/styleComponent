@@ -1,6 +1,7 @@
 export const LOGIN_FETCH = "LOGIN_FETCH";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAILIURE = "LOGIN_FAILURE";
+export const USER_LOGOUT = "USER_LOGOUT";
 
 export const CURRENT_USER_FETCH = "CURRENT_USER_FETCH";
 export const CURRENT_USER_SUCCESS = "CURRENT_USER_SUCCESS";
@@ -21,6 +22,12 @@ export const loginActions = {
         type: LOGIN_FAILIURE,
         payload: {error}
     }),
+    logout: ()=> {
+        localStorage.removeItem("token")
+        return{
+      type:USER_LOGOUT,
+        }
+    }
 }
 
 
