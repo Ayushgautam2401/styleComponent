@@ -20,6 +20,7 @@ export const Header = styled.header.attrs((props) => {
 })`
   display: flex;
   flex-direction: row;
+  justify-content: end;
   height: 60px;
   background-color: ${(props) => props.bg};
 `;
