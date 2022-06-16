@@ -76,6 +76,7 @@ const InvoiceFormPage = props => {
     let total = 0;
     formData.descriptions.forEach(({ amount }) => {
       total += parseInt(amount);
+      history.push("/invoice")
     })
 
     const clientDetail = raw[formData.clientFirm.value];

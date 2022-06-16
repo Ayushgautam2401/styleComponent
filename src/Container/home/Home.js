@@ -11,7 +11,11 @@ import { Redirect } from "react-router-dom";
 import SideComponent from "./sideComponent";
 import { Pdf_Maker } from "Container/invoice/invoicePDF/pdfMaker";
 import { loginActions } from "Store/Action/auth";
-import { useDispatch } from "react-redux";
+
+
+
+import { useDispatch, useSelector } from "react-redux";
+
 import { useHistory } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { ThanksButton } from "Container/thankyou/thankYouStyling";
@@ -21,8 +25,9 @@ function Home() {
   const location = useLocation();
   const dispatch = useDispatch();
 
-  const handleLogout = () => {
-    dispatch(loginActions.logout());
+
+  const handleLogout =() => {
+    dispatch(loginActions.logout ());
   }
 
   return (
