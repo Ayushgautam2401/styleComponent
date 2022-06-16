@@ -43,8 +43,7 @@ const LoginFormComponent = (props) => {
         type="password"
         label={<InputLabel>Password</InputLabel>}
         placeholder='Password'
-      validate={[ required]}
-
+        validate={[required]}
       />
       <Loginbutton>Log In</Loginbutton>
     </Form>

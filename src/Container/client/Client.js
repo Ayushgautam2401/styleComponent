@@ -38,7 +38,9 @@ function Client() {
   return (
 
     <Fragment>
+
       <Styledbutton  onClick={() => { handleClient() }}>Add</Styledbutton>
+
       {
          <Table striped bordered hover>
          <thead>
@@ -52,8 +54,7 @@ function Client() {
          </thead>
             {
               list?.map(renderClientItem)
-            }
-          
+            }   
         </Table>
       }
     </Fragment>

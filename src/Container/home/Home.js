@@ -33,17 +33,13 @@ function Home() {
   const history = useHistory()
   const location =useLocation();
   const dispatch = useDispatch();
-  const { user } = useSelector(getAuthState);
-
-
-  useEffect(() => {
-    // fetch user
-    dispatch(currentUserActions.request())
-  }, [])
-
-
+  // const { user } = useSelector(getAuthState);
+  // useEffect(() => {
+  //   // fetch user
+  //   dispatch(currentUserActions.request())
+  // }, [])
   return (
-    user ? <Layout>
+     <Layout>
       <Header><ThanksButton onClick={() => {history.push ("/Thankyou")}}>Thanks</ThanksButton></Header>
       <DisplayArea>
         <SideComponent />
@@ -69,7 +65,7 @@ function Home() {
               <Route path="/client/Clientform/:id?" component={ClientForm} />
               <Route exact path="/invoice" component={Invoice} />
               <Route path="/invoice/Invoiceform/:id?" component={InvoiceForm} />
-              <Route path= "/invoice_Pd/:invoiceID" component={Pdf_Maker}/>
+                <Route path= "/invoice_Pd/:invoiceID" component={Pdf_Maker}/>
 
               <Redirect to="/client"/>
             </Switch>
@@ -78,7 +74,6 @@ function Home() {
       </DisplayArea>
       <Footer></Footer>
     </Layout>
-    : <div>Lodaing ... </div>
   );
 }
 
