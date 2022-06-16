@@ -14,12 +14,9 @@ import SideComponent from "./sideComponent";
 import { Pdf_Maker } from "Container/invoice/invoicePDF/pdfMaker";
 import { loginActions } from "Store/Action/auth";
 
-import { useEffect } from "react";
-import { getAuthState } from "Store/Selector";
-import { useDispatch, useSelector } from "react-redux";
-import { currentUserActions } from "Store/Action/auth";
 
-import { Styledbutton } from "Components/Inputs/button";
+import { useDispatch, useSelector } from "react-redux";
+
 import { useHistory } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
@@ -30,13 +27,8 @@ function Home() {
 
   const handleLogout =() => {
     dispatch(loginActions.logout ());
-    // history.push("/login")
   }
-  // const { user } = useSelector(getAuthState);
-  // useEffect(() => {
-  //   // fetch user
-  //   dispatch(currentUserActions.request())
-  // }, [])
+
   return (
 
     <Layout>

@@ -11,7 +11,7 @@ const ClientFormPage = (props) => {
   const {id} = useParams();
   const dispatch= useDispatch();
   const {client, loading} = useSelector(getClientState);
-
+  
   useEffect(() => {
     if(id) {
       dispatch(clientActions.request({id}));
@@ -21,6 +21,7 @@ const ClientFormPage = (props) => {
   const handleFormSubmit= (data)=>{
     console.log(data);
     dispatch(clientUpdateActions.request(data));
+    history.push('/client')
   }
 
   return (
