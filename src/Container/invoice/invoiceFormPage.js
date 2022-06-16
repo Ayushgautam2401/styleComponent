@@ -3,23 +3,17 @@ import React, { useEffect,useState  } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, useParams } from "react-router-dom"
 import { invoiceActions, invoiceUpdateActions } from 'Store/Action/invoiceActions'
-//import { getInvoiceState,getClientState } from 'Store/Selector/index'
-//import './invoiceForm.scss'
 import { getInvoiceState,getClientState } from 'Store/Selector'
 import InvoiceForm from './invoiceForm'
-//import { Button } from 'react-bootstrap';
 import {clientListActions } from 'Store/Action/clientActions'
 import { Fragment } from 'react'
 import { Styledbutton } from 'Components/Inputs/button'
+import { Button } from 'react-bootstrap'
 
 
-
-
-// const [startDate, setStartDate] = useState(new Date());
 const current = new Date();
 const currentDate = `${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()}`;
-
-
+  
 function doConvert(numberInput) {
 
     let oneToTwenty = ['', 'ONE ', 'TWO ', 'THREE ', 'FOUR ', 'FIVE ', 'SIX ', 'SEVEN ', 'EIGHT ', 'NINE ', 'TEN ',

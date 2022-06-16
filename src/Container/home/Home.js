@@ -2,20 +2,10 @@ import Invoice from "Container/invoice/Invoice";
 import React from "react";
 import { useLocation } from "react-router-dom";
 
-import {
-  Layout,
-  DisplayArea,
-  ContentArea,
-  TitleBar,
-  TitleLabel,
-  Content,
-  Footer,
-  ButtonContainer,
-} from "./HomeStyling";
+import { Layout,DisplayArea,ContentArea,TitleBar,TitleLabel,Content,Footer,} from "./HomeStyling";
 
 import { Header } from "./HomeStyling";
 import Client from "Container/client/Client";
-import { NavLink } from "Components/Inputs/link";
 import { Switch, Route } from "react-router-dom";
 import ClientForm from "Container/client/clientFormPage";
 import InvoiceForm from "Container/invoice/invoiceFormPage";
@@ -31,6 +21,7 @@ import { currentUserActions } from "Store/Action/auth";
 
 import { Styledbutton } from "Components/Inputs/button";
 import { useHistory } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 function Home() {
   const history = useHistory()
@@ -45,7 +36,7 @@ function Home() {
   }, [])
   return (
     user ? <Layout>
-      <Header><Styledbutton variant='outline-dark'>Thank You</Styledbutton></Header>
+      <Header><Button variant='outline-dark' onClick={()=> history.push("/thankyou")}>Thank You</Button></Header>
       <DisplayArea>
         <SideComponent />
         <ContentArea>
