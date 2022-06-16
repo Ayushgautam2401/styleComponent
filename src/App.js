@@ -11,7 +11,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUserState } from "Store/Selector";
 import { useState } from "react";
 import { currentUserActions } from "Store/Action/auth";
-import { Fragment } from "react";
 const GlobalStyle = createGlobalStyle`
  html,body{
    font-size:16px;
