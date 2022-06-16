@@ -9,76 +9,10 @@ import { FormContainer, FormHeaderContainer } from './invoicePDF/FormStyling'
 import { required } from 'Util/validate';
 import { Fragment } from 'react'
 const current = new Date();
-
-
 const invoiceForm = (props) => {
   console.log("aajaa",props)
-  const { id } = useParams();
-  const dispatch = useDispatch();
-  const { invoice, loading } = useSelector(getInvoiceState);
-  const {list, raw }= useSelector(getClientState);
-  
-  
-  const [clientOptions, setClientOptions] = useState([]);
 
-
-
-  useEffect(() => {
-    if (id) {
-      dispatch(invoiceActions.request({ id }));
-    }
-  }, [id]);
-
-  useEffect(() => {
-    if(!list) {
-      // api call dipatch
-      console.log("call api")
-      dispatch(clientListActions.request());
-    } else {
-      // generate options
-      console.log("generate options");
-      const options= [];
-      list.forEach(item => {
-        const clientDetail = raw[item]
-        options.push({label: clientDetail.name, value: clientDetail.id})
-      })
-      setClientOptions(options);
-    }
-  }, [list]);
-
-  
-  const handleFormSubmit = (formData) => {
-    let total = 0;
-    formData.descriptions.forEach(({ amount }) => {
-      total += parseInt(amount);
-    })
-
-    const clientDetail = raw[formData.clientFirm.value];
-    formData = {
-      ...formData,
-      clientFirm: clientDetail,
-      invoicedRaisedBy: "Ashutosh Sharma",
-      firmDetail: {
-        name: "Biz Tecno",
-        addressLine1: "Plot J7, FCS Building, Rajiv Gandhi Technology Park",
-        addressLine2: "Chandigarh – 160101",
-        telephone: "+91 9781918447",
-        account: {
-          bankName: "ICICI BANK LTD.",
-          beneficiaryName: "Biz Tecno",
-          accountNumber: "632205009436",
-          ifscCode: "ICIC0006322",
-          swiftCode: "ICICINBBCTS",
-          panCard: "BYOPS0301M",
-          bankAddress: "S.C.O. No.485-486, Sector 35-C, Chandigarh – 160022"
-        }
-      },
-      totalAmount: total,
-      totalAmountInWords: doConvert(total),
-    }
-    dispatch(invoiceUpdateActions.request(formData));
-  }
-   
+  const { handleSubmit, handleFormSubmit, clientOptions } = props
 
   return (
 

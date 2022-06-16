@@ -1,7 +1,7 @@
 import Invoice from "Container/invoice/Invoice";
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { Styledbutton } from "../../Components/Inputs/button";
+//import { Styledbutton } from "../../Components/Inputs/button";
 import Button from 'react-bootstrap/Button'
 import {
   Layout,
@@ -22,25 +22,39 @@ import InvoiceForm from "Container/invoice/invoiceFormPage";
 import { Redirect } from "react-router-dom";
 import SideComponent from "./sideComponent";
 import { Pdf_Maker } from "Container/invoice/invoicePDF/pdfMaker";
+import { loginActions } from "Store/Action/auth";
 
-
-import { useEffect } from "react";
-import { getAuthState } from "Store/Selector";
+//import { useEffect } from "react";
+//import { getAuthState } from "Store/Selector";
 import { useDispatch, useSelector } from "react-redux";
 import { currentUserActions } from "Store/Action/auth";
 import { ThanksButton } from "Container/thankyou/thankYouStyling";
+
+import { Styledbutton } from "Components/Inputs/button";
+//import { useHistory } from "react-router-dom";
+//import { Button } from "react-bootstrap";
+
 function Home() {
   const history = useHistory()
   const location =useLocation();
   const dispatch = useDispatch();
+
+  const handleLogout =() => {
+    dispatch(loginActions.logout ());
+    // history.push("/login")
+  }
   // const { user } = useSelector(getAuthState);
   // useEffect(() => {
   //   // fetch user
   //   dispatch(currentUserActions.request())
   // }, [])
   return (
-     <Layout>
-      <Header><ThanksButton onClick={() => {history.push ("/Thankyou")}}>Thanks</ThanksButton></Header>
+
+    <Layout>
+      <Header><ThanksButton variant='outline-dark' onClick={()=>history.push("/thankyou")}>Thank You</ThanksButton>
+      <Button onClick={handleLogout}>Log out</Button>
+      </Header>
+
       <DisplayArea>
         <SideComponent />
         <ContentArea>

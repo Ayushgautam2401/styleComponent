@@ -11,7 +11,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUserState } from "Store/Selector";
 import { useState } from "react";
 import { currentUserActions } from "Store/Action/auth";
-import { Fragment } from "react";
 const GlobalStyle = createGlobalStyle`
  html,body{
    font-size:16px;
@@ -21,21 +20,6 @@ const GlobalStyle = createGlobalStyle`
    height: 100vh;
    width: 100vw;
  }`;
-
-// const User = (Component) => {
-//   const history = useHistory();
-//   const [checked,setChecked]=useState; 
-
-//   const { isAuthenticated,fetching } = useSelector(getUserState)
-//   const location = useLocation();
-//   useEffect(() => {
-//     console.log ('auth', isAuthenticated,location)
-//     if (!isAuthenticated) {
-//       history.push("/login");
-//     }
-//   }, [isAuthenticated])
-//   return isAuthenticated ? Component : null
-// }
 
 
 function App() {

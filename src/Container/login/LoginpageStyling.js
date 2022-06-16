@@ -12,7 +12,6 @@ export const HomepageLayout = styled.div.attrs((props) => {
 })`
     display: flex;
    height: 100vh;
-
     width: 100vw;
     background-color:${(props) => props.bg};
     position: relative;
@@ -33,10 +32,6 @@ export const InnerContainer = styled.div`display:flex;
     border: 2px solid black;
     align-self: center;
     min-height: 400px;
-<<<<<<< HEAD
-
-=======
->>>>>>> 2bd0b49d0eb2ae21b0ca7721f20f167c2343e98a
 `
 
 export const FormHeader = styled.div`

@@ -1,4 +1,4 @@
-import { LOGIN_FETCH,LOGIN_SUCCESS,LOGIN_FAILIURE, CURRENT_USER_FETCH,CURRENT_USER_SUCCESS,CURRENT_USER_FAILIURE} from "../Action/auth";
+import { LOGIN_FETCH,LOGIN_SUCCESS,LOGIN_FAILIURE, CURRENT_USER_FETCH,CURRENT_USER_SUCCESS,CURRENT_USER_FAILIURE, USER_LOGOUT} from "../Action/auth";
 
 const INITIAL_STATE = {
   token: localStorage.getItem("token"),
@@ -17,6 +17,8 @@ const AuthReducer = (state = INITIAL_STATE, action) => {
       return { ...state, fetching: false, isAuthenticated: true, ...payload }
     case LOGIN_FAILIURE:
       return { ...state, fetching: false, isAuthenticated: false, ...payload }
+    case USER_LOGOUT:
+      return {...state, fetching:false, isAuthenticated: false}
       case CURRENT_USER_FAILIURE: 
       return { ...state, fetching: false, token: undefined, isAuthenticated: false}
     default: return state;
