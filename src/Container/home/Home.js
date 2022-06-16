@@ -41,7 +41,7 @@ function Home() {
 
     <Layout>
       <Header><Button variant='outline-dark' onClick={()=>history.push("/thankyou")}>Thank You</Button>
-      <Button onClick={handleLogout}>Log out</Button>
+      <Button variant='secondary' onClick={handleLogout}>Log out</Button>
       </Header>
 
       <DisplayArea>
