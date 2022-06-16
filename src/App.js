@@ -22,21 +22,6 @@ const GlobalStyle = createGlobalStyle`
    width: 100vw;
  }`;
 
-// const User = (Component) => {
-//   const history = useHistory();
-//   const [checked,setChecked]=useState; 
-
-//   const { isAuthenticated,fetching } = useSelector(getUserState)
-//   const location = useLocation();
-//   useEffect(() => {
-//     console.log ('auth', isAuthenticated,location)
-//     if (!isAuthenticated) {
-//       history.push("/login");
-//     }
-//   }, [isAuthenticated])
-//   return isAuthenticated ? Component : null
-// }
-
 
 function App() {
   const history = useHistory();
