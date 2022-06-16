@@ -12,6 +12,7 @@ export const HomepageLayout = styled.div.attrs((props) => {
 })`
     display: flex;
    height: 100vh;
+
     width: 100vw;
     background-color:${(props) => props.bg};
     position: relative;
@@ -32,13 +33,9 @@ export const InnerContainer = styled.div`display:flex;
     position: absolute;
     border: 2px solid black;
     align-self: center;
-   
-
-   
-    
-    
-
+    min-height: 400px;
 `
+
 export const FormHeader = styled.div`
 display:flex;
   height: 20%;
@@ -63,9 +60,8 @@ export const Heading = styled.div.attrs((props) => {
   font-weight: bold;
 `;
 
-
-
-export const FormContainer = styled.div` display:flex;
+export const FormContainer = styled.div` 
+display:flex;
 flex-direction: column;
  height:calc(100% - 80.95px);
  width: 60%;

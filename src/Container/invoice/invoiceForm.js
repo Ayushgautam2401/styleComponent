@@ -11,7 +11,9 @@ import { Fragment } from 'react'
 const current = new Date();
 const invoiceForm = (props) => {
   console.log("aajaa",props)
+
   const { handleSubmit, handleFormSubmit, clientOptions } = props
+
   return (
 
     <Fragment>
@@ -44,7 +46,6 @@ const invoiceForm = (props) => {
             component={FormInput} 
             validate={[required]}
             />
-
             <Field
             name="currencyType"
             type="text"
@@ -59,7 +60,7 @@ const invoiceForm = (props) => {
             options= {clientOptions}
           />
           <FieldArray name="descriptions" component={renderInvoiceOrders} />
-        <Styledbutton>submit</Styledbutton>
+          <Styledbutton>Submit</Styledbutton>
         </Form>
       </FormContainer>
       </Fragment>

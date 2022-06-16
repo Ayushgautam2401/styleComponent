@@ -12,11 +12,11 @@ import styled from "styled-components";
    // color: red;
     background-color: grey;
     /* background: blue; */
-  }
-  :active{
-     background-color: grey;
-   }
 
+   } 
+    &.active{
+    background-color:red;
+   } 
 
 `;
 

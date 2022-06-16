@@ -2,9 +2,8 @@ import React from 'react'
 import { Styledinput } from './input'
 import { RenderField } from 'Util/validate'
 import { Styledtext } from './text'
-// import StyledTextarea from 'Components/Inputs/textarea'
 
-const FormInput = ({label, input, meta, placeholder, type, ...props} ) => {
+const FormInput = ({label, input, meta, placeholder, type} ) => {
   return (
     <div>
         <Styledtext>{label}</Styledtext>

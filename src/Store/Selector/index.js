@@ -19,3 +19,6 @@ export function getToken(state){
 export function getAuthState(state){
     return state.authReducer
 }
+export function getUserState(state){
+    return state.UserReducer
+}

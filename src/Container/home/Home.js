@@ -1,46 +1,37 @@
 import Invoice from "Container/invoice/Invoice";
 import React from "react";
-import { useLocation } from "react-router-dom"; 
-import {
-  Layout,
-  DisplayArea,
-  ContentArea,
-  TitleBar,
-  TitleLabel,
-  Content,
-  Footer,
-  ButtonContainer,
-} from "./HomeStyling";
+import { useLocation } from "react-router-dom";
+import {Layout,DisplayArea,ContentArea,TitleBar,TitleLabel,Content,Footer,}from "./HomeStyling";
 import { Header } from "./HomeStyling";
 import Client from "Container/client/Client";
 import { Switch, Route } from "react-router-dom";
 import ClientForm from "Container/client/clientFormPage";
 import InvoiceForm from "Container/invoice/invoiceFormPage";
 import { Redirect } from "react-router-dom";
-import { Pdf_Maker } from "Container/invoice/invoicePDF/pdfMaker";
 import SideComponent from "./sideComponent";
+import { Pdf_Maker } from "Container/invoice/invoicePDF/pdfMaker";
+
+
 import { useEffect } from "react";
 import { getAuthState } from "Store/Selector";
 import { useDispatch, useSelector } from "react-redux";
 import { currentUserActions } from "Store/Action/auth";
+
 import { Styledbutton } from "Components/Inputs/button";
 import { useHistory } from "react-router-dom";
+
 function Home() {
   const history = useHistory()
   const location =useLocation();
   const dispatch = useDispatch();
-  const { user } = useSelector(getAuthState);
-
-
-  useEffect(() => {
-    // fetch user
-    dispatch(currentUserActions.request())
-  }, [])
-
-
+  // const { user } = useSelector(getAuthState);
+  // useEffect(() => {
+  //   // fetch user
+  //   dispatch(currentUserActions.request())
+  // }, [])
   return (
-    user ? <Layout>
-      <Header><button variant='outline-dark'onClick={()=>{history.push('/thankyou')}}>Thank You</button></Header>
+    <Layout>
+      <Header><button variant='outline-dark' onClick={()=>history.push("/thankyou")}>Thank You</button></Header>
       <DisplayArea>
         <SideComponent />
         <ContentArea>
@@ -61,18 +52,21 @@ function Home() {
           <Content>
             <Switch>
               <Route exact path="/client" component={Client} />
+
               <Route path="/client/Clientform/:id?" component={ClientForm} />
               <Route exact path="/invoice" component={Invoice} />
               <Route path="/invoice/Invoiceform/:id?" component={InvoiceForm} />
-              <Route path="/invoice_Pd/:invoiceID" component={Pdf_Maker} />
-              <Redirect to="/client" />
+
+              <Route path= "/invoice_Pd/:invoiceID" component={Pdf_Maker}/>
+
+              <Redirect to="/client"/>
+
             </Switch>
           </Content>
         </ContentArea>
       </DisplayArea>
       <Footer></Footer>
     </Layout>
-    : <div>Lodaing ... </div>
   );
 }
 

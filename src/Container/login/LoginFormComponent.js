@@ -42,8 +42,8 @@ const LoginFormComponent = (props) => {
         component={FormInput}
         type="password"
         label="Password"
-        placeholder='password'
-      // validate={[ required]}
+        placeholder='Password'
+        validate={[required]}
       />
       <Loginbutton>Log In</Loginbutton>
     </Form>

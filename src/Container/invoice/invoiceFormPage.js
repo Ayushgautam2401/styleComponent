@@ -11,6 +11,7 @@ import InvoiceForm from './invoiceForm'
 import {clientListActions } from 'Store/Action/clientActions'
 import { Styledbutton } from 'Components/Inputs/button'
 import { Fragment } from 'react'
+import { Button } from 'react-bootstrap'
 
 
 
@@ -110,9 +111,9 @@ const InvoiceFormPage = props => {
   }
   return (
     <Fragment>
-      <Styledbutton variant='outline-dark' onClick={() => history.push("/invoice")}>Back</Styledbutton>
+      <Button variant='outline-dark' onClick={() => history.push("/invoice")}>Back</Button>
       <InvoiceForm clientOptions={clientOptions} handleFormSubmit={handleFormSubmit} initialValues={id ? {...invoice, clientFirm: {label: invoice.clientFirm && invoice.clientFirm.name, value: invoice.clientFirm && invoice.clientFirm.id}} : { invoiceDate: currentDate }} />
-      </Fragment>
+    </Fragment>
   )
 }
 export default InvoiceFormPage;
