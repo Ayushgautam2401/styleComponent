@@ -38,3 +38,11 @@ export const Message = styled.text.attrs((props) => {
    
 
 `
+export const ThanksButton = styled.button`
+   background-color: black;
+   color:white;
+   border-radius: 5px;
+   height:2.5rem;
+   width:5rem;
+  margin: 2rem;
+  align-self: center;`

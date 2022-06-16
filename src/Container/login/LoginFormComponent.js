@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 
 import FormInput from 'Components/Inputs/formInputs'
-import { Loginbutton } from './LoginpageStyling';
+import { InputLabel, Loginbutton } from './LoginpageStyling';
 import { loginActions } from 'Store/Action/auth';
 import { required } from 'Util/validate';
 import { getAuthState } from 'Store/Selector';
@@ -35,14 +35,14 @@ const LoginFormComponent = (props) => {
         component={FormInput}
         validate={[required]}
         placeholder="Email"
-        label="Email"
+        label={<InputLabel>Email</InputLabel>}
       />
       <Field
         name="password"
         component={FormInput}
         type="password"
-        label="Password"
-        placeholder='Password'
+        label={<InputLabel>Password</InputLabel>}
+        placeholder="Password"
         validate={[required]}
       />
       <Loginbutton>Log In</Loginbutton>
