@@ -44,7 +44,7 @@ function Home() {
 
   return (
     user ? <Layout>
-      <Header>{location.pathname==="/client" ? (<ThanksButton variant="outline-dark">Thanks</ThanksButton>):null}</Header>
+      <Header>{location.pathname==="/client" ? (<ThanksButton variant="outline-dark"onClick={history.push ("/Thankyou")}>Thanks</ThanksButton>):null}</Header>
       <DisplayArea>
         <SideComponent />
         <ContentArea>
