@@ -8,6 +8,7 @@ import { Field, Form, reduxForm, FieldArray } from 'redux-form'
 import { FormContainer, FormHeaderContainer } from './invoicePDF/FormStyling'
 import { required } from 'Util/validate';
 import { Fragment } from 'react'
+import hand
 const current = new Date();
 const invoiceForm = (props) => {
   console.log("aajaa",props)
