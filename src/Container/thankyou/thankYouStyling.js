@@ -43,8 +43,8 @@ export const ThanksButton = styled.button`
    border-radius: 5px;
    height:2.5rem;
    width:5rem;
-  margin-left: 92%;
-  align-self: center;
+  margin: 3rem;
+  align-self:center;
   
    
 `

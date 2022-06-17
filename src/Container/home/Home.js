@@ -15,9 +15,9 @@ import {
 } from "./HomeStyling";
 import { useHistory } from "react-router-dom";
 import { Header } from "./HomeStyling";
-import Client from "Container/client/Client";
+import Account from "Container/accounts/Accounts";
 import { Switch, Route } from "react-router-dom";
-import ClientForm from "Container/client/clientFormPage";
+import AccountForm from "Container/accounts/AccountFormPage";
 import InvoiceForm from "Container/invoice/invoiceFormPage";
 import { Redirect } from "react-router-dom";
 import SideComponent from "./sideComponent";
@@ -51,8 +51,8 @@ function Home() {
   return (
 
     <Layout>
-      <Header><ThanksButton variant='outline-dark' onClick={()=>history.push("/thankyou")}>Thank You</ThanksButton>
-      <Button onClick={handleLogout}>Log out</Button>
+      <Header><ThanksButton variant='outline-dark' onClick={()=>history.push("/thankyou")}>Thanks</ThanksButton>
+      <ThanksButton onClick={handleLogout}>Log out</ThanksButton>
       </Header>
 
       <DisplayArea>
@@ -60,10 +60,10 @@ function Home() {
         <ContentArea>
           <TitleBar>
             <TitleLabel>
-              {location.pathname === "/client" ? (
-                <p>Client List</p>
-              ) : location.pathname === "/client/Clientform/" ? (
-                <p>Client Form</p>
+              {location.pathname === "/Account" ? (
+                <p>Account List</p>
+              ) : location.pathname === "/Account/Accountform/" ? (
+                <p>Account Form</p>
               ) : location.pathname === "/invoice" ? (
                 <p>Invoice List</p>
               ) : location.pathname === "/invoice/Invoiceform/" ? (
@@ -74,14 +74,14 @@ function Home() {
           </TitleBar>
           <Content>
             <Switch>
-              <Route exact path="/client" component={Client} />
+              <Route exact path="/Account" component={Account} />
 
-              <Route path="/client/Clientform/:id?" component={ClientForm} />
+              <Route path="/Account/Accountform/:id?" component={AccountForm} />
               <Route exact path="/invoice" component={Invoice} />
               <Route path="/invoice/Invoiceform/:id?" component={InvoiceForm} />
                 <Route path= "/invoice_Pd/:invoiceID" component={Pdf_Maker}/>
 
-              <Redirect to="/client"/>
+              <Redirect to="/Account"/>
             </Switch>
           </Content>
         </ContentArea>

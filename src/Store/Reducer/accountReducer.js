@@ -1,24 +1,24 @@
 import { forEach, map } from "lodash";
 import {
-  CLIENT_FAILURE, CLIENT_LIST_FAILURE,
-  CLIENT_LIST_REQUEST, CLIENT_LIST_SUCCESS,
-  CLIENT_REQUEST, CLIENT_SUCCESS, CLIENT_UPDATE_FAILURE,
-  CLIENT_UPDATE_REQUEST, CLIENT_UPDATE_SUCCESS
-} from "Store/Action/clientActions";
+  ACCOUNT_FAILURE, ACCOUNT_LIST_FAILURE,
+  ACCOUNT_LIST_REQUEST, ACCOUNT_LIST_SUCCESS,
+  ACCOUNT_REQUEST, ACCOUNT_SUCCESS, ACCOUNT_UPDATE_FAILURE,
+  ACCOUNT_UPDATE_REQUEST, ACCOUNT_UPDATE_SUCCESS
+} from "Store/Action/AccountActions";
 import { makeid } from "Util/idGenrator";
 
 const INITIAL_STATE = {
-  list: ["BIZ_CLIENT_1", "BIZ_CLIENT_2"],
+  list: ["BIZ_Account_1", "BIZ_Account_2"],
   raw: {
-    "BIZ_CLIENT_1" : {
-      "id": "BIZ_CLIENT_1",
+    "BIZ_Account_1" : {
+      "id": "BIZ_Account_1",
       "name": "BIZTECNO",
 
       "address": "PLOT J7 FCS BUILDING",
       "phoneNumber": "9888824240"
     },
-    "BIZ_CLIENT_2" : {
-      "id": "BIZ_CLIENT_2",
+    "BIZ_Account_2" : {
+      "id": "BIZ_Account_2",
       "name": "BIZ",
       "address": " J7 FCS BUILDING",
       "phoneNumber": "96971782782"
@@ -26,37 +26,37 @@ const INITIAL_STATE = {
     }
     
   },
-  client: undefined,
+  Account: undefined,
   loading: false,
   error: undefined
 }
 
-const clientReducer = (state = INITIAL_STATE, action) => {
+const AccountReducer = (state = INITIAL_STATE, action) => {
   const { type, payload } = action;
   const { data, message } = payload || {};
   switch (type) {
-    case CLIENT_LIST_REQUEST:
+    case ACCOUNT_LIST_REQUEST:
       return { ...state, loading: true };
-    case CLIENT_LIST_SUCCESS:
+    case ACCOUNT_LIST_SUCCESS:
       const raw = {};
       forEach(data, (item) => {
         raw[data.id] = item
       })
       return { ...state, loading: false, list: map(data, "id"), raw };
-    case CLIENT_LIST_FAILURE:
+    case ACCOUNT_LIST_FAILURE:
       return { ...state, error: message, loading: false };
 
-    case CLIENT_REQUEST:
-      return { ...state, client: undefined, loading: true, error: undefined }
-    case CLIENT_SUCCESS:
-      return { ...state, client: data, loading: false }
-    case CLIENT_FAILURE:
-    case CLIENT_UPDATE_FAILURE:
+    case ACCOUNT_REQUEST:
+      return { ...state, Account: undefined, loading: true, error: undefined }
+    case ACCOUNT_SUCCESS:
+      return { ...state, Account: data, loading: false }
+    case ACCOUNT_FAILURE:
+    case ACCOUNT_UPDATE_FAILURE:
       return { ...state, error: message, loading: false }
 
-    case CLIENT_UPDATE_REQUEST:
+    case ACCOUNT_UPDATE_REQUEST:
       return { ...state, loading: true, error: undefined }
-    case CLIENT_UPDATE_SUCCESS:
+    case ACCOUNT_UPDATE_SUCCESS:
       if(!data.id) {
         const id = makeid(3);
         if(!state.list) {
@@ -73,5 +73,5 @@ const clientReducer = (state = INITIAL_STATE, action) => {
   }
 }
 
-export default clientReducer;
+export default AccountReducer;
 

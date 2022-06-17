@@ -1,5 +1,5 @@
 import React from "react";
-import { getClientState } from 'Store/Selector'
+import { getAccountState } from 'Store/Selector'
 import { useSelector } from "react-redux";
 import { Table } from "react-bootstrap";
 import { Styledbutton } from "../../Components/Inputs/button";
@@ -8,18 +8,18 @@ import { Fragment } from "react";
 
 
 
-function Client() {
+function Account() {
 
   const history = useHistory();
-  const {list, raw} = useSelector(getClientState);
+  const {list, raw} = useSelector(getAccountState);
 
-  const handleClient = (client = {}) => {
-    const { id } = client;
-    history.push(`/client/Clientform/${id || ""}`);
+  const handleAccount = (Account = {}) => {
+    const { id } = Account;
+    history.push(`/Account/Accountform/${id || ""}`);
   }
 
-  const renderClientItem = (clientID, index) => {
-    const { id, name, phoneNumber, address } = raw[clientID] || {};
+  const renderAccountItem = (AccountID, index) => {
+    const { id, name, phoneNumber, address } = raw[AccountID] || {};
     return (
       <tbody key={id}>
         <tr key={id}>
@@ -28,7 +28,7 @@ function Client() {
           <td>{address}</td>
           <td>{phoneNumber}</td>
           <td><Styledbutton className="update" onClick={() => {
-            handleClient(raw[clientID])
+            handleAccount(raw[AccountID])
           }}>update</Styledbutton></td>
         </tr>
       </tbody>
@@ -38,7 +38,7 @@ function Client() {
   return (
 
     <Fragment>
-      <Styledbutton  onClick={() => { handleClient() }}>Add</Styledbutton>
+      <Styledbutton  onClick={() => { handleAccount() }}>Add</Styledbutton>
 
       {
          <Table striped bordered hover>
@@ -52,7 +52,7 @@ function Client() {
            </tr>
          </thead>
             {
-              list?.map(renderClientItem)
+              list?.map(renderAccountItem)
             }   
         </Table>
       }
@@ -60,4 +60,4 @@ function Client() {
   );
 }
 
-export default Client;
+export default Account;

@@ -7,7 +7,7 @@ import { FormContainer, FormHeaderContainer } from 'Container/invoice/invoicePDF
 import { textArea } from 'Components/Inputs/input'
 import Textarea from 'Components/Inputs/textarea'
 
-const ClientForm = (props) => {
+const AccountForm = (props) => {
   const { handleSubmit, handleFormSubmit } = props
   return (
     <Fragment>
@@ -47,5 +47,5 @@ const ClientForm = (props) => {
 }
 
 export default reduxForm({
-  form: "ClientForm",
-})(ClientForm);
+  form: "AccountForm",
+})(AccountForm);

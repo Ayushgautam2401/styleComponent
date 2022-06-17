@@ -9,7 +9,7 @@ const SideComponent = () => {
 
       <StyledNavLink
         activeClassName="active"
-        to="/client"
+        to="/Account"
         activeStyle={{
           fontWeight: "bold",
           backgroundColor: "grey",
@@ -17,7 +17,7 @@ const SideComponent = () => {
         }
         }
       >
-        Client
+        Account
       </StyledNavLink>
       <StyledNavLink
         activeClassName="active"
