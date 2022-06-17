@@ -71,7 +71,7 @@ const InvoiceFormPage = props => {
   }, [list]);
 
   
- export const handleFormSubmit = (formData) => {
+  const handleFormSubmit = (formData) => {
     let total = 0;
     formData.descriptions.forEach(({ amount }) => {
       total += parseInt(amount);

@@ -2,7 +2,7 @@ import { forEach, map } from "lodash";
 import {
     INVOICE_LIST_REQUEST, INVOICE_LIST_SUCCESS, INVOICE_LIST_FAILURE,
     INVOICE_REQUEST, INVOICE_FAILURE, INVOICE_SUCCESS,
-    INVOICE_UPDATE_REQUEST, INVOICE_UPDATE_FAILURE, INVOICE_UPDATE_SUCCESS
+    INVOICE_UPDATE_REQUEST, INVOICE_UPDATE_FAILURE, INVOICE_UPDATE_SUCCESS, INVOICE_CLONE_REQUEST, INVOICE_CLONE_SUCCESS
 } from 'Store/Action/invoiceActions'
 import { makeid } from "Util/idGenrator";
 
@@ -49,6 +49,17 @@ const invoiceReducer = (state = INITIAL_STATE, action) => {
                 state.raw[data.id] = data;
               }
               return { ...state, loading: false, error: undefined }
+          case INVOICE_CLONE_REQUEST:
+              return{...state, loading: true, error:undefined}
+          case INVOICE_CLONE_SUCCESS:
+              if(data.id !== null && state.list)
+                 {const id = makeid(3)
+                    state.list.push(id)
+                    state.raw[id] = {...data, id};
+                  } else {
+                      state.raw[data.id] = data;
+                  }
+                  return {...state, loading:false, error:undefined }    
               default: return state;
     }
 }

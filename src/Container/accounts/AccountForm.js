@@ -6,9 +6,9 @@ import FormInput from 'Components/Inputs/formInputs'
 import { FormContainer, FormHeaderContainer } from 'Container/invoice/invoicePDF/FormStyling'
 import { textArea } from 'Components/Inputs/input'
 import Textarea from 'Components/Inputs/textarea'
-import handleFormSubmit from './AccountFormPage'
-const AccountForm = (props) => {
-  const { handleSubmit, handleFormSubmit } = props
+import {handleFormSubmit} from './AccountFormPage';
+const AccountForm = () => {
+ 
   return (
     <Fragment>
       <FormContainer>
