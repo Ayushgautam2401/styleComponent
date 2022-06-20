@@ -6,7 +6,7 @@ function* mysaga(){
   yield all([
     fork(watchLoginActions),
     fork(watchClientActions),
-    fork(watchInvoiceActions)
+    fork(watchInvoiceActions),
   ])
 }
 export  default mysaga;

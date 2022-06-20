@@ -2,7 +2,7 @@
 import React, { useEffect,useState  } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, useParams } from "react-router-dom"
-import { invoiceActions, invoiceUpdateActions } from 'Store/Action/invoiceActions'
+import { invoiceActions, invoiceCloneActions, invoiceUpdateActions } from 'Store/Action/invoiceActions'
 import { getInvoiceState,getClientState } from 'Store/Selector'
 import InvoiceForm from './invoiceForm'
 import {clientListActions } from 'Store/Action/clientActions'
@@ -31,7 +31,7 @@ function doConvert(numberInput) {
     outputText += num[2] != 0 ? (oneToTwenty[Number(num[2])] || `${tenth[num[2][0]]} ${oneToTwenty[num[2][1]]}`) + 'HUNDRED ' : '';
     outputText += num[3] != 0 ? (oneToTwenty[Number(num[3])] || `${tenth[num[3][0]]} ${oneToTwenty[num[3][1]]}`) + ' THOUSAND ' : '';
     outputText += num[4] != 0 ? (oneToTwenty[Number(num[4])] || `${tenth[num[4][0]]} ${oneToTwenty[num[4][1]]}`) + 'HUNDRED ' : '';
-    outputText += num[5] != 0 ? (oneToTwenty[Number(num[5])] || `${tenth[num[5][0]]} ${oneToTwenty[num[5][1]]} `) : '';
+    outputText += num[5] != 0 ? (oneToTwenty[Number(num[5])] || `${tenth[num[5][0]]} ${oneToTwenty[num[5][1]]} `) : 'Lakh';
 
     return outputText;
   }
@@ -102,6 +102,7 @@ const InvoiceFormPage = props => {
       totalAmountInWords: doConvert(total),
     }
     dispatch(invoiceUpdateActions.request(formData));
+    dispatch(invoiceCloneActions.request(formData));
   }
   return (
     <Fragment>

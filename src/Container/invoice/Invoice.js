@@ -17,6 +17,10 @@ function Invoice() {
     const { id } = invoice;
     history.push(`/invoice/Invoiceform/${id || ""}`);
   }
+  const handleClone = (invoice = {}) => {
+    const { id } = invoice;
+    history.push(`/invoice/Invoiceform/${id || ""}`);
+  }
   const renderInvoiceItem = (invoiceID) => {
     const { id, invoiceDate, invoiceNumber } = raw[invoiceID] || {};
     return (
@@ -31,6 +35,9 @@ function Invoice() {
         <td> <Styledbutton className='generatepdf' variant="success" onClick={() => {
           history.push(`/invoice_Pd/${id}`)
         }}>Generate PDF</Styledbutton></td>
+        <td><button onClick={()=>{
+          handleClone(raw[invoiceID])
+        }}> clone</button></td>
       </tr>
 
     )
