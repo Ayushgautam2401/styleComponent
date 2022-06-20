@@ -2,7 +2,7 @@
 import React from 'react'
 import Select from 'react-select'
 export const RenderSelectInput = ({input, options, ...props}) => {
-  console.log ("ptani",input,props)
+  // console.log ("ptani",input,props)
   return (
     <Select
       {...input}

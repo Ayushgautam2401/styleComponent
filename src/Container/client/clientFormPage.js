@@ -5,6 +5,7 @@ import { clientActions, clientUpdateActions } from 'Store/Action/clientActions'
 import { getClientState } from 'Store/Selector'
 import { Button } from 'react-bootstrap'
 import ClientForm from "./clientForm";
+import { Fragment } from 'react';
 
 const ClientFormPage = (props) => {
   const history = useHistory();
@@ -25,10 +26,10 @@ const ClientFormPage = (props) => {
   }
 
   return (
-    <div className='formdesign'>
+    <Fragment>
         <Button variant="outline-dark" onClick={() => history.push("/client")}>Back</Button>
         <ClientForm handleFormSubmit={handleFormSubmit} initialValues={id ? client : {}}/>
-    </div>
+    </Fragment>
   )
 }
 

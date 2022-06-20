@@ -12,7 +12,7 @@ const current = new Date();
 const invoiceForm = (props) => {
   console.log("aajaa",props)
 
-  const { handleSubmit, handleFormSubmit, clientOptions } = props
+  const { handleSubmit, handleFormSubmit, clientOptions ,addressOption } = props
 
   return (
 
@@ -59,6 +59,12 @@ const invoiceForm = (props) => {
             component={RenderSelectInput}
             options= {clientOptions}
           />
+          <Field 
+          name='Address'
+          component={RenderSelectInput}
+          options= {addressOption}>
+
+          </Field>
           <FieldArray name="descriptions" component={renderInvoiceOrders} />
           <Styledbutton>Submit</Styledbutton>
         </Form>

@@ -6,13 +6,17 @@ import { invoiceActions, invoiceUpdateActions } from 'Store/Action/invoiceAction
 import { getInvoiceState,getClientState } from 'Store/Selector'
 import InvoiceForm from './invoiceForm'
 import {clientListActions } from 'Store/Action/clientActions'
-import { Styledbutton } from 'Components/Inputs/button'
 import { Fragment } from 'react'
 import { Button } from 'react-bootstrap'
+import Moment from 'moment'
 
 
-const current = new Date();
-const currentDate = `${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()}`;
+// const current = new Date();
+// const currentDate = `${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()}`;
+
+
+const date = Moment().format("MMMM Do , YYYY");
+
   
 function doConvert(numberInput) {
 
@@ -28,7 +32,7 @@ function doConvert(numberInput) {
 
     let outputText = num[1] != 0 ? (oneToTwenty[Number(num[1])] || `${tenth[num[1][0]]} ${oneToTwenty[num[1][1]]}`) + ' MILLION ' : '';
 
-    outputText += num[2] != 0 ? (oneToTwenty[Number(num[2])] || `${tenth[num[2][0]]} ${oneToTwenty[num[2][1]]}`) + 'HUNDRED ' : '';
+    outputText += num[2] != 0 ? (oneToTwenty[Number(num[2])] || `${tenth[num[2][0]]} ${oneToTwenty[num[2][1]]}`) + 'LAKH ' : '';
     outputText += num[3] != 0 ? (oneToTwenty[Number(num[3])] || `${tenth[num[3][0]]} ${oneToTwenty[num[3][1]]}`) + ' THOUSAND ' : '';
     outputText += num[4] != 0 ? (oneToTwenty[Number(num[4])] || `${tenth[num[4][0]]} ${oneToTwenty[num[4][1]]}`) + 'HUNDRED ' : '';
     outputText += num[5] != 0 ? (oneToTwenty[Number(num[5])] || `${tenth[num[5][0]]} ${oneToTwenty[num[5][1]]} `) : '';
@@ -45,6 +49,7 @@ const InvoiceFormPage = props => {
   const { invoice, loading } = useSelector(getInvoiceState);
   const {list, raw }= useSelector(getClientState);
   const [clientOptions, setClientOptions] = useState([]);
+  const [addressOption, setAddressoption] = useState([]);
 
 
 
@@ -68,6 +73,23 @@ const InvoiceFormPage = props => {
         options.push({label: clientDetail.name, value: clientDetail.id})
       })
       setClientOptions(options);
+    }
+  }, [list]);
+
+  useEffect(() => {
+    if(!list) {
+      // api call dipatch
+      console.log("call api")
+      dispatch(clientListActions.request());
+    } else {
+      // generate address options
+      console.log("generate options");
+      const options= [];
+      list.forEach(item => {
+        const clientDetail = raw[item]
+        options.push({label: clientDetail.address, value: clientDetail.id})
+      })
+      setAddressoption(options);
     }
   }, [list]);
 
@@ -108,7 +130,7 @@ const InvoiceFormPage = props => {
     <Fragment>
       <Button variant='outline-dark' onClick={() => history.push("/invoice")}>Back</Button>
 
-      <InvoiceForm clientOptions={clientOptions} handleFormSubmit={handleFormSubmit} initialValues={id ? {...invoice, clientFirm: {label: invoice.clientFirm && invoice.clientFirm.name, value: invoice.clientFirm && invoice.clientFirm.id}} : { invoiceDate: currentDate }} />
+      <InvoiceForm clientOptions={clientOptions} addressOption={addressOption} handleFormSubmit={handleFormSubmit} initialValues={id ? {...invoice, clientFirm: {label: invoice.clientFirm && invoice.clientFirm.name, value: invoice.clientFirm && invoice.clientFirm.id}} : { invoiceDate: date }} />
     </Fragment>
   )
 }

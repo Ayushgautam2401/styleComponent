@@ -4,7 +4,6 @@ import { normalizePhone, required } from 'Util/validate'
 import { Field, Form, reduxForm } from 'redux-form'
 import FormInput from 'Components/Inputs/formInputs'
 import { FormContainer, FormHeaderContainer } from 'Container/invoice/invoicePDF/FormStyling'
-import { useHistory } from 'react-router-dom'
 
 
 
