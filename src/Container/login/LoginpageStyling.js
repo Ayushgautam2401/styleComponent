@@ -131,5 +131,4 @@ height:2rem;
 width:5rem;
 color:white;
 justify-content: center;
-
 `

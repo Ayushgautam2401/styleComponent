@@ -14,6 +14,7 @@ const AccountFormPage = (props) => {
 
   const {Account, loading} = useSelector(getAccountState);
 
+
   useEffect(() => {
     if(id) {
       dispatch(AccountActions.request({id}));
@@ -22,8 +23,9 @@ const AccountFormPage = (props) => {
 
   const handleFormSubmit= (data)=>{
     console.log(data);
-    dispatch(AccountUpdateActions.request(data));
 
+    dispatch(AccountUpdateActions.request(data));
+    history.push('/account')
   }
 
   return (

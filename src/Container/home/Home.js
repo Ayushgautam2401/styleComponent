@@ -36,18 +36,14 @@ import { Styledbutton } from "Components/Inputs/button";
 
 function Home() {
   const history = useHistory()
-  const location =useLocation();
+  const location = useLocation();
   const dispatch = useDispatch();
+
 
   const handleLogout =() => {
     dispatch(loginActions.logout ());
-    // history.push("/login")
   }
-  // const { user } = useSelector(getAuthState);
-  // useEffect(() => {
-  //   // fetch user
-  //   dispatch(currentUserActions.request())
-  // }, [])
+
   return (
 
     <Layout>
@@ -70,7 +66,6 @@ function Home() {
                 <p>Invoice Form</p>
               ) : null}{" "}
             </TitleLabel>
-            {/* <ButtonContainer></ButtonContainer> */}
           </TitleBar>
           <Content>
             <Switch>
