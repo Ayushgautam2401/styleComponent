@@ -4,7 +4,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { clientActions, clientUpdateActions } from 'Store/Action/clientActions'
 import { getClientState } from 'Store/Selector'
 import { Button } from 'react-bootstrap'
-import ClientForm from "./clientForm";
+import ClientForm from "./AccountForm";
 
 const ClientFormPage = (props) => {
   const history = useHistory();

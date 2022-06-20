@@ -28,7 +28,7 @@ function doConvert(numberInput) {
 
     let outputText = num[1] != 0 ? (oneToTwenty[Number(num[1])] || `${tenth[num[1][0]]} ${oneToTwenty[num[1][1]]}`) + ' MILLION ' : '';
 
-    outputText += num[2] != 0 ? (oneToTwenty[Number(num[2])] || `${tenth[num[2][0]]} ${oneToTwenty[num[2][1]]}`) + 'HUNDRED ' : '';
+    outputText += num[2] != 0 ? (oneToTwenty[Number(num[2])] || `${tenth[num[2][0]]} ${oneToTwenty[num[2][1]]}`) + 'LAKH ' : '';
     outputText += num[3] != 0 ? (oneToTwenty[Number(num[3])] || `${tenth[num[3][0]]} ${oneToTwenty[num[3][1]]}`) + ' THOUSAND ' : '';
     outputText += num[4] != 0 ? (oneToTwenty[Number(num[4])] || `${tenth[num[4][0]]} ${oneToTwenty[num[4][1]]}`) + 'HUNDRED ' : '';
     outputText += num[5] != 0 ? (oneToTwenty[Number(num[5])] || `${tenth[num[5][0]]} ${oneToTwenty[num[5][1]]} `) : '';
@@ -45,6 +45,7 @@ const InvoiceFormPage = props => {
   const { invoice, loading } = useSelector(getInvoiceState);
   const {list, raw }= useSelector(getClientState);
   const [clientOptions, setClientOptions] = useState([]);
+  const [addressOptions,setAddressOptions]= useState([])
 
 
 
@@ -65,10 +66,27 @@ const InvoiceFormPage = props => {
       const options= [];
       list.forEach(item => {
         const clientDetail = raw[item]
+
         options.push({label: clientDetail.name, value: clientDetail.id})
+
       })
       setClientOptions(options);
     }
+  }, [list]);
+
+
+  // decorition
+  useEffect(() => {
+
+      const options= [];
+      list.forEach(item => {
+        const clientDetail = raw[item]
+
+        options.push({label: clientDetail.name, value: clientDetail.id})
+
+      })
+      setAddressOptions(options);
+    
   }, [list]);
 
   
@@ -108,7 +126,7 @@ const InvoiceFormPage = props => {
     <Fragment>
       <Button variant='outline-dark' onClick={() => history.push("/invoice")}>Back</Button>
 
-      <InvoiceForm clientOptions={clientOptions} handleFormSubmit={handleFormSubmit} initialValues={id ? {...invoice, clientFirm: {label: invoice.clientFirm && invoice.clientFirm.name, value: invoice.clientFirm && invoice.clientFirm.id}} : { invoiceDate: currentDate }} />
+      <InvoiceForm clientOptions={clientOptions} addressOptions={addressOptions} handleFormSubmit={handleFormSubmit} initialValues={id ? {...invoice, clientFirm: {label: invoice.clientFirm && invoice.clientFirm.name, value: invoice.clientFirm && invoice.clientFirm.id}} : { invoiceDate: currentDate }} />
     </Fragment>
   )
 }

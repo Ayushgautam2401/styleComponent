@@ -3,19 +3,15 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { Layout, DisplayArea, ContentArea, TitleBar, TitleLabel, Content, Footer, } from "./HomeStyling";
 import { Header } from "./HomeStyling";
-import Client from "Container/client/Client";
+import Client from "Container/Account/Account";
 import { Switch, Route } from "react-router-dom";
-import ClientForm from "Container/client/clientFormPage";
+import ClientForm from "Container/Account/AccountFormPage";
 import InvoiceForm from "Container/invoice/invoiceFormPage";
 import { Redirect } from "react-router-dom";
 import SideComponent from "./sideComponent";
 import { Pdf_Maker } from "Container/invoice/invoicePDF/pdfMaker";
 import { loginActions } from "Store/Action/auth";
-
-
-
 import { useDispatch, useSelector } from "react-redux";
-
 import { useHistory } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { ThanksButton } from "Container/thankyou/thankYouStyling";
@@ -42,7 +38,7 @@ function Home() {
         <ContentArea>
           <TitleBar>
             <TitleLabel>
-              {location.pathname === "/client" ? (
+              {location.pathname === "/" ? (
                 <p>Client List</p>
               ) : location.pathname === "/client/Clientform/" ? (
                 <p>Client Form</p>

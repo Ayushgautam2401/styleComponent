@@ -37,7 +37,7 @@ function Invoice() {
   }
   return (
     <Fragment>
-      <Styledbutton className='add' onClick={() => { handleInvoice() }}>Add</Styledbutton>
+      <Styledbutton onClick={() => { handleInvoice() }}>Add</Styledbutton>
       {
         <Table striped bordered hover >
           <tbody>

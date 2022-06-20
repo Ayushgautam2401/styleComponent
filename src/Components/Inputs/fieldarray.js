@@ -1,5 +1,3 @@
-import { Styledinput } from 'Components/Inputs/input'
-import { Styledtext } from 'Components/Inputs/text'
 import { Field } from 'redux-form'
 import { Styledbutton } from 'Components/Inputs/button'
 import { Styledheader } from 'Components/Inputs/header'
@@ -7,18 +5,8 @@ import { FormHeaderContainer } from 'Container/invoice/invoicePDF/FormStyling'
 import FormInput from './formInputs'
 import { normalizeNo, required } from 'Util/validate'
 
-const renderField = ({ input, label, type, meta: { touched, error } }) => (
-    <div>
-      <Styledtext>{label}</Styledtext>
-      <div>
-        <Styledinput {...input} type={type} placeholder={label} />
-        {touched && error && <span>{error}</span>}
-      </div>
-    </div>
-  )
 export const renderInvoiceOrders = ({ fields, meta: { error, submitFailed } }) => (
     <ul>
-  
       <ul>
         {submitFailed && error && <span>{error}</span>}
       </ul>
