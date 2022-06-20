@@ -76,22 +76,6 @@ const InvoiceFormPage = props => {
     }
   }, [list]);
 
-  useEffect(() => {
-    if(!list) {
-      // api call dipatch
-      console.log("call api")
-      dispatch(clientListActions.request());
-    } else {
-      // generate address options
-      console.log("generate options");
-      const options= [];
-      list.forEach(item => {
-        const clientDetail = raw[item]
-        options.push({label: clientDetail.address, value: clientDetail.id})
-      })
-      setAddressoption(options);
-    }
-  }, [list]);
 
   
   const handleFormSubmit = (formData) => {
@@ -130,7 +114,7 @@ const InvoiceFormPage = props => {
     <Fragment>
       <Button variant='outline-dark' onClick={() => history.push("/invoice")}>Back</Button>
 
-      <InvoiceForm clientOptions={clientOptions} addressOption={addressOption} handleFormSubmit={handleFormSubmit} initialValues={id ? {...invoice, clientFirm: {label: invoice.clientFirm && invoice.clientFirm.name, value: invoice.clientFirm && invoice.clientFirm.id}} : { invoiceDate: date }} />
+      <InvoiceForm clientOptions={clientOptions}  handleFormSubmit={handleFormSubmit} initialValues={id ? {...invoice, clientFirm: {label: invoice.clientFirm && invoice.clientFirm.name, value: invoice.clientFirm && invoice.clientFirm.id}} : { invoiceDate: date }} />
     </Fragment>
   )
 }
