@@ -1,12 +1,8 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
 import styled from "styled-components"
 import { theme } from '../../theme';
-import { setTitleAction } from '../../Store/Action/action';
-import { useSelector } from 'react-redux';
-import { getTitle } from '../../Store/Selector';
+
 
 
  export const Styledinput = styled.input.attrs(props => {
@@ -57,12 +53,7 @@ color: ${props => props.color};
 `
 
 function Input() {
-  const {title} = useSelector(getTitle)
-  // console.log(title)
-const dispatch =useDispatch()
-useEffect(()=>{
-dispatch(setTitleAction())
-},[])
+
   return (
     
         <ThemeProvider theme={theme}>
