@@ -2,7 +2,6 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import { reducer as reduxformReducer } from 'redux-form';
 import createSagaMiddleware from '@redux-saga/core';
 import ClientReducer from './Reducer/clientReducer';
-import {titleReducer}  from "./Reducer/reducer";
 import InvoiceReducer from './Reducer/invoiceReducer'
 import saga from './saga/saga'
 import AuthReducer from "./Reducer/auth";
@@ -13,7 +12,6 @@ const Reducer = combineReducers({
     authReducer: AuthReducer,
     clientReducer: ClientReducer,
     invoiceReducer: InvoiceReducer,
-    TitleReducer: titleReducer,
     UserReducer: userReducer
 
 })

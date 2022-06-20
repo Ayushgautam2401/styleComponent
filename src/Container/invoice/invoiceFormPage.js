@@ -82,7 +82,7 @@ const InvoiceFormPage = props => {
       list.forEach(item => {
         const clientDetail = raw[item]
 
-        options.push({label: clientDetail.name, value: clientDetail.id})
+        options.push({label: clientDetail.adress, value: clientDetail.id})
 
       })
       setAddressOptions(options);
