@@ -131,7 +131,7 @@ const InvoiceFormPage = props => {
       <Button variant='outline-dark' onClick={() => history.push("/invoice")}>Back</Button>
 
 
-      <InvoiceForm clientOptions={clientOptions} addressOptions={addressOptions} handleFormSubmit={handleFormSubmit} initialValues={id ? {...invoice, clientFirm: {label: invoice.clientFirm && invoice.clientFirm.name, value: invoice.clientFirm && invoice.clientFirm.id}} : { invoiceDate: currentDate }} />
+      <InvoiceForm clientOptions={clientOptions} addressOptions={addressOptions} handleFormSubmit={handleFormSubmit} initialValues={id ? {...invoice, clientFirm: {label: invoice.clientFirm && invoice.clientFirm.name, value: invoice.clientFirm && invoice.clientFirm.id}} : { invoiceDate: date }} />
 
     </Fragment>
   )
