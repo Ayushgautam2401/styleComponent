@@ -8,7 +8,7 @@ import { FormContainer, FormHeaderContainer } from './invoicePDF/FormStyling'
 import { required } from 'Util/validate';
 const invoiceForm = (props) => {
 
-  const { handleSubmit, handleFormSubmit, clientOptions,accountAddress } = props
+  const { handleSubmit, handleFormSubmit, accountOptions,accountAddress } = props
   return (
 
     <Fragment>
@@ -51,7 +51,7 @@ const invoiceForm = (props) => {
           <Field
             name="AccountFirm"
             component={RenderSelectInput}
-            options= {AccountOptions}
+            options= {accountOptions}
           />
           <Field
           name= "address"

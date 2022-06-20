@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux';
 import { useHistory, useParams } from "react-router-dom";
-import { AccountActions, AccountUpdateActions } from 'Store/Action/AccountActions'
-import { getAccountState } from 'Store/Selector'
+import { AccountActions, AccountUpdateActions } from 'Store/action/AccountActions'
+import { getAccountState } from 'Store/selector'
 import { Button } from 'react-bootstrap'
 import AccountForm from "./AccountForm";
 

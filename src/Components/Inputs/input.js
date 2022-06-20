@@ -4,9 +4,9 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import styled from "styled-components"
 import { theme } from '../../theme';
-import { setTitleAction } from '../../Store/Action/action';
+import { setTitleAction } from '../../Store/action/action';
 import { useSelector } from 'react-redux';
-import { getTitle } from '../../Store/Selector';
+import { getTitle } from '../../Store/selector';
 
 
  export const Styledinput = styled.input.attrs(props => {

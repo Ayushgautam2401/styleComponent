@@ -22,12 +22,12 @@ import InvoiceForm from "Container/invoice/invoiceFormPage";
 import { Redirect } from "react-router-dom";
 import SideComponent from "./sideComponent";
 import { Pdf_Maker } from "Container/invoice/invoicePDF/pdfMaker";
-import { loginActions } from "Store/Action/auth";
+import { loginActions } from "Store/action/auth";
 
 //import { useEffect } from "react";
 //import { getAuthState } from "Store/Selector";
 import { useDispatch, useSelector } from "react-redux";
-import { currentUserActions } from "Store/Action/auth";
+import { currentUserActions } from "Store/action/auth";
 import { ThanksButton } from "Container/thankyou/thankYouStyling";
 
 import { Styledbutton } from "Components/Inputs/button";

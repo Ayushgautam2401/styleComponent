@@ -2,9 +2,9 @@ import MyDocument from './InvoicePdf';
 import React, { useEffect } from 'react';
 import { PDFViewer } from '@react-pdf/renderer';
 import { useParams } from 'react-router-dom';
-import { invoiceActions } from 'Store/Action/invoiceActions';
+import { invoiceActions } from 'Store/action/invoiceActions';
 import { useDispatch, useSelector } from 'react-redux';
-import { getInvoiceState } from 'Store/Selector/index';
+import { getInvoiceState } from 'Store/selector/index';
 
 export const Pdf_Maker = () => {
   const { invoiceID } = useParams();

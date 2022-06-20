@@ -4,7 +4,7 @@ import {
   ACCOUNT_LIST_REQUEST, ACCOUNT_LIST_SUCCESS,
   ACCOUNT_REQUEST, ACCOUNT_SUCCESS, ACCOUNT_UPDATE_FAILURE,
   ACCOUNT_UPDATE_REQUEST, ACCOUNT_UPDATE_SUCCESS
-} from "Store/Action/AccountActions";
+} from "Store/action/AccountActions";
 import { makeid } from "Util/idGenrator";
 
 const INITIAL_STATE = {

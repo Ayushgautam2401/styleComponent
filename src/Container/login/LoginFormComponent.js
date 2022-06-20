@@ -6,9 +6,9 @@ import {RenderField, validate} from 'Util/validate'
 
 import FormInput from 'Components/Inputs/formInputs'
 import { InputLabel, Loginbutton } from './LoginpageStyling';
-import { loginActions } from 'Store/Action/auth';
+import { loginActions } from 'Store/action/auth';
 import { required } from 'Util/validate';
-import { getAuthState } from 'Store/Selector';
+import { getAuthState } from 'Store/selector';
 
 
 const LoginFormComponent = (props) => {

@@ -8,9 +8,9 @@ import WithAuth from "HOC/withAuth";
 import ThankyouPage from "Container/thankyou/ThankyouPage";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getUserState } from "Store/Selector";
+import { getUserState } from "Store/selector";
 import { useState } from "react";
-import { currentUserActions } from "Store/Action/auth";
+import { currentUserActions } from "Store/action/auth";
 const GlobalStyle = createGlobalStyle`
  html,body{
    font-size:16px;

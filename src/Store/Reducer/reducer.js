@@ -1,4 +1,4 @@
-import {TITLE_CHANGED} from '../Action/action'
+import {TITLE_CHANGED} from '../action/action'
 
 const INITIAL_STATE={
 title:undefined

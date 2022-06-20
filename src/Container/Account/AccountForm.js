@@ -46,7 +46,7 @@ const ClientForm = (props) => {
             name="name"
             placeholder='Name'
             component={FormInput}
-            validate={[required]}
+            validate={[required]}zz
             label="Name"
           />
           <FieldArray name="descriptions" component={renderAddressOrders} />
