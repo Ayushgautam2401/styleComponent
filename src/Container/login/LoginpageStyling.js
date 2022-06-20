@@ -24,7 +24,7 @@ export const HomepageLayout = styled.div.attrs((props) => {
   `
 export const InnerContainer = styled.div`display:flex;
     flex-direction: column;
-     height: 70%;
+     height: 60%;
      width: 30%;
      background-color: beige;
      border-radius: 5%;
@@ -83,8 +83,7 @@ export const InputLabel = styled.label.attrs((props) => {
 color:${(props) => props.tc};;
   size:${(props) => props.ts};;
   font-weight: bold;
-  padding-bottom: 2%;
-  padding-top: 12%;
+  padding-top: 8%;
   
 `
 
@@ -126,10 +125,10 @@ background-color: ${props => props.background};
 border-radius: ${props=> props.bordersize};
 border: none;
 display: flex;
-margin-top: 15%;
-margin-left: 25%;
+margin-top: 10%;
+margin-left: 27%;
 height:2rem;
 width:5rem;
 color:white;
-align-items: center;
+justify-content: center;
 `

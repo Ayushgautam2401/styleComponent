@@ -49,7 +49,8 @@ const InvoiceFormPage = props => {
   const { invoice, loading } = useSelector(getInvoiceState);
   const {list, raw }= useSelector(getClientState);
   const [clientOptions, setClientOptions] = useState([]);
-  const [addressOption, setAddressoption] = useState([]);
+
+  const [addressOptions,setAddressOptions]= useState([])
 
 
 
@@ -70,13 +71,28 @@ const InvoiceFormPage = props => {
       const options= [];
       list.forEach(item => {
         const clientDetail = raw[item]
+
         options.push({label: clientDetail.name, value: clientDetail.id})
+
       })
       setClientOptions(options);
     }
   }, [list]);
 
 
+  // decorition
+  useEffect(() => {
+
+      const options= [];
+      list.forEach(item => {
+        const clientDetail = raw[item]
+
+        options.push({label: clientDetail.name, value: clientDetail.id})
+
+      })
+      setAddressOptions(options);
+    
+  }, [list]);
   
   const handleFormSubmit = (formData) => {
     let total = 0;
@@ -114,7 +130,9 @@ const InvoiceFormPage = props => {
     <Fragment>
       <Button variant='outline-dark' onClick={() => history.push("/invoice")}>Back</Button>
 
-      <InvoiceForm clientOptions={clientOptions}  handleFormSubmit={handleFormSubmit} initialValues={id ? {...invoice, clientFirm: {label: invoice.clientFirm && invoice.clientFirm.name, value: invoice.clientFirm && invoice.clientFirm.id}} : { invoiceDate: date }} />
+
+      <InvoiceForm clientOptions={clientOptions} addressOptions={addressOptions} handleFormSubmit={handleFormSubmit} initialValues={id ? {...invoice, clientFirm: {label: invoice.clientFirm && invoice.clientFirm.name, value: invoice.clientFirm && invoice.clientFirm.id}} : { invoiceDate: currentDate }} />
+
     </Fragment>
   )
 }

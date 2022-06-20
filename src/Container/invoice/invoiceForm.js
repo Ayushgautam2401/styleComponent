@@ -1,24 +1,19 @@
 import { Styledbutton } from 'Components/Inputs/button'
 import FormInput from 'Components/Inputs/formInputs'
-import { Styledheader } from 'Components/Inputs/header'
 import { renderInvoiceOrders } from 'Components/Inputs/fieldarray'
 import { RenderSelectInput } from 'Components/selectComponent/selectComponent'
-import React from 'react';
+import React,{ Fragment } from 'react';
 import { Field, Form, reduxForm, FieldArray } from 'redux-form'
 import { FormContainer, FormHeaderContainer } from './invoicePDF/FormStyling'
 import { required } from 'Util/validate';
-import { Fragment } from 'react'
-const current = new Date();
 const invoiceForm = (props) => {
-  console.log("aajaa",props)
 
-  const { handleSubmit, handleFormSubmit, clientOptions ,addressOption } = props
 
+  const { handleSubmit, handleFormSubmit, clientOptions,accountAddress } = props
   return (
 
     <Fragment>
       <FormContainer>
-       
         <Form onSubmit={handleSubmit(handleFormSubmit)}>
         <FormHeaderContainer>
           <Field
@@ -59,12 +54,12 @@ const invoiceForm = (props) => {
             component={RenderSelectInput}
             options= {clientOptions}
           />
-          {/* <Field 
-          name='Address'
-          component={RenderSelectInput}
-          options= {addressOption}>
 
-          </Field> */}
+          <Field
+          name= "address"
+          component={RenderSelectInput}
+          options= {accountAddress}
+          />
           <FieldArray name="descriptions" component={renderInvoiceOrders} />
           <Styledbutton>Submit</Styledbutton>
         </Form>

@@ -1,29 +1,26 @@
 import Invoice from "Container/invoice/Invoice";
 import React from "react";
 import { useLocation } from "react-router-dom";
-
-import {Layout,DisplayArea,ContentArea,TitleBar,TitleLabel,Content,Footer,}from "./HomeStyling";
-
+import { Layout, DisplayArea, ContentArea, TitleBar, TitleLabel, Content, Footer, } from "./HomeStyling";
 import { Header } from "./HomeStyling";
-import Client from "Container/client/Client";
+import Client from "Container/Account/Account";
 import { Switch, Route } from "react-router-dom";
-import ClientForm from "Container/client/clientFormPage";
+import ClientForm from "Container/Account/AccountFormPage";
 import InvoiceForm from "Container/invoice/invoiceFormPage";
 import { Redirect } from "react-router-dom";
 import SideComponent from "./sideComponent";
 import { Pdf_Maker } from "Container/invoice/invoicePDF/pdfMaker";
 import { loginActions } from "Store/Action/auth";
-
-
 import { useDispatch, useSelector } from "react-redux";
-
 import { useHistory } from "react-router-dom";
 import { Button } from "react-bootstrap";
+import { ThanksButton } from "Container/thankyou/thankYouStyling";
 
 function Home() {
   const history = useHistory()
-  const location =useLocation();
+  const location = useLocation();
   const dispatch = useDispatch();
+
 
   const handleLogout =() => {
     dispatch(loginActions.logout ());
@@ -32,8 +29,8 @@ function Home() {
   return (
 
     <Layout>
-      <Header><Button variant='outline-dark' onClick={()=>history.push("/thankyou")}>Thank You</Button>
-      <Button variant='secondary' onClick={handleLogout}>Log out</Button>
+      <Header><ThanksButton variant='outline-dark' onClick={() => history.push("/thankyou")}>Thanks</ThanksButton>
+        <ThanksButton variant='secondary' onClick={handleLogout}>Log out</ThanksButton>
       </Header>
 
       <DisplayArea>
@@ -41,7 +38,7 @@ function Home() {
         <ContentArea>
           <TitleBar>
             <TitleLabel>
-              {location.pathname === "/client" ? (
+              {location.pathname === "/" ? (
                 <p>Client List</p>
               ) : location.pathname === "/client/Clientform/" ? (
                 <p>Client Form</p>
@@ -51,7 +48,6 @@ function Home() {
                 <p>Invoice Form</p>
               ) : null}{" "}
             </TitleLabel>
-            {/* <ButtonContainer></ButtonContainer> */}
           </TitleBar>
           <Content>
             <Switch>
@@ -61,9 +57,9 @@ function Home() {
               <Route exact path="/invoice" component={Invoice} />
               <Route path="/invoice/Invoiceform/:id?" component={InvoiceForm} />
 
-              <Route path= "/invoice_Pd/:invoiceID" component={Pdf_Maker}/>
+              <Route path="/invoice_Pd/:invoiceID" component={Pdf_Maker} />
 
-              <Redirect to="/client"/>
+              <Redirect to="/client" />
 
             </Switch>
           </Content>
