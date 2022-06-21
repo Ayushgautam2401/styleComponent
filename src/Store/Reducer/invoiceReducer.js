@@ -8,12 +8,11 @@ import { makeid } from "Util/idGenrator";
 
 const INITIAL_STATE = {
     list: undefined,
-    raw: {},
+    raw: {},        
     invoice: undefined,
     loading: false,
     error: undefined
 }
-
 const invoiceReducer = (state = INITIAL_STATE, action) => {
     const { type, payload } = action;
     const { data, message } = payload || {};
@@ -51,8 +50,7 @@ const invoiceReducer = (state = INITIAL_STATE, action) => {
             return { ...state, loading: false, error: undefined }
             case INVOICE_CLONE_REQUEST:
             return{...state,loading: true, error:undefined};
-            case INVOICE_CLONE_SUCCESS:         
-
+            case INVOICE_CLONE_SUCCESS:  
                 return {...state ,loading: false , error: undefined}
         default: return state;  
     }

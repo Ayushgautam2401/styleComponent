@@ -6,12 +6,10 @@ import { useHistory } from 'react-router-dom';
 import { Styledbutton } from 'Components/Inputs/button';
 import { generatePath } from 'react-router-dom';
 import { Fragment } from 'react';
-
-
+import { getCloneState } from 'Store/Selector';
 function Invoice() {
   const history = useHistory();
   const { list, raw } = useSelector(getInvoiceState);
-
 
   const handleInvoice = (invoice = {}) => {
     const { id } = invoice;
@@ -19,7 +17,7 @@ function Invoice() {
   }
   const handleClone = (invoice = {}) => {
     const { id } = invoice;
-    history.push(`/invoice/Invoiceform/${id || ""}`);
+    history.push(`/invoice/Invoiceform/${ id|| ""}`);
   }
   const renderInvoiceItem = (invoiceID) => {
     const { id, invoiceDate, invoiceNumber } = raw[invoiceID] || {};
@@ -36,7 +34,7 @@ function Invoice() {
           history.push(`/invoice_Pd/${id}`)
         }}>Generate PDF</Styledbutton></td>
         <td><button onClick={()=>{
-          handleClone(raw[invoiceID])
+          handleClone(invoiceID)
         }}> clone</button></td>
       </tr>
 

@@ -34,14 +34,14 @@ function* updateInvoiceOperation (action){
     yield put(invoiceUpdateActions.success({data: payload}));
 
 }
-// function* cloneInvoiceOperation (action){
-//     const {type, payload } = action;
-//     yield put (invoiceCloneActions.success({data: payload}))
-// }
+function* cloneInvoiceOperation (action){
+    const {type, payload } = action;
+    yield put (invoiceCloneActions.success({data: payload}))
+}
 export function* watchInvoiceActions(){
     yield takeLatest(INVOICE_LIST_REQUEST,fetchInvoiceListOperation );
     yield takeLatest(INVOICE_REQUEST, fetchInvoiceOperation);
     yield takeLatest(INVOICE_UPDATE_REQUEST,updateInvoiceOperation );
-    // yield takeLatest(INVOICE_LIST_REQUEST,cloneInvoiceOperation);
+    yield takeLatest(INVOICE_LIST_REQUEST,cloneInvoiceOperation);
 
 }

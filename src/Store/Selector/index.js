@@ -22,3 +22,6 @@ export function getAuthState(state){
 export function getUserState(state){
     return state.UserReducer
 }
+export function getCloneState(state){
+    return state.CloneReducer
+}
