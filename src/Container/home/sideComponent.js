@@ -34,7 +34,12 @@ const SideComponent = () => {
       </StyledNavLink>
 
       <StyledNavLink
-      to = "Inventary" >
+      to = "inventory" 
+      activeStyle={{
+        fontWeight: "bold",
+        backgroundColor: "grey",
+        textDecoration: "none",
+      }}  >
         Inventory
       </StyledNavLink>
 

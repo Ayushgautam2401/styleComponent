@@ -13,7 +13,6 @@ import { Pdf_Maker } from "Container/invoice/invoicePDF/pdfMaker";
 import { loginActions } from "Store/Action/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { Button } from "react-bootstrap";
 import { ThanksButton } from "Container/thankyou/thankYouStyling";
 import Inventory from "Container/Inventory/Inventory";
 import InventoryForm from "Container/Inventory/InventoryForm";
@@ -65,8 +64,8 @@ function Home() {
 
               <Route path="/invoice_Pd/:invoiceID" component={Pdf_Maker} />
 
-              <Route path='/inventory' component={Inventory}></Route>
-              <Route path='inventory/Inventoryform' component={InventoryForm} />
+              <Route exact path='/inventory' component={Inventory}/>
+              <Route path="/inventory/Inventoryform" component={InventoryForm} />
 
               <Redirect to="/client" />
 

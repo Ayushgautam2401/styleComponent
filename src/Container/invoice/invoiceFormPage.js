@@ -42,7 +42,7 @@ function doConvert(numberInput) {
 
 
 // const Add =new Address();
-const InvoiceFormPage = props => {
+const InvoiceFormPage = (props) => {
   const history= useHistory();
   const { id } = useParams();
   const dispatch = useDispatch();
