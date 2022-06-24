@@ -4,7 +4,6 @@ import styled from "styled-components"
 import { theme } from '../../theme';
 
 
-
  export const Styledinput = styled.input.attrs(props => {
     const {theme:{size,background,bordersize}} = props;
 

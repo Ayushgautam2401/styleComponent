@@ -8,8 +8,7 @@ import { FormContainer, FormHeaderContainer } from './invoicePDF/FormStyling'
 import { required } from 'Util/validate';
 const invoiceForm = (props) => {
 
-  const { handleSubmit, handleFormSubmit, clientOptions,addressOptions } = props
-
+  const { handleSubmit, handleFormSubmit, AccountOptions,AccountDetails } = props
   return (
 
     <Fragment>
@@ -50,17 +49,19 @@ const invoiceForm = (props) => {
             label="Currency Type"
           /> </FormHeaderContainer>
           <Field
-            name="clientFirm"
+            name="AccountFirm"
             component={RenderSelectInput}
-            options= {clientOptions}
+            options= {AccountOptions}
           />
 
           <Field
           name= "address"
           component={RenderSelectInput}
-          options= {addressOptions}
+          options= {AccountDetails}
           />
+          
           <FieldArray name="descriptions" component={renderInvoiceOrders} />
+          
           <Styledbutton>Submit</Styledbutton>
         </Form>
       </FormContainer>

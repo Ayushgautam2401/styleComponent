@@ -5,36 +5,50 @@ import { Field, Form, reduxForm,FieldArray } from 'redux-form'
 import FormInput from 'Components/Inputs/formInputs'
 import { FormContainer, FormHeaderContainer } from 'Container/invoice/invoicePDF/FormStyling'
 import { Styledheader } from 'Components/Inputs/header'
+//import {FieldArray} from 'redux-form/lib/FieldArray'
 
 
-const renderAddressOrders = ({ fields, meta: { error, submitFailed } }) => (
+export const renderAdressOrders = ({ fields, meta: { error, submitFailed } }) => (
   <ul>
-    {fields.map((member, index) => (
+    <ul>
+      {submitFailed && error && <span>{error}</span>}
+    </ul>
+    {fields.map((item, index) => (
       <ul key={index}>
         <Styledbutton
           type="button"
           title="Remove Member"
           onClick={() => fields.remove(index)}
         >Remove</Styledbutton>
-        <Styledheader>Address {index + 1}</Styledheader>
-        <Field
-          name={`${member}.address`}
+
+        
+        <ul><Field
+          name={`${item}.address`}
           component={FormInput}
           validate={[required]}
+          label={<Styledheader>Adress {index + 1}</Styledheader>}
         />
+        </ul>
+            <ul><Field
+          name={`${item}.phonenumber`}
+          component={FormInput}
+          validate={[required]}
+          label={<Styledheader>Contact {index + 1}</Styledheader>}
+        /></ul>
+
       </ul>
     )
     )
     }
     <ul>
       <Styledbutton type="button" onClick={() => fields.push({})}>
-        Add Description
+        Add Account Details
       </Styledbutton>
       {submitFailed && error && <span>{error}</span>}
     </ul>
   </ul>
 )
-const ClientForm = (props) => {
+const AccountForm = (props) => {
   const { handleSubmit, handleFormSubmit } = props
   // console.log('fieldarray', handleFormSubmit)
   return (
@@ -46,10 +60,11 @@ const ClientForm = (props) => {
             name="name"
             placeholder='Name'
             component={FormInput}
-            validate={[required]}
+            validate={[required]}zz
             label="Name"
           />
-          <FieldArray name="descriptions" component={renderAddressOrders} />
+          <FieldArray name="details" component={renderAdressOrders} />
+        
           <Styledbutton>Submit</Styledbutton>
         </Form>
       </FormContainer>
@@ -58,5 +73,5 @@ const ClientForm = (props) => {
 }
 
 export default reduxForm({
-  form: "ClientForm",
-})(ClientForm);
+  form: "AccountForm",
+})(AccountForm);

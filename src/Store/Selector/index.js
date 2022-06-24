@@ -6,8 +6,8 @@ export function getData(state) {
     return state.tableData;
 }
 
-export function getClientState(state) {
-    return state.clientReducer
+export function getAccountState(state) {
+    return state.AccountReducer
 }
 
 export function getInvoiceState(state) {

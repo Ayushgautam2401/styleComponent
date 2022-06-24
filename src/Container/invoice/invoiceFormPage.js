@@ -1,13 +1,14 @@
-
 import React, { useEffect,useState  } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, useParams } from "react-router-dom"
-import { invoiceActions, invoiceUpdateActions } from 'Store/Action/invoiceActions'
-import { getInvoiceState,getClientState } from 'Store/Selector'
+import { invoiceActions, invoiceUpdateActions } from 'Store/action/invoiceActions'
+import { getInvoiceState,getAccountState } from 'Store/selector'
 import InvoiceForm from './invoiceForm'
-import {clientListActions } from 'Store/Action/clientActions'
+import {AccountListActions } from 'Store/action/AccountActions'
+import { Styledbutton } from 'Components/Inputs/button'
 import { Fragment } from 'react'
 import { Button } from 'react-bootstrap'
+import { renderAdressOrders } from 'Container/accounts/AccountForm'
 import Moment from 'moment'
 
 
@@ -15,7 +16,7 @@ import Moment from 'moment'
 // const currentDate = `${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()}`;
 
 
-const date = Moment().format("MMMM Do , YYYY");
+const currentDate = Moment().format("MMMM Do , YYYY");
 
   
 function doConvert(numberInput) {
@@ -32,7 +33,7 @@ function doConvert(numberInput) {
 
     let outputText = num[1] != 0 ? (oneToTwenty[Number(num[1])] || `${tenth[num[1][0]]} ${oneToTwenty[num[1][1]]}`) + ' MILLION ' : '';
 
-    outputText += num[2] != 0 ? (oneToTwenty[Number(num[2])] || `${tenth[num[2][0]]} ${oneToTwenty[num[2][1]]}`) + 'LAKH ' : '';
+    outputText += num[2] != 0 ? (oneToTwenty[Number(num[2])] || `${tenth[num[2][0]]} ${oneToTwenty[num[2][1]]}`) + 'HUNDRED ' : '';
     outputText += num[3] != 0 ? (oneToTwenty[Number(num[3])] || `${tenth[num[3][0]]} ${oneToTwenty[num[3][1]]}`) + ' THOUSAND ' : '';
     outputText += num[4] != 0 ? (oneToTwenty[Number(num[4])] || `${tenth[num[4][0]]} ${oneToTwenty[num[4][1]]}`) + 'HUNDRED ' : '';
     outputText += num[5] != 0 ? (oneToTwenty[Number(num[5])] || `${tenth[num[5][0]]} ${oneToTwenty[num[5][1]]} `) : '';
@@ -47,11 +48,9 @@ const InvoiceFormPage = (props) => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const { invoice, loading } = useSelector(getInvoiceState);
-  const {list, raw }= useSelector(getClientState);
-  const [clientOptions, setClientOptions] = useState([]);
-
-  const [addressOptions,setAddressOptions]= useState([])
-
+  const {list, raw }= useSelector(getAccountState);
+  const [AccountOptions, setAccountOptions] = useState([]);
+  // const [AdressOptions, setAdressOptions] = useState([]);
 
 
   useEffect(() => {
@@ -64,48 +63,42 @@ const InvoiceFormPage = (props) => {
     if(!list) {
       // api call dipatch
       console.log("call api")
-      dispatch(clientListActions.request());
+      dispatch(AccountListActions.request());
     } else {
       // generate options
       console.log("generate options");
       const options= [];
       list.forEach(item => {
-        const clientDetail = raw[item]
-
-        options.push({label: clientDetail.name, value: clientDetail.id})
-
+        const AccountDetail = raw[item]
+        options.push({label: AccountDetail.name, value: AccountDetail.id})
       })
-      setClientOptions(options);
+      setAccountOptions(options);
     }
   }, [list]);
 
+// useEffect(() =>{
+//   const options = [];
+//   list.forEach(item => {
+//     const AdressDetail = raw[?.map(renderAdressOrders)]
+//     options.push({label:AdressDetail.adress, value:AdressDetail.id})
+//   })
+//   setAdressOptions(options);
+  
+// })
 
-  // decorition
-  useEffect(() => {
 
-      const options= [];
-      list.forEach(item => {
-        const clientDetail = raw[item]
-
-        options.push({label: clientDetail.address, value: clientDetail.id})
-
-      })
-      setAddressOptions(options);
-    
-  }, [list]);
-console.log(addressOptions)
+  
 
   const handleFormSubmit = (formData) => {
     let total = 0;
     formData.descriptions.forEach(({ amount }) => {
       total += parseInt(amount);
-      history.push("/invoice")
     })
 
-    const clientDetail = raw[formData.clientFirm.value];
+    const AccountDetail = raw[formData.AccountFirm.value];
     formData = {
       ...formData,
-      clientFirm: clientDetail,
+      AccountFirm: AccountDetail,
       invoicedRaisedBy: "Ashutosh Sharma",
       firmDetail: {
         name: "Biz Tecno",
@@ -131,9 +124,7 @@ console.log(addressOptions)
     <Fragment>
       <Button variant='outline-dark' onClick={() => history.push("/invoice")}>Back</Button>
 
-
-      <InvoiceForm clientOptions={clientOptions} addressOptions={addressOptions} handleFormSubmit={handleFormSubmit} initialValues={id ? {...invoice, clientFirm: {label: invoice.clientFirm && invoice.clientFirm.name, value: invoice.clientFirm && invoice.clientFirm.id}} : { invoiceDate: date }} />
-
+      <InvoiceForm AccountOptions={AccountOptions}  handleFormSubmit={handleFormSubmit} initialValues={id ? {...invoice, AccountFirm: {label: invoice.AccountFirm && invoice.AccountFirm.name, value: invoice.AccountFirm && invoice.AccountFirm.id}} : { invoiceDate: currentDate }} />
     </Fragment>
   )
 }

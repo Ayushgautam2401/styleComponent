@@ -1,9 +1,9 @@
 import usePlaceholder from 'react-bootstrap/esm/usePlaceholder';
 import { useParams } from 'react-router-dom';
 import { call, put, takeLatest, select } from 'redux-saga/effects';
-import { CURRENT_USER_FETCH, LOGIN_FETCH, loginActions, currentUserActions } from 'Store/Action/auth';
-import { _userData } from 'Store/Reducer/auth';
-import { getToken } from 'Store/Selector';
+import { CURRENT_USER_FETCH, LOGIN_FETCH, loginActions, currentUserActions } from 'Store/action/auth';
+import { _userData } from 'Store/reducer/auth';
+import { getToken } from 'Store/selector';
 function* LoginUserFetch(action) {
   const { payload } = action;
   const { email, password } = payload;

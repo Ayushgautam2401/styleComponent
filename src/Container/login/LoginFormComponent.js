@@ -2,13 +2,13 @@ import { Field, reduxForm, Form } from 'redux-form'
 import { useEffect } from 'react'
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
-
+import {RenderField, validate} from 'Util/validate'
 
 import FormInput from 'Components/Inputs/formInputs'
 import { InputLabel, Loginbutton } from './LoginpageStyling';
-import { loginActions } from 'Store/Action/auth';
+import { loginActions } from 'Store/action/auth';
 import { required } from 'Util/validate';
-import { getAuthState } from 'Store/Selector';
+import { getAuthState } from 'Store/selector';
 
 
 const LoginFormComponent = (props) => {
@@ -42,7 +42,7 @@ const LoginFormComponent = (props) => {
         component={FormInput}
         type="password"
         label={<InputLabel>Password</InputLabel>}
-        placeholder="Password"
+        placeholder='Password'
         validate={[required]}
       />
       <Loginbutton>Log In</Loginbutton>
@@ -51,4 +51,5 @@ const LoginFormComponent = (props) => {
 }
 export default reduxForm({
   form: 'LoginForm',
+  
 })(LoginFormComponent)

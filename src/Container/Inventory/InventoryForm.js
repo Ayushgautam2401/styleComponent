@@ -30,6 +30,7 @@ const InventoryForm = (props) => {
         </Form>
         </FormContainer>
     </Fragment>
+
   )
 }
 

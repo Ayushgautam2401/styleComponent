@@ -1,6 +1,6 @@
 import { call, put, select, takeLatest } from 'redux-saga/effects';
-import { invoiceActions, invoiceListActions, invoiceUpdateActions, INVOICE_LIST_REQUEST, INVOICE_REQUEST, INVOICE_UPDATE_REQUEST } from 'Store/Action/invoiceActions';
-import { getInvoiceState } from "Store/Selector";
+import { invoiceActions, invoiceListActions, invoiceUpdateActions, invoiceCloneActions, INVOICE_LIST_REQUEST, INVOICE_REQUEST, INVOICE_UPDATE_REQUEST, INVOICE_CLONE_REQUEST } from 'Store/action/invoiceActions';
+import { getInvoiceState } from "Store/selector";
 
 
 
@@ -34,9 +34,13 @@ function* updateInvoiceOperation (action){
     yield put(invoiceUpdateActions.success({data: payload}));
 
 }
+// function* cloneInvoiceOperation (action){
+//     const { type, payload } = action;
+//     yield put(invoiceCloneActions.success({data: payload}));
+// }
 export function* watchInvoiceActions(){
     yield takeLatest(INVOICE_LIST_REQUEST,fetchInvoiceListOperation );
     yield takeLatest(INVOICE_REQUEST, fetchInvoiceOperation);
     yield takeLatest(INVOICE_UPDATE_REQUEST,updateInvoiceOperation );
-
+   // yield takeLatest(INVOICE_CLONE_REQUEST,cloneInvoiceOperation );
 }
