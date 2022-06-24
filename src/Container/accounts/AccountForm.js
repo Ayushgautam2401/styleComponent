@@ -50,7 +50,7 @@ export const renderAdressOrders = ({ fields, meta: { error, submitFailed } }) =>
 )
 const AccountForm = (props) => {
   const { handleSubmit, handleFormSubmit } = props
-  console.log('fieldarray', handleFormSubmit)
+  // console.log('fieldarray', handleFormSubmit)
   return (
     <Fragment>
       <FormContainer>

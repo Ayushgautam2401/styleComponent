@@ -29,6 +29,8 @@ import { loginActions } from "Store/action/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { currentUserActions } from "Store/action/auth";
 import { ThanksButton } from "Container/thankyou/thankYouStyling";
+import Inventory from "Container/inventory/Inventory";
+import InventoryForm from "Container/inventory/InventoryForm";
 
 import { Styledbutton } from "Components/Inputs/button";
 //import { useHistory } from "react-router-dom";
@@ -64,6 +66,10 @@ function Home() {
                 <p>Invoice List</p>
               ) : location.pathname === "/invoice/Invoiceform/" ? (
                 <p>Invoice Form</p>
+              ) : location.pathname === "/inventory" ? (
+                <p>Inventory List</p>
+              ) : location.pathname === "/inventory/Inventoryform" ? (
+                <p>Inventory Form</p>
               ) : null}{" "}
             </TitleLabel>
           </TitleBar>
@@ -76,7 +82,13 @@ function Home() {
               <Route path="/invoice/Invoiceform/:id?" component={InvoiceForm} />
                 <Route path= "/invoice_Pd/:invoiceID" component={Pdf_Maker}/>
 
-              <Redirect to="/Account"/>
+              <Route path="/invoice_Pd/:invoiceID" component={Pdf_Maker} />
+
+              <Route path='/inventory' component={Inventory}></Route>
+              <Route path='inventory/Inventoryform' component={InventoryForm} />
+
+              <Redirect to="/Account" />
+
             </Switch>
           </Content>
         </ContentArea>

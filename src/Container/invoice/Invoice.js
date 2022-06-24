@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import { Table } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { Styledbutton } from 'Components/Inputs/button';
-import { generatePath } from 'react-router-dom';
 import { Fragment } from 'react';
 import { makeid } from 'Util/idGenrator';
 
@@ -39,7 +38,8 @@ function Invoice() {
           handleInvoice(raw[invoiceID])
         }}>update</Styledbutton></td>
         {/* <td><Styledbutton onClick={() => {handleInvoiceClone(raw[invoiceID])}}>Clone</Styledbutton></td> */}
-        <td> <Styledbutton className='generatepdf' variant="success" onClick={() => {
+       
+        <td> <Styledbutton variant="success" onClick={() => {
           history.push(`/invoice_Pd/${id}`)
         }}>Generate PDF</Styledbutton></td>
       </tr>
@@ -48,6 +48,7 @@ function Invoice() {
   }
   return (
     <Fragment>
+
       <Styledbutton onClick={() => { handleInvoice() }}>Add</Styledbutton>
       {
         <Table striped bordered hover >
