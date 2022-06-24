@@ -13,7 +13,7 @@ function Inventory() {
 
   return (
       <div>Inventory
-    <Styledbutton onClick={() => history.push("/inventory/Inventoryform")}>Add Inventory</Styledbutton>
+    <Styledbutton onClick={() => history.push("/inventory/Inventoryform")}>Add</Styledbutton>
     </div>
   )
 }
