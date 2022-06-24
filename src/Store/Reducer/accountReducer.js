@@ -55,6 +55,7 @@ const AccountReducer = (state = INITIAL_STATE, action) => {
     case ACCOUNT_SUCCESS:
       return { ...state, Account: data, loading: false };
     case ACCOUNT_FAILURE:
+      return {...state, error:message, loading: false};
     case ACCOUNT_UPDATE_FAILURE:
       return { ...state, error: message, loading: false };
 

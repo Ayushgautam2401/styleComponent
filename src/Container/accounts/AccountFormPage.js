@@ -23,6 +23,7 @@ const AccountFormPage = (props) => {
   const handleFormSubmit= (data)=>{
     console.log(data);
     dispatch(AccountUpdateActions.request(data));
+    history.push("/Account");
 
   }
 

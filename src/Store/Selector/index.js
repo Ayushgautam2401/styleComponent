@@ -22,3 +22,7 @@ export function getAuthState(state){
 export function getUserState(state){
     return state.UserReducer
 }
+
+export function getInventoryState(state){
+    return state.InventoryReducer
+}

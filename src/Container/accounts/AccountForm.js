@@ -5,10 +5,12 @@ import { Field, Form, reduxForm,FieldArray } from 'redux-form'
 import FormInput from 'Components/Inputs/formInputs'
 import { FormContainer, FormHeaderContainer } from 'Container/invoice/invoicePDF/FormStyling'
 import { Styledheader } from 'Components/Inputs/header'
+import { useHistory } from 'react-router-dom'
 //import {FieldArray} from 'redux-form/lib/FieldArray'
 
 
 export const renderAdressOrders = ({ fields, meta: { error, submitFailed } }) => (
+  
   <ul>
     <ul>
       {submitFailed && error && <span>{error}</span>}
@@ -51,6 +53,7 @@ export const renderAdressOrders = ({ fields, meta: { error, submitFailed } }) =>
 const AccountForm = (props) => {
   const { handleSubmit, handleFormSubmit } = props
   // console.log('fieldarray', handleFormSubmit)
+ 
   return (
     <Fragment>
       <FormContainer>
@@ -65,7 +68,7 @@ const AccountForm = (props) => {
           />
           <FieldArray name="details" component={renderAdressOrders} />
         
-          <Styledbutton>Submit</Styledbutton>
+          <Styledbutton >Submit</Styledbutton> 
         </Form>
       </FormContainer>
     </Fragment>
