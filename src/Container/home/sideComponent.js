@@ -31,6 +31,18 @@ const SideComponent = () => {
       >
         Invoice
       </StyledNavLink>
+      <StyledNavLink
+        activeClassName="active"
+        to="/Inventory"
+        activeStyle={{
+          fontWeight: "bold",
+          backgroundColor: "grey",
+          textDecoration: "none",
+        }
+        }
+      >
+        Inventory
+      </StyledNavLink>
 
     </Sidebar>
   )

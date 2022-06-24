@@ -8,6 +8,7 @@ import {AccountListActions } from 'Store/action/AccountActions'
 import { Styledbutton } from 'Components/Inputs/button'
 import { Fragment } from 'react'
 import { Button } from 'react-bootstrap'
+import { renderAdressOrders } from 'Container/accounts/AccountForm'
 
 
 const current = new Date();
@@ -44,7 +45,7 @@ const InvoiceFormPage = props => {
   const { invoice, loading } = useSelector(getInvoiceState);
   const {list, raw }= useSelector(getAccountState);
   const [AccountOptions, setAccountOptions] = useState([]);
-
+  const [AdressOptions, setAdressOptions] = useState([]);
 
 
   useEffect(() => {
@@ -69,6 +70,19 @@ const InvoiceFormPage = props => {
       setAccountOptions(options);
     }
   }, [list]);
+
+// useEffect(() =>{
+//   const options = [];
+//   list.forEach(item => {
+//     const AdressDetail = raw[?.map(renderAdressOrders)]
+//     options.push({label:AdressDetail.adress, value:AdressDetail.id})
+//   })
+//   setAdressOptions(options);
+  
+// })
+
+
+  
 
   
   const handleFormSubmit = (formData) => {
@@ -106,7 +120,7 @@ const InvoiceFormPage = props => {
     <Fragment>
       <Button variant='outline-dark' onClick={() => history.push("/invoice")}>Back</Button>
 
-      <InvoiceForm AccountOptions={AccountOptions} handleFormSubmit={handleFormSubmit} initialValues={id ? {...invoice, AccountFirm: {label: invoice.AccountFirm && invoice.AccountFirm.name, value: invoice.AccountFirm && invoice.AccountFirm.id}} : { invoiceDate: currentDate }} />
+      <InvoiceForm AccountOptions={AccountOptions} AdressOptions={AdressOptions} handleFormSubmit={handleFormSubmit} initialValues={id ? {...invoice, AccountFirm: {label: invoice.AccountFirm && invoice.AccountFirm.name, value: invoice.AccountFirm && invoice.AccountFirm.id}} : { invoiceDate: currentDate }} />
     </Fragment>
   )
 }

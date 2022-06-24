@@ -6,6 +6,7 @@ import { useHistory } from 'react-router-dom';
 import { Styledbutton } from 'Components/Inputs/button';
 import { generatePath } from 'react-router-dom';
 import { Fragment } from 'react';
+import { makeid } from 'Util/idGenrator';
 
 
 function Invoice() {
@@ -16,7 +17,16 @@ function Invoice() {
   const handleInvoice = (invoice = {}) => {
     const { id } = invoice;
     history.push(`/invoice/Invoiceform/${id || ""}`);
-  }
+}
+
+// const handleInvoiceClone = (invoice = {}) => {
+//   if (id !== null) {
+//     const {newId} = makeid(3) = invoice;
+//     history.push(`/invoice/Invoiceform/${newId || ""}`)     
+//   }
+// }
+
+
   const renderInvoiceItem = (invoiceID) => {
     const { id, invoiceDate, invoiceNumber } = raw[invoiceID] || {};
     return (
@@ -28,6 +38,7 @@ function Invoice() {
         <td><Styledbutton className='update' onClick={() => {
           handleInvoice(raw[invoiceID])
         }}>update</Styledbutton></td>
+        {/* <td><Styledbutton onClick={() => {handleInvoiceClone(raw[invoiceID])}}>Clone</Styledbutton></td> */}
         <td> <Styledbutton className='generatepdf' variant="success" onClick={() => {
           history.push(`/invoice_Pd/${id}`)
         }}>Generate PDF</Styledbutton></td>
