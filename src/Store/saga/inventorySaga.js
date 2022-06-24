@@ -1,4 +1,31 @@
 import { put,select,takeLatest } from "@redux-saga/core/effects";
-import { InventoryListActions, InventoryActions } from "Store/Action/inventoryActions";
+import { InventoryListActions, InventoryActions, INVENTORY_LIST_REQUEST, INVENTORY_ADD_REQUEST } from "Store/Action/inventoryActions";
+import { getInventoryState } from "Store/Selector";
 
-function
+function* fetchInventoryListOperation() {
+    try {
+     
+      const InventoryState = yield select(getInventoryState);
+      yield put(InventoryListActions.success({
+        data: InventoryState.list // todo: pass list
+      }))
+    } catch (error) {
+      yield put(InventoryListActions.failure({message: error.message}))
+    }
+  }
+
+  function* fetchInventoryOperation(action) {
+    const { type, payload: {id} } = action;
+    const {raw} = yield select(getInventoryState);
+    if(raw[id]) {
+      yield put(InventoryActions.success({data: raw[id]}));
+    } else {
+      yield put(InventoryActions.failure({message: "No Category Found", data: undefined}));
+    }
+  }
+
+  export function* watchInventoryActions() {
+    yield takeLatest(INVENTORY_LIST_REQUEST, fetchInventoryListOperation);
+    yield takeLatest(INVENTORY_ADD_REQUEST, fetchInventoryOperation);
+  }
+  

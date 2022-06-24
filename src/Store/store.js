@@ -18,7 +18,7 @@ const Reducer = combineReducers({
     AccountReducer: AccountReducer,
     invoiceReducer: InvoiceReducer,
     UserReducer: userReducer,
-    InventoryReducer:InventoryReducer
+    InventoryReducer: InventoryReducer
 
 })
 const Store = createStore(Reducer,applyMiddleware(SagaMiddleware));

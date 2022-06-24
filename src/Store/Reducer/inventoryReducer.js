@@ -40,9 +40,9 @@ const InventoryReducer = (state = INITIAL_STATE, action) => {
             return {...state, error: message, loading: false }; 
         
         case INVENTORY_ADD_REQUEST:
-            return {...state, Inventory: undefined, loading: true, error:undefined};
+     return {...state, inventory: undefined, loading: true, error:undefined};
         case INVENTORY_ADD_SUCCESS:
-            return {...state, Inventory: data, error:undefined };
+            return {...state, inventory: data, error:undefined };
         case INVENTORY_ADD_FAILIURE:
             return {...state, error: message, loading:false};
          default:
