@@ -15,6 +15,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { ThanksButton } from "Container/thankyou/thankYouStyling";
+import Inventory from "Container/Inventory/Inventory";
+import InventoryForm from "Container/Inventory/InventoryForm";
 
 function Home() {
   const history = useHistory()
@@ -46,6 +48,10 @@ function Home() {
                 <p>Invoice List</p>
               ) : location.pathname === "/invoice/Invoiceform/" ? (
                 <p>Invoice Form</p>
+              ) : location.pathname === "/inventory" ? (
+                <p>Inventory List</p>
+              ) : location.pathname === "/inventory/Inventoryform" ? (
+                <p>Inventory Form</p>
               ) : null}{" "}
             </TitleLabel>
           </TitleBar>
@@ -58,6 +64,9 @@ function Home() {
               <Route path="/invoice/Invoiceform/:id?" component={InvoiceForm} />
 
               <Route path="/invoice_Pd/:invoiceID" component={Pdf_Maker} />
+
+              <Route path='/inventory' component={Inventory}></Route>
+              <Route path='inventory/Inventoryform' component={InventoryForm} />
 
               <Redirect to="/client" />
 

@@ -36,7 +36,7 @@ const renderAddressOrders = ({ fields, meta: { error, submitFailed } }) => (
 )
 const ClientForm = (props) => {
   const { handleSubmit, handleFormSubmit } = props
-  console.log('fieldarray', handleFormSubmit)
+  // console.log('fieldarray', handleFormSubmit)
   return (
     <Fragment>
       <FormContainer>

@@ -19,13 +19,14 @@ function Client() {
   }
 
   const renderClientItem = (clientID, index) => {
-    const { id, name} = raw[clientID] || {};
+    const { id, name,address} = raw[clientID] || {};
     return (
       <tbody key={id}>
         <tr key={id}>
           <td>{id}</td>
           <td>{name}</td>
-          <td><Styledbutton className="update" onClick={() => {
+          <td>{address}</td>
+          <td><Styledbutton  onClick={() => {
             handleClient(raw[clientID])
           }}>update</Styledbutton></td>
         </tr>

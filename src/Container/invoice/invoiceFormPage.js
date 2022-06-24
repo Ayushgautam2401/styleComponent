@@ -87,13 +87,14 @@ const InvoiceFormPage = props => {
       list.forEach(item => {
         const clientDetail = raw[item]
 
-        options.push({label: clientDetail.adress, value: clientDetail.id})
+        options.push({label: clientDetail.address, value: clientDetail.id})
 
       })
       setAddressOptions(options);
     
   }, [list]);
-  
+console.log(addressOptions)
+
   const handleFormSubmit = (formData) => {
     let total = 0;
     formData.descriptions.forEach(({ amount }) => {
