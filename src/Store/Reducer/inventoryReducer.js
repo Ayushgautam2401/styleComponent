@@ -14,6 +14,7 @@ const INITIAL_STATE = {
         Inventory_1 : {
     id:"A",
     name: "LAPTOP",
+    quantity: "16"
     }
 },
     inventory: undefined,
@@ -39,7 +40,7 @@ const InventoryReducer = (state = INITIAL_STATE, action) => {
             return {...state, error: message, loading: false }; 
         
         case INVENTORY_ADD_REQUEST:
-            return {...state, inventory: undefined, loading: true, error:undefined};
+     return {...state, inventory: undefined, loading: true, error:undefined};
         case INVENTORY_ADD_SUCCESS:
             return {...state, inventory: data, error:undefined };
         case INVENTORY_ADD_FAILIURE:
