@@ -66,7 +66,7 @@ function Home() {
               ) : location.pathname === "/invoice/Invoiceform/" ? (
                 <p>Invoice Form</p>
               ) : location.pathname === "/inventory" ? (
-                <p>Inventory List</p>
+                <p>Inventory </p>
               ) : location.pathname === "/inventory/Inventoryform" ? (
                 <p>Inventory Form</p>
               ) : null}{" "}
@@ -84,7 +84,7 @@ function Home() {
 
               <Route path="/invoice_Pd/:invoiceID" component={Pdf_Maker} />
 
-              <Route path="/inventory" component={Inventory}/>
+              <Route exact path="/inventory" component={Inventory}/>
               <Route path="/inventory/Inventoryform" component={InventoryForm} />
               
               <Redirect to="/Account" />
