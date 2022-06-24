@@ -1,4 +1,4 @@
-import { LOGIN_SUCCESS, LOGIN_FAILIURE, CURRENT_USER_FETCH,CURRENT_USER_SUCCESS,CURRENT_USER_FAILIURE } from "../action/auth"
+import { LOGIN_SUCCESS, LOGIN_FAILIURE, CURRENT_USER_FETCH,CURRENT_USER_SUCCESS,CURRENT_USER_FAILIURE } from "../Action/auth"
 const INITIAL_STATE = {
     isAuthenticated: !!localStorage.getItem("token"),
     fetching: false,

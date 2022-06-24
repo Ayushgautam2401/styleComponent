@@ -1,5 +1,5 @@
 import React from 'react';
-import { getInvoiceState } from 'Store/selector';
+import { getInvoiceState } from 'Store/Selector';
 import { useSelector } from "react-redux";
 import { Table } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';

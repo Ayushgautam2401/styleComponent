@@ -1,5 +1,5 @@
 import React from "react";
-import { getAccountState } from "Store/selector";
+import { getAccountState } from "Store/Selector";
 import { useSelector } from "react-redux";
 import { Table } from "react-bootstrap";
 import { Styledbutton } from "../../Components/Inputs/button";

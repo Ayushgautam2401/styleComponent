@@ -2,11 +2,11 @@ import { forEach, map } from "lodash";
 import {
   CATEGORY_LIST_REQUEST,
   CATEGORY_LIST_SUCCESS,
-} from "Store/action/inventoryActions";
-import { CATEGORY_LIST_FAILIURE } from "Store/action/inventoryActions";
-import { CATEGORY_ADD_REQUEST } from "Store/action/inventoryActions";
-import { CATEGORY_ADD_SUCCESS } from "Store/action/inventoryActions";
-import { CATEGORY_ADD_FAILIURE } from "Store/action/inventoryActions";
+} from "Store/Action/inventoryActions";
+import { CATEGORY_LIST_FAILIURE } from "Store/Action/inventoryActions";
+import { CATEGORY_ADD_REQUEST } from "Store/Action/inventoryActions";
+import { CATEGORY_ADD_SUCCESS } from "Store/Action/inventoryActions";
+import { CATEGORY_ADD_FAILIURE } from "Store/Action/inventoryActions";
 
 const INITIAL_STATE = {
     list : ["Category_1"],
