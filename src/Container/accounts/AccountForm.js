@@ -28,7 +28,7 @@ export const renderAdressOrders = ({ fields, meta: { error, submitFailed } }) =>
           name={`${item}.address`}
           component={FormInput}
           validate={[required]}
-          label={<Styledheader>Adress {index + 1}</Styledheader>}
+          label={<Styledheader>Address {index + 1}</Styledheader>}
         />
         </ul>
             <ul><Field

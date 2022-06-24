@@ -1,15 +1,40 @@
-import { Styledbutton } from 'Components/Inputs/button'
+import { Styledbutton } from 'Components/Inputs/button';
+import FormInput from 'Components/Inputs/formInputs';
+import { FormContainer } from 'Container/login/LoginpageStyling';
 import React from 'react'
-import { useHistory } from 'react-router-dom'
+import { Fragment } from 'react';
+import { Field, reduxForm, Form} from 'redux-form';
+import { required } from 'Util/validate';
 
-function InventoryForm() {
-    const history = useHistory();
+const InventoryForm = (props) => {
 
+    const {handleSubmit, handleFormSubmit} = props
   return (
-    <div>InventoryForm
-        <Styledbutton onClick={() => history.push("/inventory")}>Back</Styledbutton>
-    </div>
+    <Fragment>
+        <FormContainer>
+            <Form  onSubmit={handleSubmit(handleFormSubmit)} >
+        <Field
+            name="name"
+            placeholder='Name'
+            component={FormInput}
+            validate={[required]}
+            label="Name"
+          />
+          <Field 
+          name='quantity'
+          placeholder='quantity'
+          component={FormInput}
+          validate={[required]} />
+     
+        <Styledbutton>Submit</Styledbutton>
+        </Form>
+        </FormContainer>
+    </Fragment>
+
   )
 }
 
-export default InventoryForm
+export default reduxForm({
+    form: "inventoryForm",
+    enableReinitialize: true
+})(InventoryForm);

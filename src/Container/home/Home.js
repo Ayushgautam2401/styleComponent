@@ -1,8 +1,6 @@
 import Invoice from "Container/invoice/Invoice";
 import React from "react";
 import { useLocation } from "react-router-dom";
-//import { Styledbutton } from "../../Components/Inputs/button";
-import Button from 'react-bootstrap/Button'
 import {
   Layout,
   DisplayArea,
@@ -24,8 +22,7 @@ import SideComponent from "./sideComponent";
 import { Pdf_Maker } from "Container/invoice/invoicePDF/pdfMaker";
 import { loginActions } from "Store/Action/auth";
 
-//import { useEffect } from "react";
-//import { getAuthState } from "Store/Selector";
+
 import { useDispatch, useSelector } from "react-redux";
 import { currentUserActions } from "Store/Action/auth";
 import { ThanksButton } from "Container/thankyou/thankYouStyling";
@@ -84,10 +81,12 @@ function Home() {
 
               <Route path="/invoice_Pd/:invoiceID" component={Pdf_Maker} />
 
+
               <Route exact path="/inventory" component={Inventory}/>
               <Route path="/inventory/Inventoryform" component={InventoryForm} />
               
               <Redirect to="/Account" />
+
 
             </Switch>
           </Content>

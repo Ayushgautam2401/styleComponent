@@ -12,9 +12,6 @@ import { renderAdressOrders } from 'Container/accounts/AccountForm'
 import Moment from 'moment'
 
 
-// const current = new Date();
-// const currentDate = `${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()}`;
-
 
 const currentDate = Moment().format("MMMM Do , YYYY");
 
@@ -43,7 +40,7 @@ function doConvert(numberInput) {
 
 
 // const Add =new Address();
-const InvoiceFormPage = props => {
+const InvoiceFormPage = (props) => {
   const history= useHistory();
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -93,6 +90,7 @@ const InvoiceFormPage = props => {
     let total = 0;
     formData.descriptions.forEach(({ amount }) => {
       total += parseInt(amount);
+      history.push('/Invoice')
     })
 
     const AccountDetail = raw[formData.AccountFirm.value];
