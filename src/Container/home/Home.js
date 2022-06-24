@@ -29,8 +29,8 @@ import { loginActions } from "Store/Action/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { currentUserActions } from "Store/Action/auth";
 import { ThanksButton } from "Container/thankyou/thankYouStyling";
-import Inventory from "Container/inventory/Inventory";
-import InventoryForm from "Container/inventory/InventoryForm";
+import Inventory from "Container/Inventory/Inventory";
+import InventoryForm from "Container/Inventory/InventoryForm";
 
 import { Styledbutton } from "Components/Inputs/button";
 
