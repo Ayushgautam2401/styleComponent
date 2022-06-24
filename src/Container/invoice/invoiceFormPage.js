@@ -1,19 +1,16 @@
 import React, { useEffect,useState  } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, useParams } from "react-router-dom"
-import { invoiceActions, invoiceUpdateActions } from 'Store/action/invoiceActions'
-import { getInvoiceState,getAccountState } from 'Store/selector'
+import { invoiceActions, invoiceUpdateActions } from 'Store/Action/invoiceActions'
+import { getInvoiceState,getAccountState } from 'Store/Selector'
 import InvoiceForm from './invoiceForm'
-import {AccountListActions } from 'Store/action/AccountActions'
+import {AccountListActions } from 'Store/Action/AccountActions'
 import { Styledbutton } from 'Components/Inputs/button'
 import { Fragment } from 'react'
 import { Button } from 'react-bootstrap'
 import { renderAdressOrders } from 'Container/accounts/AccountForm'
 import Moment from 'moment'
 
-
-// const current = new Date();
-// const currentDate = `${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()}`;
 
 
 const currentDate = Moment().format("MMMM Do , YYYY");
@@ -93,6 +90,7 @@ const InvoiceFormPage = (props) => {
     let total = 0;
     formData.descriptions.forEach(({ amount }) => {
       total += parseInt(amount);
+      history.push('/Invoice')
     })
 
     const AccountDetail = raw[formData.AccountFirm.value];

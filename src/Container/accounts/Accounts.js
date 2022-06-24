@@ -1,5 +1,5 @@
 import React from "react";
-import { getAccountState } from "Store/selector";
+import { getAccountState } from "Store/Selector";
 import { useSelector } from "react-redux";
 import { Table } from "react-bootstrap";
 import { Styledbutton } from "../../Components/Inputs/button";
@@ -23,7 +23,7 @@ function Account() {
       <tbody key={id}>
         <tr key={id}>
           <td>{id}</td>
-          <td>{index + 1}</td>
+          {/* <td>{index + 1}</td> */}
           <td>{name}</td>
           {/* <td>{details}</td> */}
           <td>
@@ -56,7 +56,7 @@ function Account() {
           <thead>
             <tr>
               <th>Id</th>
-              <th>S.No.</th>
+              {/* <th>S.No.</th> */}
               <th>Name</th>
               
               <th>Edit</th>

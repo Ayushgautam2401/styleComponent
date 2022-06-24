@@ -8,11 +8,11 @@ import { required } from 'Util/validate';
 
 const InventoryForm = (props) => {
 
-    const {handleSubmit, handleFOrmSubmit} = props
+    const {handleSubmit, handleFormSubmit} = props
   return (
     <Fragment>
         <FormContainer>
-            <Form >
+            <Form  onSubmit={handleSubmit(handleFormSubmit)} >
         <Field
             name="name"
             placeholder='Name'

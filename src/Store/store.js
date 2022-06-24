@@ -1,11 +1,11 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import { reducer as reduxformReducer } from 'redux-form';
 import createSagaMiddleware from '@redux-saga/core';
-import AccountReducer from './reducer/accountReducer';
-import InvoiceReducer from './reducer/invoiceReducer'
+import AccountReducer from './Reducer/accountReducer';
+import InvoiceReducer from './Reducer/invoiceReducer'
 import saga from './saga/saga'
-import AuthReducer from "./reducer/auth";
-import userReducer from "./reducer/user";
+import AuthReducer from "./Reducer/auth";
+import userReducer from "./Reducer/user";
 
 
 

@@ -9,7 +9,7 @@ import {
   ACCOUNT_UPDATE_FAILURE,
   ACCOUNT_UPDATE_REQUEST,
   ACCOUNT_UPDATE_SUCCESS,
-} from "Store/action/AccountActions";
+} from "Store/Action/AccountActions";
 import { makeid } from "Util/idGenrator";
 
 const INITIAL_STATE = {

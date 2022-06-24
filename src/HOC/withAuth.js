@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
-import { getAuthState } from "Store/selector";
+import { getAuthState } from "Store/Selector";
 
 const WithAuth = (ComposedComponent) => {
         const history= useHistory();

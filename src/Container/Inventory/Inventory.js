@@ -1,5 +1,6 @@
 import { Styledbutton } from 'Components/Inputs/button'
 import React from 'react'
+import { Fragment } from 'react'
 import { useHistory } from 'react-router-dom'
 
 function Inventory() {
@@ -8,9 +9,9 @@ function Inventory() {
 
 
   return (
-      <div>Inventory
+      <Fragment>
     <Styledbutton onClick={() => history.push("/inventory/Inventoryform")}>Add</Styledbutton>
-    </div>
+    </Fragment>
   )
 }
 
