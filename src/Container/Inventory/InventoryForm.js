@@ -1,6 +1,6 @@
 import React from 'react'
 
-const InventoryForm = () => {
+function InventoryForm() {
   return (
     <div>InventoryForm</div>
   )

@@ -20,7 +20,7 @@ const SideComponent = () => {
         Account
       </StyledNavLink>
       <StyledNavLink
-      Link
+    
         activeClassName="active"
 
         to="/invoice"
@@ -34,7 +34,7 @@ const SideComponent = () => {
       </StyledNavLink>
       <StyledNavLink
         activeClassName="active"
-        to="/Inventory"
+        to="/inventory"
         activeStyle={{
           fontWeight: "bold",
           backgroundColor: "grey",

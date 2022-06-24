@@ -33,8 +33,7 @@ import Inventory from "Container/inventory/Inventory";
 import InventoryForm from "Container/inventory/InventoryForm";
 
 import { Styledbutton } from "Components/Inputs/button";
-//import { useHistory } from "react-router-dom";
-//import { Button } from "react-bootstrap";
+
 
 function Home() {
   const history = useHistory()
@@ -78,15 +77,16 @@ function Home() {
               <Route exact path="/Account" component={Account} />
 
               <Route path="/Account/Accountform/:id?" component={AccountForm} />
+              
               <Route exact path="/invoice" component={Invoice} />
               <Route path="/invoice/Invoiceform/:id?" component={InvoiceForm} />
                 <Route path= "/invoice_Pd/:invoiceID" component={Pdf_Maker}/>
 
               <Route path="/invoice_Pd/:invoiceID" component={Pdf_Maker} />
 
-              <Route path='/inventory' component={Inventory}></Route>
-              <Route path='inventory/Inventoryform' component={InventoryForm} />
-
+              <Route path="/inventory" component={Inventory}/>
+              <Route path="/inventory/Inventoryform" component={InventoryForm} />
+              
               <Redirect to="/Account" />
 
             </Switch>
