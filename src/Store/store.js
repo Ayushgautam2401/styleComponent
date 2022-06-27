@@ -6,6 +6,7 @@ import InvoiceReducer from './Reducer/invoiceReducer'
 import saga from './saga/saga'
 import AuthReducer from "./Reducer/auth";
 import userReducer from "./Reducer/user";
+import InventoryReducer from "./Reducer/inventoryReducer";
 
 
 
@@ -16,7 +17,8 @@ const Reducer = combineReducers({
     authReducer: AuthReducer,
     AccountReducer: AccountReducer,
     invoiceReducer: InvoiceReducer,
-    UserReducer: userReducer
+    UserReducer: userReducer,
+    InventoryReducer: InventoryReducer
 
 })
 const Store = createStore(Reducer,applyMiddleware(SagaMiddleware));

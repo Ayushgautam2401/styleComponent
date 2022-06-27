@@ -21,16 +21,12 @@ import { Redirect } from "react-router-dom";
 import SideComponent from "./sideComponent";
 import { Pdf_Maker } from "Container/invoice/invoicePDF/pdfMaker";
 import { loginActions } from "Store/Action/auth";
-
-//import { useEffect } from "react";
-//import { getAuthState } from "Store/Selector";
 import { useDispatch, useSelector } from "react-redux";
-// import { currentUserActions } from "Store/action/auth";
 import { ThanksButton } from "Container/thankyou/thankYouStyling";
 import Inventory from "Container/Inventory/Inventory";
-import InventoryForm from "Container/Inventory/InventoryForm";
 
 import { Styledbutton } from "Components/Inputs/button";
+import InventoryForm from "Container/Inventory/InventoryFormPage";
 
 
 function Home() {
@@ -84,7 +80,7 @@ function Home() {
 
 
               <Route exact path="/inventory" component={Inventory}/>
-              <Route path="/inventory/Inventoryform" component={InventoryForm} />
+              <Route path="/inventory/Inventoryform/:id?" component={InventoryForm} />
               
               <Redirect to="/Account" />
 

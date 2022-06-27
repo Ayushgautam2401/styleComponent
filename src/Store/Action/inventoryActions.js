@@ -1,5 +1,34 @@
-export const CATEGORY_LIST_REQUEST = "CATEGORY_LIST_REQUEST";
-export const CATEGORY_LIST_SUCCESS = "CATEGORY_LIST_SUCCESS";
-export const CATEGORY_LIST_FAILIURE = "CATEGORY_LIST_FAILIURE";
+export const INVENTORY_LIST_REQUEST = "INVENTORY_LIST_REQUEST";
+export const INVENTORY_LIST_SUCCESS = "INVENTORY_LIST_SUCCESS";
+export const INVENTORY_LIST_FAILIURE = "INVENTORY_LIST_FAILIURE";
 
-export const CATEGORY_REQUEST = "CATEGORY_REQUEST";
+export const INVENTORY_ADD_REQUEST = "INVENTORY_ADD_REQUEST";
+export const INVENTORY_ADD_SUCCESS = "INVENTORY_ADD_SUCCESS";
+export const INVENTORY_ADD_FAILIURE = "INVENTORY_ADD_FAILIURE";
+
+export const INVENTORY_UPDATE_REQUEST = "INVENTORY_UPDATE_REQUEST";
+export const INVENTORY_UPDATE_SUCCESS =  "INVENTORY_UPDATE_SUCCESS";
+export const INVENTORY_UPDATE_FAILURE = "INVENTORY_UPDATE_FAILURE";
+
+const genericFunc = (type) => (payload) => ({
+    type,
+    payload
+  })
+
+
+  export const InventoryListActions = {
+    request: genericFunc(INVENTORY_LIST_REQUEST),
+    success: genericFunc(INVENTORY_LIST_SUCCESS),
+    failure: genericFunc(INVENTORY_LIST_FAILIURE),
+  }
+  
+  export const InventoryActions = {
+    request: genericFunc(INVENTORY_ADD_REQUEST),
+    success: genericFunc(INVENTORY_ADD_SUCCESS),
+    failure: genericFunc(INVENTORY_ADD_FAILIURE),
+  }
+  export const InventoryUpdateActions = {
+    request: genericFunc(INVENTORY_UPDATE_REQUEST),
+    success: genericFunc(INVENTORY_UPDATE_SUCCESS),
+    failure: genericFunc(INVENTORY_UPDATE_FAILURE),
+  }

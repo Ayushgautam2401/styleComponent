@@ -9,7 +9,7 @@ const WithAuth = (ComposedComponent) => {
         const { isAuthenticated } = useSelector(getAuthState);
 
         useEffect(() => {
-            console.log("auth check", isAuthenticated, location);
+            // console.log("auth check", isAuthenticated, location);
             if(!isAuthenticated) {
                 history.push("/login");
             }
