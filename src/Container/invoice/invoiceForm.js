@@ -1,6 +1,7 @@
 import { Styledbutton } from 'Components/Inputs/button'
 import FormInput from 'Components/Inputs/formInputs'
 import { Styledheader } from 'Components/Inputs/header'
+import { useLocation } from 'react-router-dom';
 import { renderInvoiceOrders } from 'Components/Inputs/fieldarray'
 import { RenderSelectInput } from 'Components/selectComponent/selectComponent'
 import React from 'react';
@@ -23,6 +24,8 @@ const invoiceForm = (props) => {
           <Field
             name="invoiceDate"
             component={FormInput}
+
+            
             type="text"
             placeholder="invoiceDate"
             label="Date"

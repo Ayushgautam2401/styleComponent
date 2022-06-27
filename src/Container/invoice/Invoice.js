@@ -4,39 +4,42 @@ import { useSelector } from "react-redux";
 import { Table } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { Styledbutton } from 'Components/Inputs/button';
-import { generatePath } from 'react-router-dom';
 import { Fragment } from 'react';
-import { getCloneState } from 'Store/Selector';
+import queryString from 'query-string'
 function Invoice() {
+  //  let queries = queryString.parse('clone=true',{parseBooleans: true});
+  // console.log(queries)
   const history = useHistory();
   const { list, raw } = useSelector(getInvoiceState);
-
   const handleInvoice = (invoice = {}) => {
     const { id } = invoice;
     history.push(`/invoice/Invoiceform/${id || ""}`);
   }
-  const handleClone = (invoice = {}) => {
+  const handleClone =(invoice = {}) => {
     const { id } = invoice;
-    history.push(`/invoice/Invoiceform/${ id|| ""}`);
+    history.push(`/invoice/Invoiceform/${id || ""}?clone=true`);
   }
+
   const renderInvoiceItem = (invoiceID) => {
-    const { id, invoiceDate, invoiceNumber } = raw[invoiceID] || {};
-    return (
+    const { id, invoiceDate, invoiceNumber } = raw[invoiceID]
+        return (
       <tr key={id} >
         <td>{id}</td>
         <td>{invoiceDate}</td>
         <td>{invoiceNumber}</td>
-
         <td><Styledbutton className='update' onClick={() => {
           handleInvoice(raw[invoiceID])
         }}>update</Styledbutton></td>
         <td> <Styledbutton className='generatepdf' variant="success" onClick={() => {
           history.push(`/invoice_Pd/${id}`)
         }}>Generate PDF</Styledbutton></td>
-        <td><button onClick={()=>{
-          handleClone(invoiceID)
-        }}> clone</button></td>
+        <td>
+          <Styledbutton variant="success" onClick={()=>{ 
+            handleClone(raw[invoiceID])
+          }} >clone</Styledbutton>
+        </td>
       </tr>
+      
 
     )
   }

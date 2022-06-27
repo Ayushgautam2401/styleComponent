@@ -1,14 +1,16 @@
 
 import React, { useEffect,useState  } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useHistory, useParams } from "react-router-dom"
+import { useHistory, useParams ,useLocation} from "react-router-dom"
 import { invoiceActions, invoiceCloneActions, invoiceUpdateActions } from 'Store/Action/invoiceActions'
 import { getInvoiceState,getClientState } from 'Store/Selector'
 import InvoiceForm from './invoiceForm'
 import {clientListActions } from 'Store/Action/clientActions'
-import { Styledbutton } from 'Components/Inputs/button'
+import { Styledbutton } from 'Components/Inputs/button' 
 import { Fragment } from 'react'
 import { Button } from 'react-bootstrap'
+import queryString from 'query-string'
+// import { remove } from 'lodash'
 
 
 const current = new Date();
@@ -40,12 +42,24 @@ function doConvert(numberInput) {
 // const Add =new Address();
 const InvoiceFormPage = props => {
   const history= useHistory();
+  const location=useLocation();
+  const {search} = useLocation();
   const { id } = useParams();
   const dispatch = useDispatch();
-  const { invoice, loading } = useSelector(getInvoiceState);
+  const { invoice } = useSelector(getInvoiceState);
   const {list, raw }= useSelector(getClientState);
   const [clientOptions, setClientOptions] = useState([]);
+  const [isCloned, setIsCloned] = useState(false);
+   const clone = new URLSearchParams(search).get('clone')
+  useEffect(()=>{
+    const queryParams = queryString.parse(search); 
+    console.log(queryParams)
+    if(id && clone ==='true' ){
+      setIsCloned(true)
+    }
+    // check id and clone true // then set is clone true
 
+  },[search])
 
 
   useEffect(() => {
@@ -53,7 +67,7 @@ const InvoiceFormPage = props => {
       dispatch(invoiceActions.request({ id }));
     }
   }, [id]);
-
+  
   useEffect(() => {
     if(!list) {
       // api call dipatch
@@ -101,14 +115,18 @@ const InvoiceFormPage = props => {
       totalAmount: total,
       totalAmountInWords: doConvert(total),
     }
+
+    if(isCloned) {
+      delete formData.id
+    }
+
     dispatch(invoiceUpdateActions.request(formData));
-    dispatch(invoiceCloneActions.request(formData));
   }
   return (
     <Fragment>
       <Button variant='outline-dark' onClick={() => history.push("/invoice")}>Back</Button>
 
-      <InvoiceForm clientOptions={clientOptions} handleFormSubmit={handleFormSubmit} initialValues={id ? {...invoice, clientFirm: {label: invoice.clientFirm && invoice.clientFirm.name, value: invoice.clientFirm && invoice.clientFirm.id}} : { invoiceDate: currentDate }} />
+      <InvoiceForm clientOptions={clientOptions} handleFormSubmit={handleFormSubmit} initialValues={id ? {...invoice, clientFirm: {label: invoice && invoice.clientFirm && invoice.clientFirm.name, value: invoice && invoice.clientFirm && invoice.clientFirm.id}} : { invoiceDate: currentDate }} />
     </Fragment>
   )
 }

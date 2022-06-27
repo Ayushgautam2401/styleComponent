@@ -10,6 +10,7 @@ const INITIAL_STATE = {
     list: undefined,
     raw: {},        
     invoice: undefined,
+    clone:undefined,
     loading: false,
     error: undefined
 }
@@ -48,10 +49,6 @@ const invoiceReducer = (state = INITIAL_STATE, action) => {
                 state.raw[data.id] = data;
             }
             return { ...state, loading: false, error: undefined }
-            case INVOICE_CLONE_REQUEST:
-            return{...state,loading: true, error:undefined};
-            case INVOICE_CLONE_SUCCESS:  
-                return {...state ,loading: false , error: undefined}
         default: return state;  
     }
 }
