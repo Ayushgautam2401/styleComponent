@@ -3,8 +3,11 @@ import { FormContainer } from 'Container/login/LoginpageStyling'
 import React,  { Fragment } from 'react'
 import { Field,reduxForm, Form } from 'redux-form';
 import { required } from 'Util/validate';
+import FormInput from 'Components/Inputs/formInputs';
 
-const NextPage = () => {
+const NextPage = () => 
+{
+   
   return (
     <Fragment>
     

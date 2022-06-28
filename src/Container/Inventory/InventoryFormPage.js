@@ -24,7 +24,7 @@ const {inventory,loading} = useSelector(getInventoryState);
  const  handleFormSubmit= (data)=>{
       console.log(data);
       dispatch(InventoryUpdateActions.request(data));
-      history.push("/inventory")
+      history.push("/inventory/InventoryForm/Category")
     }
   return (
     <Fragment>
