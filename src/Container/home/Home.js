@@ -85,11 +85,11 @@ function Home() {
 
 
               <Route exact path="/inventory" component={Inventory}/>
-              <Route exact path="/inventory/Inventoryform" component={InventoryForm} />
-               <Route path="/inventory/Inventoryform/Category" component={NextPage} /> 
+              <Route path="/inventory/Inventoryform/:id?" component={InventoryForm} />
+              <Route path="/Inventoryform/NextPage/:id?" component={NextPage} />
 
               
-              <Redirect to="/Account" />
+              {/* <Redirect to="/Account" /> */}
 
 
             </Switch>

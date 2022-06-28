@@ -23,7 +23,7 @@ const NextPage = () =>
           />
 
         <Field
-            name="name"
+            name="text"
             placeholder='Quantity'
             component={FormInput}
             validate={[required]}
