@@ -3,7 +3,7 @@ import React from 'react'
 import { Fragment } from 'react'
 import InventoryForm from './InventoryForm'
 
-const InventoryFormPage = (props) => {
+const InventoryFormPage = () => {
 
     const  handleFormSubmit= (data)=>{
       console.log(data);
