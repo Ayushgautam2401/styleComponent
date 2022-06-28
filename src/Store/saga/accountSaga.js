@@ -1,12 +1,9 @@
-// import { fetchAPI } from 'Api/api';
 import { call, put, select, takeLatest } from 'redux-saga/effects';
 import { AccountActions, AccountListActions, AccountUpdateActions, ACCOUNT_LIST_REQUEST, ACCOUNT_REQUEST, ACCOUNT_UPDATE_REQUEST } from 'Store/Action/AccountActions';
 import { getAccountState } from 'Store/Selector';
 
 function* fetchAccountListOperation() {
   try {
-    // console.log("here");
-    // const Account = yield call(fetchAPI,"get");
     const AccountState = yield select(getAccountState);
     yield put(AccountListActions.success({
       data: AccountState.list // todo: pass list

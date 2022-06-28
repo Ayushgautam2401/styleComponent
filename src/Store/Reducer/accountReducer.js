@@ -18,7 +18,6 @@ const INITIAL_STATE = {
     BIZ_Account_1: {
       id: "BIZ_Account_1",
       name: "BIZTECNO",
-
       address: [ "PLOT J7 FCS BUILDING", "ABC Building"],
     phoneNumber:[ "9888824240", "2456789349"],
     

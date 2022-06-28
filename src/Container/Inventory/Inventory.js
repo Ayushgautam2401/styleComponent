@@ -10,9 +10,15 @@ function Inventory() {
     const history = useHistory();
     const {list , raw}= useSelector(getInventoryState);
 
+<<<<<<< HEAD
     const handleInventory = (Inventory = {}) => {
       const {id} = Inventory;
       history.push(`/Inventory/Inventoryform`)
+=======
+    const handleInventory = (inventory = {}) => {
+      const {id} = inventory;
+      history.push(`/inventory/Inventoryform/${id || ""}`)
+>>>>>>> 7ad891b5d226f740deff353f6d312f8cf4988408
     }
 
     const renderInventoryItem = ( InventoryID,index) => {

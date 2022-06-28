@@ -5,35 +5,30 @@ import { Table } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { Styledbutton } from 'Components/Inputs/button';
 import { Fragment } from 'react';
+import queryString from 'query-string'
+
 import { makeid } from 'Util/idGenrator';
-
-
 function Invoice() {
+  //  let queries = queryString.parse('clone=true',{parseBooleans: true});
+  // console.log(queries)
   const history = useHistory();
   const { list, raw } = useSelector(getInvoiceState);
-
-
   const handleInvoice = (invoice = {}) => {
     const { id } = invoice;
     history.push(`/invoice/Invoiceform/${id || ""}`);
-}
-
-// const handleInvoiceClone = (invoice = {}) => {
-//   if (id !== null) {
-//     const {newId} = makeid(3) = invoice;
-//     history.push(`/invoice/Invoiceform/${newId || ""}`)     
-//   }
-// }
-
+  }
+  const handleClone =(invoice = {}) => {
+    const { id } = invoice;
+    history.push(`/invoice/Invoiceform/${id || ""}?clone=true`);
+  }
 
   const renderInvoiceItem = (invoiceID) => {
-    const { id, invoiceDate, invoiceNumber } = raw[invoiceID] || {};
-    return (
+    const { id, invoiceDate, invoiceNumber } = raw[invoiceID]
+        return (
       <tr key={id} >
         <td>{id}</td>
         <td>{invoiceDate}</td>
         <td>{invoiceNumber}</td>
-
         <td><Styledbutton className='update' onClick={() => {
           handleInvoice(raw[invoiceID])
         }}>update</Styledbutton></td>
@@ -42,7 +37,13 @@ function Invoice() {
         <td> <Styledbutton variant="success" onClick={() => {
           history.push(`/invoice_Pd/${id}`)
         }}>Generate PDF</Styledbutton></td>
+        <td>
+          <Styledbutton variant="success" onClick={()=>{ 
+            handleClone(raw[invoiceID])
+          }} >clone</Styledbutton>
+        </td>
       </tr>
+      
 
     )
   }

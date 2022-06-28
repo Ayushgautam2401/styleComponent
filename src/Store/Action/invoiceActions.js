@@ -10,9 +10,6 @@ export const INVOICE_UPDATE_REQUEST = "INVOICE_UPDATE_REQUEST";
 export const INVOICE_UPDATE_FAILURE = "INVOICE_UPDATE_FAILURE";
 export const INVOICE_UPDATE_SUCCESS = "INVOICE_UPDATE_SUCCESS";
 
- export const INVOICE_CLONE_REQUEST = "INVOICE_CLONE_REQUEST";
- export const INVOICE_CLONE_SUCCESS = "INVOICE_CLONE_SUCCESS";
-
 const genericFunc = (type) => (payload) => ({
   type,
   payload
@@ -37,7 +34,3 @@ export const invoiceUpdateActions = {
   failure: genericFunc(INVOICE_UPDATE_FAILURE),
 }
 
-// export const invoiceCloneActions = {
-//   request: genericFunc(INVOICE_CLONE_REQUEST),
-//   success: genericFunc(INVOICE_CLONE_SUCCESS),
-  //failure: genericFunc(INVOICE_UPDATE_FAILURE),

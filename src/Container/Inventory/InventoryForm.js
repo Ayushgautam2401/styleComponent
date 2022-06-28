@@ -1,18 +1,27 @@
+import React,  { Fragment }  from 'react'
 import { Styledbutton } from 'Components/Inputs/button';
 import FormInput from 'Components/Inputs/formInputs';
-import { FormContainer } from 'Container/login/LoginpageStyling';
-import React from 'react'
-import { Fragment } from 'react';
-import { Field, reduxForm, Form} from 'redux-form';
+import { Field, reduxForm, Form, FieldArray} from 'redux-form';
+import { FormHeaderContainer ,FormContainer} from 'Container/invoice/invoicePDF/FormStyling';
 import { required } from 'Util/validate';
+
+
+
+
+
+
+
 
 const InventoryForm = (props) => {
 
-    const {handleSubmit, handleFormSubmit} = props
+  const { handleSubmit, handleFormSubmit} = props
+    // console.log(handleFormSubmit)
   return (
     <Fragment>
         <FormContainer>
-            <Form  onSubmit={handleSubmit(handleFormSubmit)} >
+        <FormHeaderContainer>
+            <Form onSubmit={handleSubmit(handleFormSubmit)}>
+
         <Field
             name="name"
             placeholder='Name'
@@ -20,14 +29,12 @@ const InventoryForm = (props) => {
             validate={[required]}
             label="Name"
           />
-          <Field 
-          name='quantity'
-          placeholder='quantity'
-          component={FormInput}
-          validate={[required]} />
+          
+         
      
         <Styledbutton>Submit</Styledbutton>
         </Form>
+        </FormHeaderContainer>
         </FormContainer>
     </Fragment>
 
@@ -35,6 +42,6 @@ const InventoryForm = (props) => {
 }
 
 export default reduxForm({
-    form: "inventoryForm",
+    form: "InventoryForm",
     enableReinitialize: true
 })(InventoryForm);

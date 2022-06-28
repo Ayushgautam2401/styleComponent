@@ -3,6 +3,9 @@ import { ThemeProvider } from 'styled-components';
 import styled from "styled-components"
 import { theme } from '../../theme';
 
+import { useSelector } from 'react-redux';
+
+
 
  export const Styledinput = styled.input.attrs(props => {
     const {theme:{size,background,bordersize}} = props;

@@ -63,7 +63,7 @@ const AccountForm = (props) => {
             name="name"
             placeholder='Name'
             component={FormInput}
-            validate={[required]}zz
+            validate={[required]}
             label="Name"
           />
           <FieldArray name="details" component={renderAdressOrders} />

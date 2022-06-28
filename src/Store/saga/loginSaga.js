@@ -8,12 +8,13 @@ function* LoginUserFetch(action) {
   const { payload } = action;
   const { email, password } = payload;
   try {
-    console.log(payload);
-    if (email === '123' && password === '123') {
+    // console.log(payload);
+    if (email === 'Ashishchoudhary41508@gmail.com' && password === 'Ashish@1234') {
       const response = {
         token: "1234567890"
       }
       localStorage.setItem('token', response.token);
+      
       yield put(loginActions.success(response));
     }
     else {
