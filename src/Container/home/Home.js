@@ -80,7 +80,9 @@ function Home() {
 
 
               <Route exact path="/inventory" component={Inventory}/>
-              <Route path="/inventory/Inventoryform/:id?" component={InventoryForm} />
+              <Route path="/inventory/Inventoryform" component={InventoryForm} />
+              {/* <Route path="/inventory/Inventoryform/:id?" component={InventoryForm} /> */}
+
               
               <Redirect to="/Account" />
 

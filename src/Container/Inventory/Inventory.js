@@ -12,14 +12,14 @@ function Inventory() {
 
     const handleInventory = (inventory = {}) => {
       const {id} = inventory;
-      history.push(`/inventory/Inventoryform/${id || ""}`)
+      history.push(`/inventory/Inventoryform/`)
     }
 
     const renderInventoryItem = ( InventoryID,index) => {
       const {id,name,quantity} = raw[InventoryID] || {}
 
       return (
-    <tbody key={id}>
+    <tbody >
       <tr key={id}>
         <td>{id}</td>
       <td>{name}</td>
@@ -44,7 +44,7 @@ function Inventory() {
   <Table striped bordered hover>
     <thead>
       <tr>
-        <th>Id</th>
+        {/* <th>Id</th> */}
         <th>Name</th>
         <th>Quantity</th>
       </tr>
