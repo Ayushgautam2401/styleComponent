@@ -27,6 +27,7 @@ import Inventory from "Container/Inventory/Inventory";
 
 import { Styledbutton } from "Components/Inputs/button";
 import InventoryForm from "Container/Inventory/InventoryFormPage";
+import NextPage from "Container/Inventory/NextPage";
 
 
 function Home() {
@@ -80,11 +81,11 @@ function Home() {
 
 
               <Route exact path="/inventory" component={Inventory}/>
-              <Route path="/inventory/Inventoryform" component={InventoryForm} />
-              {/* <Route path="/inventory/Inventoryform/:id?" component={InventoryForm} /> */}
+              <Route path="/inventory/Inventoryform/:id?" component={InventoryForm} />
+              <Route path="/Inventoryform/NextPage/:id?" component={NextPage} />
 
               
-              <Redirect to="/Account" />
+              {/* <Redirect to="/Account" /> */}
 
 
             </Switch>

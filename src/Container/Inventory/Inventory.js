@@ -16,12 +16,13 @@ function Inventory() {
     }
 
     const renderInventoryItem = ( InventoryID,index) => {
-      const {id,name,quantity} = raw[InventoryID] || {}
+      const {id,category,name,quantity} = raw[InventoryID] || {}
 
       return (
     <tbody >
       <tr key={id}>
         <td>{id}</td>
+        <td>{category}</td>
       <td>{name}</td>
       <td>{quantity}</td>
       </tr>
@@ -44,7 +45,8 @@ function Inventory() {
   <Table striped bordered hover>
     <thead>
       <tr>
-        {/* <th>Id</th> */}
+        <th>Id</th>
+        <th>Category</th>
         <th>Name</th>
         <th>Quantity</th>
       </tr>

@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { useEffect } from 'react'
-import { Fragment } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, useParams } from 'react-router-dom'
 import { Styledbutton } from 'Components/Inputs/button'
@@ -24,7 +23,7 @@ const {inventory,loading} = useSelector(getInventoryState);
  const  handleFormSubmit= (data)=>{
       console.log(data);
       dispatch(InventoryUpdateActions.request(data));
-      history.push("/inventory")
+      history.push("/inventoryform/NextPage")
     }
   return (
     <Fragment>

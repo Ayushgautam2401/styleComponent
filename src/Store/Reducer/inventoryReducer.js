@@ -17,7 +17,8 @@ const INITIAL_STATE = {
     raw:{
         Inventory_1 : {
     id:"Inventory_1",
-    name: "LAPTOP",
+    Category: "LAPTOP",
+    Name:"T470",
     quantity: "16"
     }
 },
