@@ -9,12 +9,7 @@ function* mysaga(){
 
     fork(watchAccountActions),
     fork(watchInvoiceActions),
-<<<<<<< HEAD
     fork(watchInventoryActions),
-=======
-    fork(watchInventoryActions)
-
->>>>>>> 7ad891b5d226f740deff353f6d312f8cf4988408
   ])
 }
 export  default mysaga;

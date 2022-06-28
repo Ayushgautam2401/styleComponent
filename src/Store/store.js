@@ -9,7 +9,7 @@ import AuthReducer from "./Reducer/auth";
 import userReducer from "./Reducer/user";
 import InventoryReducer from "./Reducer/inventoryReducer";
 
-import InventoryReducer from "./Reducer/inventoryReducer";
+
 
 const SagaMiddleware = createSagaMiddleware();
 const Reducer = combineReducers({

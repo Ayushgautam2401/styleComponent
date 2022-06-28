@@ -21,14 +21,11 @@ import { Redirect } from "react-router-dom";
 import SideComponent from "./sideComponent";
 import { Pdf_Maker } from "Container/invoice/invoicePDF/pdfMaker";
 import { loginActions } from "Store/Action/auth";
-<<<<<<< HEAD
 
 
-import { useDispatch, useSelector } from "react-redux";
+//import { useDispatch, useSelector } from "react-redux";
 import { currentUserActions } from "Store/Action/auth";
-=======
 import { useDispatch, useSelector } from "react-redux";
->>>>>>> 7ad891b5d226f740deff353f6d312f8cf4988408
 import { ThanksButton } from "Container/thankyou/thankYouStyling";
 import Inventory from "Container/Inventory/Inventory";
 

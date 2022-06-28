@@ -25,8 +25,4 @@ export function getUserState(state){
 
 export function getInventoryState(state){
     return state.InventoryReducer
-<<<<<<< HEAD
-=======
-
->>>>>>> 7ad891b5d226f740deff353f6d312f8cf4988408
 }

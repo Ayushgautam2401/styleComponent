@@ -8,14 +8,10 @@ import { InventoryActions, InventoryUpdateActions } from 'Store/Action/inventory
 import { getInventoryState } from 'Store/Selector'
 import InventoryForm from './InventoryForm'
 
-<<<<<<< HEAD
-const InventoryFormPage = () => {
-=======
 const InventoryFormPage = (props) => {
   const history= useHistory();
   const {id} = useParams();
   const dispatch = useDispatch();
->>>>>>> 7ad891b5d226f740deff353f6d312f8cf4988408
 
 const {inventory,loading} = useSelector(getInventoryState);
 
@@ -27,21 +23,13 @@ const {inventory,loading} = useSelector(getInventoryState);
 
  const  handleFormSubmit= (data)=>{
       console.log(data);
-<<<<<<< HEAD
-      dispatch();
-=======
       dispatch(InventoryUpdateActions.request(data));
->>>>>>> 7ad891b5d226f740deff353f6d312f8cf4988408
       history.push("/inventory")
     }
   return (
     <Fragment>
       <Styledbutton onClick={()=> history.push("/inventory")}>Back</Styledbutton>
-<<<<<<< HEAD
-        <InventoryForm handleFormSubmit={handleFormSubmit}/>
-=======
         <InventoryForm handleFormSubmit={handleFormSubmit}  initialValues={id ? inventory : {}}/>
->>>>>>> 7ad891b5d226f740deff353f6d312f8cf4988408
     </Fragment>
   )
 }
