@@ -2,10 +2,10 @@ import { Field, reduxForm, Form } from 'redux-form'
 import { useEffect } from 'react'
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
-
+import {RenderField, validate} from 'Util/validate'
 
 import FormInput from 'Components/Inputs/formInputs'
-import { Loginbutton } from './LoginpageStyling';
+import { InputLabel, Loginbutton } from './LoginpageStyling';
 import { loginActions } from 'Store/Action/auth';
 import { required } from 'Util/validate';
 import { getAuthState } from 'Store/Selector';
@@ -35,13 +35,13 @@ const LoginFormComponent = (props) => {
         component={FormInput}
         validate={[required]}
         placeholder="Email"
-        label="Email"
+        label={<InputLabel>Email</InputLabel>}
       />
       <Field
         name="password"
         component={FormInput}
         type="password"
-        label="Password"
+        label={<InputLabel>Password</InputLabel>}
         placeholder='Password'
         validate={[required]}
       />
@@ -51,4 +51,5 @@ const LoginFormComponent = (props) => {
 }
 export default reduxForm({
   form: 'LoginForm',
+  
 })(LoginFormComponent)

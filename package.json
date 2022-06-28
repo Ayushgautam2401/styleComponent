@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "lodash": "^4.17.21",
     "query-string": "^7.1.1",
+    "moment": "^2.29.3",
     "react": "^18.1.0",
     "react-app-rewired": "^2.2.1",
     "react-bootstrap": "^2.4.0",

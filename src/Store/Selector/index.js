@@ -6,8 +6,8 @@ export function getData(state) {
     return state.tableData;
 }
 
-export function getClientState(state) {
-    return state.clientReducer
+export function getAccountState(state) {
+    return state.AccountReducer
 }
 
 export function getInvoiceState(state) {
@@ -22,6 +22,8 @@ export function getAuthState(state){
 export function getUserState(state){
     return state.UserReducer
 }
-export function getCloneState(state){
-    return state.CloneReducer
+
+export function getInventoryState(state){
+    return state.InventoryReducer
+
 }

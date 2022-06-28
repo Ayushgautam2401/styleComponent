@@ -1,10 +1,10 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
 import styled from "styled-components"
 import { theme } from '../../theme';
+
 import { useSelector } from 'react-redux';
+
 
 
  export const Styledinput = styled.input.attrs(props => {

@@ -1,20 +1,21 @@
-
 import React, { useEffect,useState  } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, useParams ,useLocation} from "react-router-dom"
 import { invoiceActions, invoiceCloneActions, invoiceUpdateActions } from 'Store/Action/invoiceActions'
-import { getInvoiceState,getClientState } from 'Store/Selector'
+import { getInvoiceState,getAccountState } from 'Store/Selector'
 import InvoiceForm from './invoiceForm'
-import {clientListActions } from 'Store/Action/clientActions'
+import {AccountListActions } from 'Store/Action/AccountActions'
 import { Styledbutton } from 'Components/Inputs/button' 
 import { Fragment } from 'react'
+import { renderAdressOrders } from 'Container/accounts/AccountForm'
 import { Button } from 'react-bootstrap'
 import queryString from 'query-string'
-// import { remove } from 'lodash'
+import Moment from 'moment'
 
 
-const current = new Date();
-const currentDate = `${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()}`;
+
+const currentDate = Moment().format("MMMM Do , YYYY");
+
   
 function doConvert(numberInput) {
 
@@ -40,15 +41,16 @@ function doConvert(numberInput) {
 
 
 // const Add =new Address();
-const InvoiceFormPage = props => {
+const InvoiceFormPage = (props) => {
   const history= useHistory();
   const location=useLocation();
   const {search} = useLocation();
   const { id } = useParams();
   const dispatch = useDispatch();
+
   const { invoice } = useSelector(getInvoiceState);
-  const {list, raw }= useSelector(getClientState);
-  const [clientOptions, setClientOptions] = useState([]);
+  const {list, raw }= useSelector(getAccountState);
+  const [AccountOptions, setAccountOptions] = useState([]);
   const [isCloned, setIsCloned] = useState(false);
    const clone = new URLSearchParams(search).get('clone')
   useEffect(()=>{
@@ -62,6 +64,7 @@ const InvoiceFormPage = props => {
   },[search])
 
 
+
   useEffect(() => {
     if (id) {
       dispatch(invoiceActions.request({ id }));
@@ -72,30 +75,43 @@ const InvoiceFormPage = props => {
     if(!list) {
       // api call dipatch
       console.log("call api")
-      dispatch(clientListActions.request());
+      dispatch(AccountListActions.request());
     } else {
       // generate options
       console.log("generate options");
       const options= [];
       list.forEach(item => {
-        const clientDetail = raw[item]
-        options.push({label: clientDetail.name, value: clientDetail.id})
+        const AccountDetail = raw[item]
+        options.push({label: AccountDetail.name, value: AccountDetail.id})
       })
-      setClientOptions(options);
+      setAccountOptions(options);
     }
   }, [list]);
 
+// useEffect(() =>{
+//   const options = [];
+//   list.forEach(item => {
+//     const AdressDetail = raw[?.map(renderAdressOrders)]
+//     options.push({label:AdressDetail.adress, value:AdressDetail.id})
+//   })
+//   setAdressOptions(options);
   
+// })
+
+
+  
+
   const handleFormSubmit = (formData) => {
     let total = 0;
     formData.descriptions.forEach(({ amount }) => {
       total += parseInt(amount);
+      history.push('/Invoice')
     })
 
-    const clientDetail = raw[formData.clientFirm.value];
+    const AccountDetail = raw[formData.AccountFirm.value];
     formData = {
       ...formData,
-      clientFirm: clientDetail,
+      AccountFirm: AccountDetail,
       invoicedRaisedBy: "Ashutosh Sharma",
       firmDetail: {
         name: "Biz Tecno",
@@ -126,7 +142,9 @@ const InvoiceFormPage = props => {
     <Fragment>
       <Button variant='outline-dark' onClick={() => history.push("/invoice")}>Back</Button>
 
-      <InvoiceForm clientOptions={clientOptions} handleFormSubmit={handleFormSubmit} initialValues={id ? {...invoice, clientFirm: {label: invoice && invoice.clientFirm && invoice.clientFirm.name, value: invoice && invoice.clientFirm && invoice.clientFirm.id}} : { invoiceDate: currentDate }} />
+
+      {/* <InvoiceForm   handleFormSubmit={handleFormSubmit} initialValues={id ? {...invoice, AccountFirm: {label: invoice.AccountFirm && invoice.AccountFirm.name, value: invoice.AccountFirm && invoice.AccountFirm.id}} : { invoiceDate: currentDate }} /> */}
+      <InvoiceForm AccountOptions={AccountOptions} handleFormSubmit={handleFormSubmit} initialValues={id ? {...invoice, AccountFirm: {label: invoice && invoice.AccountFirm && invoice.AccountFirm.name, value: invoice && invoice.AccountFirm && invoice.AccountFirm.id}} : { invoiceDate: currentDate }} />
     </Fragment>
   )
 }

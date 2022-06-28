@@ -6,6 +6,8 @@ import { useHistory } from 'react-router-dom';
 import { Styledbutton } from 'Components/Inputs/button';
 import { Fragment } from 'react';
 import queryString from 'query-string'
+
+import { makeid } from 'Util/idGenrator';
 function Invoice() {
   //  let queries = queryString.parse('clone=true',{parseBooleans: true});
   // console.log(queries)
@@ -30,7 +32,9 @@ function Invoice() {
         <td><Styledbutton className='update' onClick={() => {
           handleInvoice(raw[invoiceID])
         }}>update</Styledbutton></td>
-        <td> <Styledbutton className='generatepdf' variant="success" onClick={() => {
+        {/* <td><Styledbutton onClick={() => {handleInvoiceClone(raw[invoiceID])}}>Clone</Styledbutton></td> */}
+       
+        <td> <Styledbutton variant="success" onClick={() => {
           history.push(`/invoice_Pd/${id}`)
         }}>Generate PDF</Styledbutton></td>
         <td>
@@ -45,7 +49,8 @@ function Invoice() {
   }
   return (
     <Fragment>
-      <Styledbutton className='add' onClick={() => { handleInvoice() }}>Add</Styledbutton>
+
+      <Styledbutton onClick={() => { handleInvoice() }}>Add</Styledbutton>
       {
         <Table striped bordered hover >
           <tbody>

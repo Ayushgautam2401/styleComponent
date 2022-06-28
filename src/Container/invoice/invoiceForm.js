@@ -1,20 +1,16 @@
+import React,{ Fragment } from 'react';
 import { Styledbutton } from 'Components/Inputs/button'
 import FormInput from 'Components/Inputs/formInputs'
 import { Styledheader } from 'Components/Inputs/header'
 import { useLocation } from 'react-router-dom';
 import { renderInvoiceOrders } from 'Components/Inputs/fieldarray'
 import { RenderSelectInput } from 'Components/selectComponent/selectComponent'
-import React from 'react';
 import { Field, Form, reduxForm, FieldArray } from 'redux-form'
 import { FormContainer, FormHeaderContainer } from './invoicePDF/FormStyling'
 import { required } from 'Util/validate';
-import { Fragment } from 'react'
-const current = new Date();
 const invoiceForm = (props) => {
-  console.log("aajaa",props)
 
-  const { handleSubmit, handleFormSubmit, clientOptions } = props
-
+  const { handleSubmit, handleFormSubmit, AccountOptions,AccountDetails } = props
   return (
 
     <Fragment>
@@ -57,11 +53,19 @@ const invoiceForm = (props) => {
             label="Currency Type"
           /> </FormHeaderContainer>
           <Field
-            name="clientFirm"
+            name="AccountFirm"
             component={RenderSelectInput}
-            options= {clientOptions}
+            options= {AccountOptions}
           />
+
+          <Field
+          name= "address"
+          component={RenderSelectInput}
+          options= {AccountDetails}
+          />
+          
           <FieldArray name="descriptions" component={renderInvoiceOrders} />
+          
           <Styledbutton>Submit</Styledbutton>
         </Form>
       </FormContainer>

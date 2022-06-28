@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   borderRight: {
     borderRight: "1px solid black"
   },
-  clientContainer: {
+  AccountContainer: {
     border: "1px solid black",
     borderRight: "none"
   },
@@ -142,10 +142,10 @@ const styles = StyleSheet.create({
     )
   }
 
-  const renderClientDetail=() => {
-    const {clientFirm: {name, addressLine1, addressLine2 }}= invoice;
+  const renderAccountDetails=() => {
+    const {AccountFirm: {name, addressLine1, addressLine2 }}= invoice;
     return(
-      <View style={[styles.width50, styles.clientContainer, styles.cellPadding]}>
+      <View style={[styles.width50, styles.AccountContainer, styles.cellPadding]}>
             <Text style={styles.fontmd}>{name}</Text>
             <Text style={styles.fontSm}>{addressLine1}</Text>
             <Text style={styles.fontSm}>{addressLine2}</Text>
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
        {renderFirmDetail()}
 
         <View style={[styles.flex, styles.flexRow, styles.flexJustifyBetween, styles.marginBottom10]}>
-          {renderClientDetail()}
+          {renderAccountDetails()}
 
           <View style={[styles.width50, styles.borderBox]}>
             {renderTableDetail(["Summary"], [100], [], true)}
