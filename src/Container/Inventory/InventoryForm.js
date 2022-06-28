@@ -1,21 +1,16 @@
 import React,  { Fragment }  from 'react'
 import { Styledbutton } from 'Components/Inputs/button';
 import FormInput from 'Components/Inputs/formInputs';
-import { Field, reduxForm, Form, FieldArray} from 'redux-form';
+import { Field, reduxForm, Form} from 'redux-form';
 import { FormHeaderContainer ,FormContainer} from 'Container/invoice/invoicePDF/FormStyling';
 import { required } from 'Util/validate';
-
-
-
-
-
-
-
 
 const InventoryForm = (props) => {
 
   const { handleSubmit, handleFormSubmit} = props
-    // console.log(handleFormSubmit)
+    console.log(handleFormSubmit)
+
+    
   return (
     <Fragment>
         <FormContainer>
@@ -24,15 +19,13 @@ const InventoryForm = (props) => {
 
         <Field
             name="name"
-            placeholder='Name'
+            placeholder='category'
             component={FormInput}
             validate={[required]}
-            label="Name"
+            label="Category"
           />
           
-         
-     
-        <Styledbutton>Submit</Styledbutton>
+        <Styledbutton >Submit</Styledbutton>
         </Form>
         </FormHeaderContainer>
         </FormContainer>
