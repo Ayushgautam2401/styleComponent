@@ -31,6 +31,9 @@ import Inventory from "Container/Inventory/Inventory";
 
 import { Styledbutton } from "Components/Inputs/button";
 import InventoryForm from "Container/Inventory/InventoryFormPage";
+//import NextPage from "Container/Inventory/NextPage";
+import { getInventoryState } from "Store/Selector";
+import { useParams } from "react-router-dom";
 import NextPage from "Container/Inventory/NextPage";
 
 
@@ -38,8 +41,7 @@ function Home() {
   const history = useHistory()
   const location = useLocation();
   const dispatch = useDispatch();
-
-
+  const {category} = useParams();
   const handleLogout =() => {
     dispatch(loginActions.logout ());
   }
@@ -68,6 +70,8 @@ function Home() {
                 <p>Inventory </p>
               ) : location.pathname === "/inventory/Inventoryform" ? (
                 <p>Inventory Form</p>
+              ) : location.pathname === "/inventory/Inventoryform/NextPage/:category?" ? (
+                <p>{category}</p>
               ) : null}{" "}
             </TitleLabel>
           </TitleBar>
@@ -81,15 +85,12 @@ function Home() {
               <Route path="/invoice/Invoiceform/:id?" component={InvoiceForm} />
                 <Route path= "/invoice_Pd/:invoiceID" component={Pdf_Maker}/>
 
-              <Route path="/invoice_Pd/:invoiceID" component={Pdf_Maker} />
-
-
               <Route exact path="/inventory" component={Inventory}/>
               <Route path="/inventory/Inventoryform/:id?" component={InventoryForm} />
-              <Route path="/Inventoryform/NextPage/:id?" component={NextPage} />
+              <Route path="/inventory/Inventoryform/NextPage" component={NextPage} />
 
               
-              {/* <Redirect to="/Account" /> */}
+               <Redirect to="/Account" />
 
 
             </Switch>

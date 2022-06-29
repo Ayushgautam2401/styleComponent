@@ -17,7 +17,7 @@ function Account() {
 
 
   const renderAccountItem = (AccountID, index) => {
-    const { id, name, phoneNumber, address, details } = raw[AccountID] || {};
+    const { id, name } = raw[AccountID] || {};
 
     return (
       <tbody key={id}>

@@ -6,13 +6,14 @@ import { Styledbutton } from 'Components/Inputs/button'
 import { InventoryActions, InventoryUpdateActions } from 'Store/Action/inventoryActions'
 import { getInventoryState } from 'Store/Selector'
 import InventoryForm from './InventoryForm'
+import NextPage from './NextPage'
 
 const InventoryFormPage = (props) => {
   const history= useHistory();
   const {id} = useParams();
   const dispatch = useDispatch();
-
-const {inventory,loading} = useSelector(getInventoryState);
+  const {category} = useParams();
+const {data, raw} = useSelector(getInventoryState);
 
   useEffect(()=>{
     if(id){
@@ -23,12 +24,14 @@ const {inventory,loading} = useSelector(getInventoryState);
  const  handleFormSubmit= (data)=>{
       console.log(data);
       dispatch(InventoryUpdateActions.request(data));
-      history.push("/inventoryform/NextPage")
+     // const {category} = data;
+      history.push("/inventory/Inventoryform/NextPage");
     }
   return (
     <Fragment>
       <Styledbutton onClick={()=> history.push("/inventory")}>Back</Styledbutton>
-        <InventoryForm handleFormSubmit={handleFormSubmit}  initialValues={id ? inventory : {}}/>
+        <InventoryForm handleFormSubmit={handleFormSubmit} />
+        <NextPage/>
     </Fragment>
   )
 }

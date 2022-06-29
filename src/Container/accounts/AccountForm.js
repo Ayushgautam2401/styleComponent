@@ -31,13 +31,7 @@ export const renderAdressOrders = ({ fields, meta: { error, submitFailed } }) =>
           label={<Styledheader>Address {index + 1}</Styledheader>}
         />
         </ul>
-            <ul><Field
-          name={`${item}.phonenumber`}
-          component={FormInput}
-          validate={[required]}
-          label={<Styledheader>Contact {index + 1}</Styledheader>}
-        /></ul>
-
+          
       </ul>
     )
     )

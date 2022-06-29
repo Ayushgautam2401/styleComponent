@@ -18,7 +18,7 @@ const InventoryForm = (props) => {
             <Form onSubmit={handleSubmit(handleFormSubmit)}>
 
         <Field
-            name="name"
+            name="category"
             placeholder='category'
             component={FormInput}
             validate={[required]}
