@@ -6,6 +6,7 @@ import { Styledbutton } from 'Components/Inputs/button'
 import { InventoryActions, InventoryUpdateActions } from 'Store/Action/inventoryActions'
 import { getInventoryState } from 'Store/Selector'
 import InventoryForm from './InventoryForm'
+import NextPage from './NextPage'
 
 const InventoryFormPage = (props) => {
   const history= useHistory();
@@ -23,12 +24,12 @@ const {inventory,loading} = useSelector(getInventoryState);
  const  handleFormSubmit= (data)=>{
       console.log(data);
       dispatch(InventoryUpdateActions.request(data));
-      history.push("/inventoryform/NextPage")
+      history.push("/inventory")
     }
   return (
     <Fragment>
       <Styledbutton onClick={()=> history.push("/inventory")}>Back</Styledbutton>
-        <InventoryForm handleFormSubmit={handleFormSubmit}  initialValues={id ? inventory : {}}/>
+        <NextPage handleFormSubmit={handleFormSubmit}  initialValues={id ? inventory : {}}/>
     </Fragment>
   )
 }

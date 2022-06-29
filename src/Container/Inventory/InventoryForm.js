@@ -4,21 +4,31 @@ import FormInput from 'Components/Inputs/formInputs';
 import { Field, reduxForm, Form} from 'redux-form';
 import { FormHeaderContainer ,FormContainer} from 'Container/invoice/invoicePDF/FormStyling';
 import { required } from 'Util/validate';
+import { useDispatch } from 'react-redux';
+import { InventoryUpdateActions } from 'Store/Action/inventoryActions';
+import { useHistory } from 'react-router-dom';
 
 const InventoryForm = (props) => {
+  const dispatch = useDispatch();
+  const history  = useHistory();
+  const { handleSubmit} = props;
 
-  const { handleSubmit, handleFormSubmit} = props
-    console.log(handleFormSubmit)
-
+    
+  const handleFormSubmit = (data, inventory = {}) => {
+    console.log(data);
+    const {id} = inventory;
+    // dispatch(InventoryUpdateActions.request(data))
+    history.push(`/inventory/Inventoryform/NextPage/${id || ""}`)
+  }
     
   return (
     <Fragment>
         <FormContainer>
         <FormHeaderContainer>
-            <Form onSubmit={handleSubmit(handleFormSubmit)}>
+            <Form  onSubmit={handleSubmit(handleFormSubmit)}>
 
         <Field
-            name="name"
+            name="category"
             placeholder='category'
             component={FormInput}
             validate={[required]}
