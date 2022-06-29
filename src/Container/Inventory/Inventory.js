@@ -1,6 +1,5 @@
 import { Styledbutton } from 'Components/Inputs/button'
-import React from 'react'
-import { Fragment } from 'react';
+import React, {Fragment } from 'react'
 import { Table } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom'

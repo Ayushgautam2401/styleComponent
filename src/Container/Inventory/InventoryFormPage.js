@@ -25,13 +25,15 @@ const {data, raw} = useSelector(getInventoryState);
       console.log(data);
       dispatch(InventoryUpdateActions.request(data));
      // const {category} = data;
-      history.push("/inventory/Inventoryform/NextPage");
+      //history.push("/inventory/Inventoryform/NextPage");
+      history.push("/inventory")
     }
   return (
     <Fragment>
       <Styledbutton onClick={()=> history.push("/inventory")}>Back</Styledbutton>
         <InventoryForm handleFormSubmit={handleFormSubmit} />
-        <NextPage/>
+        {/* <NextPage/> */}
+        <NextPage handleFormSubmit={handleFormSubmit}  initialValues={id ? inventory : {}}/>
     </Fragment>
   )
 }

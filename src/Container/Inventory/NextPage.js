@@ -35,18 +35,18 @@ const NextPage = () =>
             label="Name"
           />
 
-        <Field
-            name="text"
+          <Field
+            name="quantity"
             placeholder='Quantity'
             component={FormInput}
             validate={[required]}
             label="Quantity"
           />
-        <Styledbutton>Submit</Styledbutton>
-          
-     </Form>
-    
-    </FormContainer>
+          <Styledbutton >Submit</Styledbutton>
+
+        </Form>
+
+      </FormContainer>
 
     </Fragment>
   )
