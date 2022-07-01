@@ -29,13 +29,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { ThanksButton } from "Container/thankyou/thankYouStyling";
 import Inventory from "Container/Inventory/Inventory";
 
-import { Styledbutton } from "Components/Inputs/button";
-//import InventoryForm from "Container/Inventory/InventoryFormPage";
+//import { Styledbutton } from "Components/Inputs/button";
+import InventoryForm from "Container/Inventory/CategoryFormPage";
 //import NextPage from "Container/Inventory/NextPage";
 import { getInventoryState } from "Store/Selector";
 import { useParams } from "react-router-dom";
 import NextPage from "Container/Inventory/NextPage";
-import InventoryForm from "Container/Inventory/InventoryForm";
+import DetailForm from "Container/Inventory/DetailForm";
 
 
 function Home() {
@@ -87,12 +87,11 @@ function Home() {
                 <Route path= "/invoice_Pd/:invoiceID" component={Pdf_Maker}/>
 
               <Route exact path="/inventory" component={Inventory}/>
-              <Route exact path="/inventory/Inventoryform"component={InventoryForm}/>
-              <Route path="/inventory/Inventoryform/NextPage/:id?" component={InventoryForm} />
-              {/* <Route path="/inventory/Inventoryform/NextPage/:id?" component={NextPage} /> */}
+              <Route   path="/inventory/Inventoryform/:id?" component={InventoryForm} />
+              <Route  path="/inventory/Detailform" component={DetailForm} />
 
               
-              <Redirect to="/Account" />
+                {/* <Redirect to="/Account" /> */}
 
 
             </Switch>

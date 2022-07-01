@@ -32,3 +32,4 @@ const genericFunc = (type) => (payload) => ({
     success: genericFunc(INVENTORY_UPDATE_SUCCESS),
     failure: genericFunc(INVENTORY_UPDATE_FAILURE),
   }
+

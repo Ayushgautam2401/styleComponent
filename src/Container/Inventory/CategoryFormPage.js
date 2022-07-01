@@ -5,7 +5,7 @@ import { useHistory, useParams } from 'react-router-dom'
 import { Styledbutton } from 'Components/Inputs/button'
 import { InventoryActions, InventoryUpdateActions } from 'Store/Action/inventoryActions'
 import { getInventoryState } from 'Store/Selector'
-import InventoryForm from './InventoryForm'
+import InventoryForm from './CategoryForm'
 import NextPage from './NextPage'
 
 const InventoryFormPage = (props) => {
@@ -25,15 +25,13 @@ const {data, raw} = useSelector(getInventoryState);
       console.log(data);
       dispatch(InventoryUpdateActions.request(data));
      // const {category} = data;
-      //history.push("/inventory/Inventoryform/NextPage");
-      history.push("/inventory")
+      history.push("/inventory/Detailform");
     }
   return (
     <Fragment>
       <Styledbutton onClick={()=> history.push("/inventory")}>Back</Styledbutton>
         <InventoryForm handleFormSubmit={handleFormSubmit} />
         {/* <NextPage/> */}
-        <NextPage handleFormSubmit={handleFormSubmit}  initialValues={id ? inventory : {}}/>
     </Fragment>
   )
 }

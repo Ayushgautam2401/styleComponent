@@ -14,11 +14,11 @@ const InventoryForm = (props) => {
   const { handleSubmit} = props;
 
     
-  const handleFormSubmit = (data, inventory = {}) => {
-    console.log(data);
-    const {id} = inventory;
-    // dispatch(InventoryUpdateActions.request(data))
-    history.push(`/inventory/Inventoryform/NextPage/${id || ""}`)
+  const handleFormSubmit = (category) => {
+    console.log(category);
+    //const {category} = inventory;
+     dispatch(InventoryUpdateActions.request(category))
+    history.push(`/inventory/Detailform`)
   }
     
   return (
@@ -35,7 +35,7 @@ const InventoryForm = (props) => {
             label="Category"
           />
           
-        <Styledbutton >Submit</Styledbutton>
+        <Styledbutton onSubmit={handleSubmit(handleFormSubmit)}>Submit</Styledbutton>
         </Form>
         </FormHeaderContainer>
         </FormContainer>

@@ -13,15 +13,8 @@ import {
 } from "Store/Action/inventoryActions";
 
 const INITIAL_STATE = {
-    list : ["Inventory_1"],
-    raw:{
-        Inventory_1 : {
-    id:"Inventory_1",
+    list : ["LAPTOP"],
     category: "LAPTOP",
-    name:"T470",
-    quantity: "16"
-    }
-},
     inventory: undefined,
     loading: false,
     error: undefined,
@@ -30,7 +23,7 @@ const INITIAL_STATE = {
 
 const InventoryReducer = (state = INITIAL_STATE, action) => {
     const {type, payload} = action;
-    const {data, message} = payload || {};
+    const {category, message} = payload || {};
     
     switch (type) {
         case INVENTORY_LIST_REQUEST:
@@ -38,9 +31,9 @@ const InventoryReducer = (state = INITIAL_STATE, action) => {
         case INVENTORY_LIST_SUCCESS:
             const raw = {};
             forEach(data, (item) => {
-                raw[data.id] = item;
+                [category] = item;
             });
-            return{...state, loading:false, list: map(data, "id"), raw };
+            return{...state, loading:false, list: map(category), raw };
         case INVENTORY_LIST_FAILIURE:
             return {...state, error: message, loading: false }; 
         
@@ -57,15 +50,15 @@ const InventoryReducer = (state = INITIAL_STATE, action) => {
               case INVENTORY_UPDATE_REQUEST:
                 return { ...state, loading: true, error: undefined };
               case INVENTORY_UPDATE_SUCCESS:
-                if (!data.id) {
-                  const id = makeid(3);
+                if (!category) {
+                  const category = state.category;
                   if (!state.list) {
                     state.list = [];
                   }
-                  state.list.push(id);
-                  state.raw[id] = { ...data, id };
+                  state.list.push(category);
+                  state.category = { ...category };
                 } else {
-                  state.raw[data.id] = data;
+                  state.category = category;
                 }
                 return { ...state, loading: false, error: undefined };
 

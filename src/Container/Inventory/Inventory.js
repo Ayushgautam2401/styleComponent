@@ -10,18 +10,18 @@ function Inventory() {
     const {list , raw}= useSelector(getInventoryState);
 
     const handleInventory = (inventory = {}) => {
-      const {id} = inventory;
+      const {category} = inventory;
       history.push(`/inventory/Inventoryform/`)
     }
 
-    const renderInventoryItem = ( InventoryID,index) => {
-      const {id,category} = raw[InventoryID] || {}
+    const renderInventoryItem = (category) => {
+      const {index} = {}
 
       return (
-    <tbody key={id} >
-      <tr key={id}>
-        <td>{id}</td>
-        <td>{category}</td>   
+    <tbody key={index} >
+      <tr key={index}>
+        {/* <td>{{index}+1}</td> */}
+        <td key={index}>{category}</td>   
       
       </tr>
     </tbody>
@@ -43,7 +43,7 @@ function Inventory() {
   <Table striped bordered hover>
     <thead>
       <tr>
-        <th>Id</th>
+        {/* <th>S.No.</th> */}
         <th>Category</th>
         <th>Name</th>
         
